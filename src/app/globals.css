@@ -20,7 +20,7 @@
 
   .underline-animated::after,
   .underline-animated-active::after {
-    @apply absolute bottom-[-10px] left-0 w-0 h-[2.5px] bg-white empty-content transition-all rounded-sm;
+    @apply absolute bottom-[-10px] left-0 w-0 h-[2.5px] bg-white empty-content transition-all rounded-sm pointer-events-none;
   }
   
   .underline-animated:hover::after,

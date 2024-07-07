@@ -3,7 +3,7 @@
 import { BsList } from "react-icons/bs"
 
 import { NavItem } from "./components/NavItem"
-import { useNav } from "./hooks/use-nav"
+import { useMobileNav } from "./hooks/use-mobile-nav"
 
 import { navToggleId } from "./constants"
 
@@ -23,13 +23,27 @@ const routes = [
 ]
 
 export const Header = () => {
-  const { navIsOpen, toggleNav, windowIsResizing } = useNav()
+  const { navIsOpen, isMobileScreen, toggleNav, windowIsResizing } =
+    useMobileNav()
 
   return (
-    <header className="flex justify-between sm:justify-normal items-center py-3 px-8 xl:px-72 sticky top-0 left-0 bg-primary">
+    <header
+      role="banner"
+      className="flex justify-between sm:justify-normal items-center py-3 px-8 xl:px-72 sticky top-0 left-0 bg-primary"
+    >
       <div className="flex text-center font-bold items-center w-[95px] h-[65px] bg-white">
         Logo placeholder
       </div>
+
+      <button
+        tabIndex={isMobileScreen ? 0 : -1}
+        aria-label={`${navIsOpen ? "Close" : "Open"} navigation menu`}
+        id={navToggleId}
+        type="button"
+        onClick={toggleNav}
+      >
+        <BsList className="sm:hidden w-10 h-10 text-white" />
+      </button>
 
       <nav
         className={`fixed sm:static overflow-hidden sm:overflow-visible ${windowIsResizing ? "transition-none" : "transition-[width]"} sm:transition-none top-0 left-0 bg-black sm:bg-transparent h-full ${navIsOpen ? "w-1/2" : "w-0"} sm:w-[calc(100%-190px)]`}
@@ -38,18 +52,13 @@ export const Header = () => {
           {routes.map((route, index) => (
             <NavItem
               {...route}
+              isAccessible={isMobileScreen ? navIsOpen : true}
               renderBreakline={index !== routes.length - 1}
               key={route.href}
             />
           ))}
         </ul>
       </nav>
-
-      <BsList
-        id={navToggleId}
-        className="sm:hidden w-10 h-10 text-white"
-        onClickCapture={toggleNav}
-      />
     </header>
   )
 }
