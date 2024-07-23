@@ -46,7 +46,7 @@ export const Header = () => {
       </button>
 
       <nav
-        className={`fixed sm:static overflow-hidden sm:overflow-visible ${windowIsResizing ? "transition-none" : "transition-[width]"} sm:transition-none top-0 left-0 bg-black sm:bg-transparent h-full ${navIsOpen ? "w-1/2" : "w-0"} sm:w-[calc(100%-190px)]`}
+        className={`z-50 fixed sm:static overflow-hidden sm:overflow-visible ${windowIsResizing ? "transition-none" : "transition-[width]"} sm:transition-none top-0 left-0 bg-black sm:bg-transparent h-full ${navIsOpen ? "w-1/2" : "w-0"} sm:w-[calc(100%-190px)]`}
       >
         <ul className="flex flex-col sm:flex-row justify-center gap-5 sm:gap-10 p-6 sm:p-0">
           {routes.map((route, index) => (
