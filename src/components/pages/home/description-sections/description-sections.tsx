@@ -42,7 +42,7 @@ const servicesOffered = [
 ]
 
 export const DescriptionSection = () => (
-  <div className="flex flex-col md:flex-row gap-10 md:gap-20 lg:gap-40 w-full px-8 md:px-52 lg:px-80">
+  <div className="flex flex-col md:flex-row gap-10 md:gap-20 lg:gap-40 w-full px-container">
     <section>
       <ul className="flex flex-col gap-10 items-center w-full sm:w-fit sm:grid sm:gap-10 sm:gird-rows-2 sm:grid-cols-2 mt-[-100px] md:mt-[-200px]">
         {descriptiveCards.map((infoCardProps, index) => {

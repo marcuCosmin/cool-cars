@@ -29,7 +29,7 @@ export const Header = () => {
   return (
     <header
       role="banner"
-      className="flex justify-between sm:justify-normal items-center py-3 px-8 md:px-52 lg:px-80 sticky top-0 left-0 bg-primary"
+      className="flex justify-between sm:justify-normal items-center py-3 px-container sticky top-0 left-0 bg-primary"
     >
       <div className="flex text-center font-bold items-center w-[95px] h-[65px] bg-white">
         Logo placeholder

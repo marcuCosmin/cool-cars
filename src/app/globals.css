@@ -35,4 +35,8 @@
   .bg-overlay::after {
     @apply empty-content absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 -z-10 pointer-events-none;
   }
+
+  .px-container {
+    @apply px-8 md:px-32 lg:px-80;
+  }
 }

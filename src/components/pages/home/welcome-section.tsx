@@ -1,5 +1,5 @@
 export const WelcomeSection = () => (
-  <section className="py-32 sm:pb-80 md:py-64 md:pb-[30rem] px-8 md:px-52 lg:px-80 text-white bg-[url('/home-background.jpg')] bg-no-repeat bg-cover bg-center bg-overlay w-full text-center sm:text-left">
+  <section className="py-32 sm:pb-80 md:pb-[25rem] lg:py-64 lg:pb-[30rem] px-container text-white bg-[url('/home-background.jpg')] bg-no-repeat bg-cover bg-center bg-overlay w-full text-center sm:text-left">
     <h1 className="tracking-[0.4rem] text-lg sm:text-xl">
       Welcome to Cool Cars
     </h1>
