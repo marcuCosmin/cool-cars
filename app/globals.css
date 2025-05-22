@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #41A0A4;
+    --color-black: #222;
+    --color-gray: #888;
+    --breakpoint-sm: 650px;
+    --breakpoint-md: 1400px;
+    --breakpoint-lg: 1920px;
+}
+
+@layer base {
+  body {
+    @apply text-sm text-gray;
+  }
+
+  h1 {
+    @apply text-lg sm:text-xl;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-5xl font-semibold;
+  }
+}
+
+@utility empty-content {
+  content: '';
+}
+
+@utility underline-animated {
+  @apply relative after:absolute after:bottom-[-10px] after:left-0 after:w-0 after:h-[2.5px] after:bg-white after:empty-content after:transition-all after:rounded-sm after:pointer-events-none hover:after:w-full;
+}
+
+@utility underline-animated-active {
+  @apply relative after:absolute after:bottom-[-10px] after:left-0 after:w-full after:h-[2.5px] after:bg-white after:empty-content after:transition-all after:rounded-sm after:pointer-events-none;
+}
+
+@utility bg-overlay {
+  @apply relative -z-20 after:empty-content after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/50 after:-z-10 after:pointer-events-none;
+}
+
+@utility px-container {
+  @apply px-8 md:px-32 lg:px-80;
+}
