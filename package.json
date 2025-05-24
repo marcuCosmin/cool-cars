@@ -16,6 +16,7 @@
     "react-bootstrap-icons": "^1.11.6",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.56.4",
+    "sharp": "^0.34.2",
     "use-debounce": "^10.0.4"
   },
   "devDependencies": {
