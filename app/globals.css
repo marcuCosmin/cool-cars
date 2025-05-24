@@ -4,9 +4,10 @@
     --color-primary: #41A0A4;
     --color-black: #222;
     --color-gray: #888;
-    --breakpoint-sm: 650px;
-    --breakpoint-md: 1400px;
-    --breakpoint-lg: 1920px;
+    --breakpoint-sm: 700px;
+    --breakpoint-md: 1000px;
+    --breakpoint-lg: 1350px;
+    --breakpoint-xl: 1600px;
 }
 
 @layer base {
@@ -15,11 +16,19 @@
   }
 
   h1 {
-    @apply text-lg sm:text-xl;
+    @apply font-bold tracking-wider text-xl sm:text-3xl xl:text-5xl text-white;
   }
 
   h2 {
-    @apply text-3xl sm:text-5xl font-semibold;
+    @apply font-semibold text-lg xl:text-2xl text-primary;
+  }
+
+  h3 {
+    @apply font-semibold sm:text-lg xl:text-xl text-primary;
+  }
+
+  input, textarea {
+    @apply border-gray border rounded-md p-2 outline-primary
   }
 }
 
@@ -39,6 +48,6 @@
   @apply relative -z-20 after:empty-content after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/50 after:-z-10 after:pointer-events-none;
 }
 
-@utility px-container {
-  @apply px-8 md:px-32 lg:px-80;
+@utility invalid-input {
+  @apply border-red-600 focus:outline-red-600;
 }

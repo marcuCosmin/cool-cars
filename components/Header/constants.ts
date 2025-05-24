@@ -5,6 +5,10 @@ export const routes = [
     innerText: "Home",
   },
   {
+    href: "/services",
+    innerText: "Services",
+  },
+  {
     href: "/about",
     innerText: "About us",
   },

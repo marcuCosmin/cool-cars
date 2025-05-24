@@ -10,10 +10,12 @@
     "start:prod": "node server.js"
   },
   "dependencies": {
+    "email-validator": "^2.0.4",
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-bootstrap-icons": "^1.11.6",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.56.4",
     "use-debounce": "^10.0.4"
   },
   "devDependencies": {
