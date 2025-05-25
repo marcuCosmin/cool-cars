@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://cool-cars.co.uk
+
+# Sitemaps
+Sitemap: https://cool-cars.co.uk/sitemap.xml
