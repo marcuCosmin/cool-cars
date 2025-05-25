@@ -18,6 +18,9 @@ jobs:
 
     - name: Build Project
       run: npm install && npm run build
+      env:
+        NEXT_PUBLIC_API_URL: https://api.cool-cars-garage.co.uk/mail
+        NEXT_PUBLIC_EMAIL: contact@cool-cars.co.uk
     
     - name: Upload to FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
