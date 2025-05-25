@@ -48,7 +48,7 @@ H0V6.2z"
         </section>
       )}
 
-      <div className="flex flex-wrap justify-between gap-10 w-full relative pb-10">
+      <div className="flex flex-wrap justify-between gap-10 w-full pb-10">
         {children}
       </div>
     </div>
