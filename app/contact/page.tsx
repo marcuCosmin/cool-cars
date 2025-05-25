@@ -1,6 +1,17 @@
+import { type Metadata } from "next"
+
 import { MainWrapper } from "@/components/MainWrapper"
 import { ContactForm } from "@/components/ContactForm/ContactForm"
 import { ContactField } from "@/components/ContactField"
+
+export const metadata: Metadata = {
+  title: "Contact Us | Cool Cars",
+  description:
+    "Get in touch with Cool Cars in Swanmore for quotes, appointments, or questions.",
+  alternates: {
+    canonical: "https://cool-cars.co.uk/contact",
+  },
+}
 
 const Contact = () => (
   <MainWrapper

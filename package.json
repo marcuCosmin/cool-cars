@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "postbuild": "node postbuild.js",
+    "postbuild": "node postbuild.js && next-sitemap",
     "build": "next build && cp -r public .next/standalone && cp -r .next/static .next/standalone/.next",
     "start": "next start",
     "lint": "next lint",
@@ -13,6 +13,7 @@
   "dependencies": {
     "email-validator": "^2.0.4",
     "next": "15.3.2",
+    "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
     "react-bootstrap-icons": "^1.11.6",
     "react-dom": "^19.0.0",

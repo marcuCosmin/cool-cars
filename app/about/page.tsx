@@ -1,4 +1,14 @@
+import { type Metadata } from "next"
 import Image from "next/image"
+
+export const metadata: Metadata = {
+  title: "About Us | Cool Cars",
+  description:
+    "Family-run car body repair shop delivering expert craftsmanship and customisation with a focus on quality, detail, and customer satisfaction.",
+  alternates: {
+    canonical: "https://cool-cars.co.uk/about",
+  },
+}
 
 export default function About() {
   return (
@@ -6,7 +16,7 @@ export default function About() {
       <Image
         className="h-full w-auto hidden lg:block"
         src="/about-background.jpg"
-        alt="Text"
+        alt="Team painting a car"
         width={1024}
         height={1536}
       />

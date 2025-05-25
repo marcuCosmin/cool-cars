@@ -1,4 +1,15 @@
+import { type Metadata } from "next"
+
 import { MainWrapper } from "@/components/MainWrapper"
+
+export const metadata: Metadata = {
+  title: "Our Services | Paint Respraying & Dent Repair | Cool Cars",
+  description:
+    "Comprehensive car bodywork services including accident repairs, dent removal, resprays, vehicle wrapping, paint correction, and custom bodywork by skilled professionals.",
+  alternates: {
+    canonical: "https://cool-cars.co.uk/services",
+  },
+}
 
 const services = [
   {
