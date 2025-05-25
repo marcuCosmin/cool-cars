@@ -30,7 +30,7 @@ export const ContactForm = () => {
 
   return (
     <form
-      className="relative flex flex-col gap-4 m-auto w-full max-w-md md:max-w-xl"
+      className="relative z-10 flex flex-col gap-4 m-auto w-full max-w-md md:max-w-xl"
       onSubmit={handleSubmit(onSubmit)}
     >
       <h3 className="text-center mb-5 text-lg md:text-2xl">

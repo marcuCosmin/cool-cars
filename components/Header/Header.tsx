@@ -15,7 +15,7 @@ export const Header = () => {
   return (
     <header
       role="banner"
-      className="flex justify-between sm:justify-normal items-center py-3 px-8 md:px-32 lg:px-80 sticky top-0 left-0 bg-primary"
+      className="z-50 flex justify-between sm:justify-normal items-center py-3 px-8 md:px-32 lg:px-80 sticky top-0 left-0 bg-primary"
     >
       <div className="flex text-center font-bold items-center">
         <Image
@@ -37,7 +37,7 @@ export const Header = () => {
       </button>
 
       <nav
-        className={`z-50 fixed sm:static overflow-hidden sm:overflow-visible sm:transition-none top-0 left-0 bg-black sm:bg-transparent h-full ${
+        className={`fixed sm:static overflow-hidden sm:overflow-visible sm:transition-none top-0 left-0 bg-black sm:bg-transparent h-full ${
           navIsOpen ? "w-1/2" : "w-0"
         } sm:w-[calc(100%-190px)]`}
       >
