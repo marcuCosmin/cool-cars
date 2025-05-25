@@ -40,7 +40,7 @@ H0V6.2z"
       </svg>
     </section>
 
-    <div className="flex flex-col pt-4 px-4 md:flex-row gap-10 md:gap-20 lg:gap-40 w-full">
+    <div className="flex flex-col pt-4 px-4 gap-10 md:gap-20 lg:gap-40 w-full max-w-5xl">
       {(h2 || description) && (
         <section className="md:hidden w-full md:w-1/2 text-center">
           {h2 && <h2 className="mb-5 text-primary">{h2}</h2>}
@@ -48,7 +48,7 @@ H0V6.2z"
         </section>
       )}
 
-      <div className="flex flex-wrap justify-between gap-10 w-full relative">
+      <div className="flex flex-wrap justify-between gap-10 w-full relative pb-10">
         {children}
       </div>
     </div>

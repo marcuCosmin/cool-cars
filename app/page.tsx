@@ -15,8 +15,8 @@ export default function Home() {
       h2="From minor scratches to full accident repairs — quality workmanship, fast turnaround, and great prices."
       description="Welcome to Cool Cars South Coast — your trusted partner for professional car body repairs, resprays, and vehicle customisation. With years of experience and a passion for excellence, we restore your vehicle to its former glory, ensuring it looks as good as new."
     >
-      <div className="absolute md:top-[-90px] xl:top-[-150px] md:left-[-16%] flex flex-wrap justify-between gap-10 w-full md:text-lg xl:text-xl">
-        <section className="w-full flex flex-col items-center">
+      <div className="flex flex-wrap justify-between gap-10 w-full md:text-lg xl:text-xl">
+        <section className="w-full">
           <h2 className="md:text-3xl mb-2">Benefits:</h2>
           <ul className="list-disc pl-5">
             {benefits.map((benefit, index) => (
@@ -25,7 +25,7 @@ export default function Home() {
           </ul>
         </section>
 
-        <section className="w-full flex flex-col items-center">
+        <section className="w-full">
           <h2 className="md:text-3xl mb-2">Get in touch</h2>
           <p>
             Call us today at

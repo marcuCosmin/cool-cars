@@ -36,7 +36,7 @@ const services = [
 const Services = () => {
   return (
     <MainWrapper h1="Our Services">
-      <h2 className="text-primary font-semibold text-lg mb-5 xl:text-2xl">
+      <h2>
         At <strong>Cool Cars South Coast</strong>, we offer a comprehensive
         range of services to meet all your car bodywork needs:
       </h2>
@@ -44,15 +44,13 @@ const Services = () => {
       <ul className="flex flex-col gap-4">
         {services.map((service, index) => (
           <li key={index}>
-            <h3>{service.title}</h3>
-            <p className="text-xs sm:text-base lg:text-lg">
-              {service.description}
-            </p>
+            <h2>{service.title}</h2>
+            <p className="lg:text-lg">{service.description}</p>
           </li>
         ))}
       </ul>
 
-      <p>
+      <p className="lg:text-lg">
         All services are performed by skilled professionals using premium
         materials to ensure the highest quality results.
       </p>
