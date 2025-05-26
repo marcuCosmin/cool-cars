@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <main className="flex bg-cover h-[calc(100vh-80px)] bg-[url('/about-background.jpg')] lg:bg-left lg:bg-size-[auto_100%] bg-no-repeat bg-overlay">
+    <main className="flex bg-cover h-[calc(100vh-80px)] bg-[url('/about-background.jpg')] bg-position-[50%_0%] lg:bg-left lg:bg-size-[auto_100%] bg-no-repeat bg-overlay">
       <Image
         className="h-full w-auto hidden lg:block"
         src="/about-background.jpg"
