@@ -15,7 +15,7 @@ export const MainWrapper = ({
 }: MainWrapperProps) => (
   <main className="flex flex-col items-center">
     <section className="flex flex-col bg-top md:max-h-[70vh] md:bg-position-[center_25%] bg-size-[100%] h-[65vw] text-white bg-[url('/background.jpg')] bg-no-repeat bg-overlay w-full text-center">
-      <div className="flex flex-col items-center justify-center xl:justify-end p-2 md:p-20 xl:p-40 xl:pt-0 xl:pb-[2%] h-full gap-5">
+      <div className="flex flex-col items-center justify-center xl:justify-end p-2 md:p-20 xl:p-40 xl:pt-0 xl:pb-[2%] gap-5 max-h-[75%]">
         <h1 className="mt-[15%] xl:mt-[8%] xl:mb-4">{h1}</h1>
         {h2 && <h2 className="hidden md:block text-white">{h2}</h2>}
 
