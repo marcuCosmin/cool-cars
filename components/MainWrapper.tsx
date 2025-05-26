@@ -14,18 +14,20 @@ export const MainWrapper = ({
   children,
 }: MainWrapperProps) => (
   <main className="flex flex-col items-center">
-    <section className="p-2 md:p-20 xl:p-40 flex md:flex-col items-center justify-center bg-top md:max-h-[70vh] md:bg-position-[center_25%] bg-size-[100%] h-[65vw] text-white bg-[url('/background.jpg')] bg-no-repeat bg-overlay w-full text-center">
-      <h1 className="mt-[15%] xl:mt-[8%] xl:mb-4">{h1}</h1>
-      {h2 && <h2 className="hidden md:block text-white">{h2}</h2>}
+    <section className="flex flex-col bg-top md:max-h-[70vh] md:bg-position-[center_25%] bg-size-[100%] h-[65vw] text-white bg-[url('/background.jpg')] bg-no-repeat bg-overlay w-full text-center">
+      <div className="flex flex-col items-center justify-center xl:justify-end p-2 md:p-20 xl:p-40 xl:pt-0 xl:pb-[2%] h-full gap-5">
+        <h1 className="mt-[15%] xl:mt-[8%] xl:mb-4">{h1}</h1>
+        {h2 && <h2 className="hidden md:block text-white">{h2}</h2>}
 
-      {description && (
-        <div className="hidden md:block text-lg xl:text-xl xl:max-w-7xl">
-          {description}
-        </div>
-      )}
+        {description && (
+          <div className="hidden md:block text-lg xl:text-xl xl:max-w-7xl">
+            {description}
+          </div>
+        )}
+      </div>
 
       <svg
-        className="rotate-180 fill-white w-full absolute bottom-[-1px] left-0"
+        className="rotate-180 fill-white w-full mt-auto mb-[-1px]"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1920 192"
@@ -40,7 +42,7 @@ H0V6.2z"
       </svg>
     </section>
 
-    <div className="flex flex-col pt-4 px-4 gap-10 md:gap-20 lg:gap-40 w-full max-w-5xl">
+    <div className="flex flex-col pt-4 px-4 gap-10 md:gap-20 lg:gap-40 w-full max-w-5xl mt-[-1px]">
       {(h2 || description) && (
         <section className="md:hidden w-full md:w-1/2 text-center">
           {h2 && <h2 className="mb-5 text-primary">{h2}</h2>}
