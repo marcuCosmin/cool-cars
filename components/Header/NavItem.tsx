@@ -24,7 +24,7 @@ export const NavItem = ({
       <li>
         <Link
           tabIndex={isFocusable ? 0 : -1}
-          className={`sm:uppercase font-normal whitespace-nowrap sm:underline-animated ${isActive ? "text-primary sm:text-white sm:underline-animated-active" : "text-white"}`}
+          className={`sm:uppercase font-normal whitespace-nowrap sm:underline-animated ${isActive ? "text-primary sm:underline-animated-active" : "text-white"}`}
           href={href}
         >
           {innerText}

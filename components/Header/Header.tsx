@@ -15,13 +15,13 @@ export const Header = () => {
   return (
     <header
       role="banner"
-      className="z-50 flex justify-between sm:justify-normal items-center py-3 px-8 md:px-32 lg:px-80 sticky top-0 left-0 bg-primary"
+      className={`z-50 flex justify-between sm:justify-normal items-center py-3 px-8 md:px-32 lg:px-80 sticky top-0 left-0 bg-black ${!navIsOpen ? "drop-shadow-[0px_4px_7px_var(--color-primary)]" : ""}`}
     >
       <div className="flex text-center font-bold items-center">
         <Image
-          src="/logo.png"
+          src="/logo.jpg"
           alt="Cool cars logo"
-          width={80}
+          width={200}
           height={65}
         />
       </div>
@@ -33,7 +33,7 @@ export const Header = () => {
         type="button"
         onClick={toggleMobileNav}
       >
-        <List className="w-10 h-10 text-white" />
+        <List className="w-10 h-10 text-primary" />
       </button>
 
       <nav

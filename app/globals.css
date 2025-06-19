@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #41A0A4;
-    --color-black: #222;
+    --color-primary: #00A1B6;
+    --color-black: #000000;
     --color-gray: #888;
     --breakpoint-sm: 700px;
     --breakpoint-md: 1000px;
@@ -12,7 +12,7 @@
 
 @layer base {
   body {
-    @apply text-sm text-gray;
+    @apply text-sm text-gray !bg-black;
   }
 
   h1 {
@@ -41,11 +41,11 @@
 }
 
 @utility underline-animated-active {
-  @apply relative after:absolute after:bottom-[-10px] after:left-0 after:w-full after:h-[2.5px] after:bg-white after:empty-content after:transition-all after:rounded-sm after:pointer-events-none;
+  @apply relative after:absolute after:bottom-[-10px] after:left-0 after:w-full after:h-[2.5px] after:bg-primary after:empty-content after:transition-all after:rounded-sm after:pointer-events-none;
 }
 
 @utility bg-overlay {
-  @apply relative -z-20 after:empty-content after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/50 after:-z-10 after:pointer-events-none;
+  @apply relative -z-20 after:empty-content after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/30 after:-z-10 after:pointer-events-none;
 }
 
 @utility invalid-input {

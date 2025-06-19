@@ -27,7 +27,7 @@ export const MainWrapper = ({
       </div>
 
       <svg
-        className="rotate-180 fill-white w-full mt-auto mb-[-1px]"
+        className="rotate-180 fill-black w-full mt-auto mb-[-1px] drop-shadow-xl drop-shadow-primary"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1920 192"
