@@ -20,16 +20,21 @@ const Contact = () => (
     description={
       <address className="flex flex-col gap-5 items-center">
         <ContactField
+          label="Address:"
           type="address"
-          value="Address: Unit 16, Swanmore Business Park, Lower Chase Rd, Swanmore SO32 2PB"
+          value="Unit 16, Swanmore Business Park, Lower Chase Rd, Swanmore SO32 2PB"
         />
+
         <ContactField
+          label="Phone:"
           type="phone"
-          value="Phone: 07387 267400"
+          value="07421535039"
         />
+
         <ContactField
+          label="Email:"
           type="email"
-          value="Email: contact@cool-cars.co.uk"
+          value="contact@cool-cars.co.uk"
         />
       </address>
     }

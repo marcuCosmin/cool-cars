@@ -4,6 +4,7 @@ import { EnvelopeFill, PinFill, TelephoneFill } from "react-bootstrap-icons"
 type ContactFieldProps = {
   type: "phone" | "email" | "address"
   value: ReactNode
+  label?: ReactNode
   size?: "small" | "medium"
 }
 
@@ -16,6 +17,7 @@ export const ContactField = ({
   type,
   size = "medium",
   value,
+  label = "",
 }: ContactFieldProps) => {
   const iconProps = {
     "aria-hidden": true,
@@ -25,6 +27,7 @@ export const ContactField = ({
   if (type === "address") {
     return (
       <p>
+        <span className="mr-2">{label}</span>
         <PinFill {...iconProps} />
         {value}
       </p>
@@ -41,7 +44,7 @@ export const ContactField = ({
 
   const href = isPhone ? `tel:${value}` : `mailto:${value}`
 
-  return (
+  const anchorElement = (
     <a
       className="m-1"
       href={href}
@@ -50,4 +53,15 @@ export const ContactField = ({
       {value}
     </a>
   )
+
+  if (label) {
+    return (
+      <p className="flex items-center gap-2">
+        {label}
+        {anchorElement}
+      </p>
+    )
+  }
+
+  return anchorElement
 }
