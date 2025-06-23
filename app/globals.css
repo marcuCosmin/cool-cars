@@ -4,6 +4,7 @@
     --color-primary: #00A1B6;
     --color-black: #000000;
     --color-gray: #888;
+    --color-error: #e7000b;
     --breakpoint-sm: 700px;
     --breakpoint-md: 1000px;
     --breakpoint-lg: 1350px;
@@ -32,6 +33,20 @@
   }
 }
 
+@layer components {
+  .Toastify__toast {
+    @apply !bg-black ;
+  }
+
+  .Toastify__toast--error {
+    @apply drop-shadow-[0px_0px_7px_var(--color-error)]
+  }
+
+    .Toastify__toast--success {
+    @apply drop-shadow-[0px_0px_7px_var(--color-primary)]
+  }
+}
+
 @utility empty-content {
   content: '';
 }
@@ -49,5 +64,5 @@
 }
 
 @utility invalid-input {
-  @apply border-red-600 focus:outline-red-600;
+  @apply border-error focus:outline-error;
 }

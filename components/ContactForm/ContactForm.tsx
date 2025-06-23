@@ -21,25 +21,45 @@ export const ContactForm = () => {
     reset,
   } = useForm<Inputs>()
   const onSubmit: SubmitHandler<Inputs> = async values => {
-    const error = await sendEmail(values)
+    try {
+      const error = await sendEmail(values)
 
-    if (error) {
+      if (error) {
+        toast.error(
+          <Toast
+            type="error"
+            message={error}
+          />
+        )
+        return
+      }
+
+      reset()
+      toast.success(
+        <Toast
+          type="success"
+          message="Your message has been sent!"
+        />
+      )
+    } catch (error) {
+      if (error instanceof Error) {
+        toast.error(
+          <Toast
+            type="error"
+            message={error.message}
+          />
+        )
+
+        return
+      }
+
       toast.error(
         <Toast
           type="error"
-          message={error}
+          message="An unexpected error occurred. Please try again later."
         />
       )
-      return
     }
-
-    reset()
-    toast.success(
-      <Toast
-        type="success"
-        message="Your message has been sent!"
-      />
-    )
   }
 
   return (

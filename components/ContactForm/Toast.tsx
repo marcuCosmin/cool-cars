@@ -7,7 +7,7 @@ type ToastProps = {
 
 export const Toast = ({ type, message }: ToastProps) => {
   const isError = type === "error"
-  const colorClassName = isError ? "text-red-600" : "text-primary"
+  const colorClassName = isError ? "text-error" : "text-primary"
   const iconClassName = `h-6 w-6 xl:h-8 xl:w-8 ${colorClassName}`
 
   return (
