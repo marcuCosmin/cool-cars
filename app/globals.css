@@ -38,6 +38,10 @@
 }
 
 @layer components {
+  .Toastify__toast-container {
+    @apply max-[480px]:!w-[95%] max-[480px]:!m-2.5 ;
+  }
+
   .Toastify__toast {
     @apply !bg-black ;
   }
