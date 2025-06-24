@@ -69,7 +69,7 @@ export const ContactForm = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <h3 className="text-center mb-5 text-lg md:text-2xl">
-          Send us a message
+          Get a quick free quote
         </h3>
         {isSubmitting && <Loader />}
         <FormField
@@ -112,7 +112,7 @@ export const ContactForm = () => {
       </form>
 
       <ToastContainer
-        position="bottom-right"
+        position="top-right"
         hideProgressBar
         icon={false}
         closeButton={false}

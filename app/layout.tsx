@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 
 import { Header } from "@/components/Header/Header"
+import { Banner } from "@/components/Banner"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -77,6 +78,7 @@ const RooutLayout = async ({ children }: RootLayoutProps) => (
       />
     </head>
     <body className={`bg-white ${inter.className}`}>
+      <Banner />
       <Header />
       {children}
     </body>

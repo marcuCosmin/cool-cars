@@ -6,11 +6,23 @@ type ContactFieldProps = {
   value: ReactNode
   label?: ReactNode
   size?: "small" | "medium"
+  variant?: "banner" | "paragraph"
+}
+
+const variantsConfig = {
+  banner: {
+    icon: "fill-white",
+    container: "text-white",
+  },
+  paragraph: {
+    icon: "fill-primary",
+    container: "text-gray",
+  },
 }
 
 const sizeClasses = {
-  small: "min-w-[16px] min-h-[16px]",
-  medium: "min-w-[24px] min-h-[24px]",
+  small: "min-w-[14px] min-h-[14px]",
+  medium: "min-w-[20px] min-h-[20px]",
 }
 
 export const ContactField = ({
@@ -18,16 +30,21 @@ export const ContactField = ({
   size = "medium",
   value,
   label = "",
+  variant = "paragraph",
 }: ContactFieldProps) => {
+  const isSmall = size === "small"
+  const variantConfig = variantsConfig[variant]
   const iconProps = {
     "aria-hidden": true,
-    className: `fill-primary inline mr-1 ${sizeClasses[size]}`,
+    className: `inline mr-2 ${isSmall ? "self-center" : "self-start"} ${sizeClasses[size]} ${variantConfig.icon}`,
   }
+
+  const containerClassNames = `inline w-fit mx-1.5 ${variantConfig.container}`
 
   if (type === "address") {
     return (
-      <p>
-        <span className="mr-2">{label}</span>
+      <p className={containerClassNames}>
+        {label && <span className="mr-2">{label}</span>}
         <PinFill {...iconProps} />
         {value}
       </p>
@@ -44,24 +61,14 @@ export const ContactField = ({
 
   const href = isPhone ? `tel:${value}` : `mailto:${value}`
 
-  const anchorElement = (
+  return (
     <a
-      className="m-1"
+      className={containerClassNames}
       href={href}
     >
+      {label && <span className="mr-2">{label}</span>}
       {icon}
       {value}
     </a>
   )
-
-  if (label) {
-    return (
-      <p className="flex items-center gap-2">
-        {label}
-        {anchorElement}
-      </p>
-    )
-  }
-
-  return anchorElement
 }
