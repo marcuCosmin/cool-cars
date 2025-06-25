@@ -68,7 +68,7 @@ export const ContactField = ({
       return
     }
 
-    gtag("event", "click", {
+    gtag("event", "phone_click", {
       event_category: "Contact",
       event_label: "Phone Call",
     })
