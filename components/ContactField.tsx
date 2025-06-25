@@ -61,10 +61,22 @@ export const ContactField = ({
 
   const href = isPhone ? `tel:${value}` : `mailto:${value}`
 
+  const onClick = () => {
+    if (!isPhone) {
+      return
+    }
+
+    gtag("event", "click", {
+      event_category: "Contact",
+      event_label: "Phone Call",
+    })
+  }
+
   return (
     <a
       className={containerClassNames}
       href={href}
+      onClick={onClick}
     >
       {label && <span className="mr-2">{label}</span>}
       {icon}

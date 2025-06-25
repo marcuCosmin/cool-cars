@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
+import { GoogleAnalytics } from "@next/third-parties/google"
 
 import "./globals.css"
 
@@ -76,6 +77,7 @@ const RooutLayout = async ({ children }: RootLayoutProps) => (
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         key="jsonld"
       />
+      <GoogleAnalytics gaId="G-723ZQPBH3D" />
     </head>
     <body className={`bg-white ${inter.className}`}>
       <Banner />

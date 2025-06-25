@@ -11,6 +11,7 @@
     "start:prod": "node server.js"
   },
   "dependencies": {
+    "@next/third-parties": "^15.3.4",
     "email-validator": "^2.0.4",
     "next": "15.3.2",
     "next-sitemap": "^4.2.3",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/ga-gtag": "^1.2.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
