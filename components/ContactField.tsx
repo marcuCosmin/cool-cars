@@ -1,3 +1,5 @@
+"use client"
+
 import { type ReactNode } from "react"
 import { EnvelopeFill, PinFill, TelephoneFill } from "react-bootstrap-icons"
 
