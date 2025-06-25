@@ -68,7 +68,7 @@
 }
 
 @utility bg-overlay {
-  @apply relative -z-20 after:empty-content after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/30 after:-z-10 after:pointer-events-none;
+  @apply relative z-10 after:empty-content after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/30 after:z-20 after:pointer-events-none;
 }
 
 @utility invalid-input {
