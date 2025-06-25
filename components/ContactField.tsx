@@ -18,7 +18,7 @@ const variantsConfig = {
   },
   paragraph: {
     icon: "fill-primary",
-    container: "text-gray",
+    container: "text-inherit",
   },
 }
 
