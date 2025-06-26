@@ -77,7 +77,7 @@ const RooutLayout = async ({ children }: RootLayoutProps) => (
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         key="jsonld"
       />
-      <GoogleAnalytics gaId="G-723ZQPBH3D" />
+      <GoogleAnalytics gaId="G-DHQ5DJR36G" />
     </head>
     <body className={`bg-white ${inter.className}`}>
       <Banner />
