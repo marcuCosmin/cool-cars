@@ -10,15 +10,19 @@
 
 ## Setup:
 - **Clone the repo:**\
-    git clone https://github.com/marcuCosmin/cool-cars.git
+    &nbsp;git clone https://github.com/marcuCosmin/cool-cars.git
+
 - **Create env files:**\
-    .env.development\
-    .env.production (in case you want to preview the production build)
+    &nbsp;.env.development\
+    &nbsp;.env.production (in case you want to preview the production build)
+
 - **Populate the env files with the following env vars:**\
-    NEXT_PUBLIC_API_URL (The url for the contact form api)\
-    NEXT_PUBLIC_EMAIL (The email to which the contact form content should be sent to)\
+    &nbsp;NEXT_PUBLIC_API_URL (The url for the contact form api)\
+    &nbsp;NEXT_PUBLIC_EMAIL (The email to which the contact form content should be sent to)\
+
 - **Install dependencies:**\
-    npm i
+    &nbsp;npm i
+    
 - **Run project:**\
-    npm run dev (dev build uses .env.developement)\
-    npm run start (production build uses .env.production)
+    &nbsp;npm run dev (dev build uses .env.developement)\
+    &nbsp;npm run start (production build uses .env.production)
