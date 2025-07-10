@@ -1,4 +1,4 @@
-import { Inputs } from "./models"
+import type { Inputs } from "./ContactForm.models"
 
 export const sendEmail = async ({ email, name, phone, message }: Inputs) => {
   const parsedMessage = `
