@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 
 import { useDebouncedCallback } from "use-debounce"
 
-import { navToggleId } from "./constants"
+import { navToggleId } from "./Header.constants"
 
 export const useMobileNav = () => {
   const [isMobileScreen, setIsMobileScreen] = useState(false)
@@ -20,7 +20,7 @@ export const useMobileNav = () => {
     setIsMobileScreen(true)
   }, 100)
 
-  const toggleMobileNav = () => setNavIsOpen((current) => !current)
+  const toggleMobileNav = () => setNavIsOpen(current => !current)
 
   useEffect(() => {
     window.addEventListener("resize", onResize)

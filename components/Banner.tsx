@@ -1,6 +1,8 @@
 "use client"
 
-import { ContactField } from "./ContactField"
+import { ContactField } from "./ContactField/ContactField"
+
+import { phoneNumber } from "@/globals/constants"
 
 export const Banner = () => {
   return (
@@ -9,7 +11,7 @@ export const Banner = () => {
         variant="banner"
         label="Contact us at:"
         type="phone"
-        value="07421535039"
+        value={phoneNumber}
       />
     </div>
   )

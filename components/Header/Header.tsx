@@ -7,7 +7,7 @@ import { List } from "react-bootstrap-icons"
 import { NavItem } from "./NavItem"
 import { useMobileNav } from "./useMobileNav"
 
-import { navToggleId, routes } from "./constants"
+import { navToggleId, routes } from "./Header.constants"
 
 export const Header = () => {
   const { navIsOpen, toggleMobileNav } = useMobileNav()

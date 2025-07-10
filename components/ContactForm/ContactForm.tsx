@@ -11,7 +11,7 @@ import { Loader } from "../Loader"
 
 import { sendEmail } from "./sendEmail"
 
-import type { Inputs } from "./models"
+import type { Inputs } from "./ContactForm.models"
 
 export const ContactForm = () => {
   const {

@@ -1,7 +1,8 @@
 import { type Metadata } from "next"
 
-import { ContactField } from "@/components/ContactField"
+import { ContactField } from "@/components/ContactField/ContactField"
 import { MainWrapper } from "@/components/MainWrapper"
+import { phoneNumber } from "@/globals/constants"
 
 export const metadata: Metadata = {
   title: "Cool Cars | Car Body Repair in Swanmore, Hampshire",
@@ -43,7 +44,7 @@ export default function Home() {
             <ContactField
               size="small"
               type="phone"
-              value="07421535039"
+              value={phoneNumber}
             />
             or request a free quote online.
           </p>

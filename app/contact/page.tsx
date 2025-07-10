@@ -2,7 +2,9 @@ import { type Metadata } from "next"
 
 import { MainWrapper } from "@/components/MainWrapper"
 import { ContactForm } from "@/components/ContactForm/ContactForm"
-import { ContactField } from "@/components/ContactField"
+import { ContactField } from "@/components/ContactField/ContactField"
+
+import { phoneNumber } from "@/globals/constants"
 
 export const metadata: Metadata = {
   title: "Contact Us | Cool Cars",
@@ -22,13 +24,14 @@ const Contact = () => (
         <ContactField
           label="Address:"
           type="address"
-          value="Unit 16, Swanmore Business Park, Lower Chase Rd, Swanmore SO32 2PB"
+          displayedValue="Unit 16, Swanmore Business Park, Lower Chase Rd, Swanmore SO32 2PB"
+          value="https://www.google.com/maps/place//data=!4m2!3m1!1s0x48746b16e20fd58d:0x806a3a19ef691a73?sa=X&ved=1t:8290&ictx=111"
         />
 
         <ContactField
           label="Phone:"
           type="phone"
-          value="07421535039"
+          value={phoneNumber}
         />
 
         <ContactField

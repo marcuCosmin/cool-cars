@@ -1,15 +1,8 @@
 "use client"
 
-import { type ReactNode } from "react"
-import { EnvelopeFill, PinFill, TelephoneFill } from "react-bootstrap-icons"
+import { getAnchorConfig } from "./getAnchorConfig"
 
-type ContactFieldProps = {
-  type: "phone" | "email" | "address"
-  value: ReactNode
-  label?: ReactNode
-  size?: "small" | "medium"
-  variant?: "banner" | "paragraph"
-}
+import { type ContactFieldProps } from "./ContactField.models"
 
 const variantsConfig = {
   banner: {
@@ -30,6 +23,7 @@ const sizeClasses = {
 export const ContactField = ({
   type,
   size = "medium",
+  displayedValue,
   value,
   label = "",
   variant = "paragraph",
@@ -42,29 +36,13 @@ export const ContactField = ({
   }
 
   const containerClassNames = `inline w-fit mx-1.5 ${variantConfig.container}`
-
-  if (type === "address") {
-    return (
-      <p className={containerClassNames}>
-        {label && <span className="mr-2">{label}</span>}
-        <PinFill {...iconProps} />
-        {value}
-      </p>
-    )
-  }
-
-  const isPhone = type === "phone"
-
-  const icon = isPhone ? (
-    <TelephoneFill {...iconProps} />
-  ) : (
-    <EnvelopeFill {...iconProps} />
-  )
-
-  const href = isPhone ? `tel:${value}` : `mailto:${value}`
+  const { href, trackClicks, target, Icon } = getAnchorConfig({
+    type,
+    value: String(value),
+  })
 
   const onClick = () => {
-    if (!isPhone) {
+    if (!trackClicks) {
       return
     }
 
@@ -78,11 +56,12 @@ export const ContactField = ({
     <a
       className={containerClassNames}
       href={href}
+      target={target}
       onClick={onClick}
     >
       {label && <span className="mr-2">{label}</span>}
-      {icon}
-      {value}
+      <Icon {...iconProps} />
+      {displayedValue || value}
     </a>
   )
 }
