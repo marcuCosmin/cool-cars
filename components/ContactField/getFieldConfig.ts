@@ -1,20 +1,20 @@
 import { EnvelopeFill, PinFill, TelephoneFill } from "react-bootstrap-icons"
 
+import { PhoneField } from "./PhoneField"
+
 import type { ContactFieldProps } from "./ContactField.models"
 
-type GetAnchorConfigProps = {
+type GetFieldConfigProps = {
   type: ContactFieldProps["type"]
   value: string
 }
 
-export const getAnchorConfig = ({ type, value }: GetAnchorConfigProps) => {
+export const getFieldConfig = ({ type, value }: GetFieldConfigProps) => {
   switch (type) {
     case "phone":
       return {
         Icon: TelephoneFill,
-        href: `https://wa.me/${value.replaceAll(" ", "")}`,
-        target: "_blank",
-        trackClicks: true,
+        Component: PhoneField,
       }
     case "email":
       return {
@@ -31,3 +31,4 @@ export const getAnchorConfig = ({ type, value }: GetAnchorConfigProps) => {
       throw new Error(`Unsupported contact type: ${type}`)
   }
 }
+

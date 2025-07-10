@@ -39,7 +39,7 @@ export default function Home() {
 
         <section className="w-full flex flex-col items-center lg:block">
           <h2 className="md:text-3xl mb-2">Get in touch</h2>
-          <p className="flex flex-wrap w-full">
+          <p className="flex flex-wrap">
             Call us today at
             <ContactField
               size="small"
@@ -53,3 +53,4 @@ export default function Home() {
     </MainWrapper>
   )
 }
+

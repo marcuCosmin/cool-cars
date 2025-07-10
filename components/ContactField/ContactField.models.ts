@@ -8,3 +8,11 @@ export type ContactFieldProps = {
   size?: "small" | "medium"
   variant?: "banner" | "paragraph"
 }
+
+export type FieldProps = Pick<ContactFieldProps, "value" | "label"> & {
+  className?: string
+  iconProps: Record<string, unknown>
+  value: string
+  label?: ReactNode
+}
+

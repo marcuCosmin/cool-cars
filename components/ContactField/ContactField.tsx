@@ -1,8 +1,6 @@
 "use client"
 
-import { getAnchorConfig } from "./getAnchorConfig"
-
-import { PhoneField } from "./PhoneField"
+import { getFieldConfig } from "./getFieldConfig"
 
 import { type ContactFieldProps } from "./ContactField.models"
 
@@ -37,26 +35,15 @@ export const ContactField = ({
     className: `inline mr-2 ${isSmall ? "self-center" : "self-start"} ${sizeClasses[size]} ${variantConfig.icon}`,
   }
 
-  const containerClassNames = `flex items-center flex-wrap w-fit mx-1.5 cursor-pointer ${variantConfig.container}`
-  const { href, trackClicks, target, Icon } = getAnchorConfig({
+  const containerClassNames = `flex justify-center items-center flex-wrap w-fit mx-1.5 cursor-pointer ${variantConfig.container}`
+  const { href, target, Component, Icon } = getFieldConfig({
     type,
     value,
   })
 
-  const onClick = () => {
-    if (!trackClicks) {
-      return
-    }
-
-    gtag("event", "phone_click", {
-      event_category: "Contact",
-      event_label: "Phone Call",
-    })
-  }
-
-  if (type === "phone") {
+  if (Component) {
     return (
-      <PhoneField
+      <Component
         className={containerClassNames}
         iconProps={iconProps}
         value={value}
@@ -70,7 +57,6 @@ export const ContactField = ({
       className={containerClassNames}
       href={href}
       target={target}
-      onClick={onClick}
     >
       {label && <span className="mr-2">{label}</span>}
       <span>
@@ -80,3 +66,4 @@ export const ContactField = ({
     </a>
   )
 }
+
