@@ -50,8 +50,12 @@
     @apply drop-shadow-[0px_0px_7px_var(--color-error)]
   }
 
-    .Toastify__toast--success {
+  .Toastify__toast--success {
     @apply drop-shadow-[0px_0px_7px_var(--color-primary)]
+  }
+
+  .react-tiny-popover-container {
+    @apply z-50;
   }
 }
 

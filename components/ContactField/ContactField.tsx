@@ -2,6 +2,8 @@
 
 import { getAnchorConfig } from "./getAnchorConfig"
 
+import { PhoneField } from "./PhoneField"
+
 import { type ContactFieldProps } from "./ContactField.models"
 
 const variantsConfig = {
@@ -35,10 +37,10 @@ export const ContactField = ({
     className: `inline mr-2 ${isSmall ? "self-center" : "self-start"} ${sizeClasses[size]} ${variantConfig.icon}`,
   }
 
-  const containerClassNames = `flex items-center flex-wrap w-fit mx-1.5 ${variantConfig.container}`
+  const containerClassNames = `flex items-center flex-wrap w-fit mx-1.5 cursor-pointer ${variantConfig.container}`
   const { href, trackClicks, target, Icon } = getAnchorConfig({
     type,
-    value: String(value),
+    value,
   })
 
   const onClick = () => {
@@ -50,6 +52,17 @@ export const ContactField = ({
       event_category: "Contact",
       event_label: "Phone Call",
     })
+  }
+
+  if (type === "phone") {
+    return (
+      <PhoneField
+        className={containerClassNames}
+        iconProps={iconProps}
+        value={value}
+        label={label}
+      />
+    )
   }
 
   return (
