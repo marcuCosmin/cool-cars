@@ -1,19 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #00A1B6;
+    --color-primary: #069EB3;
+    --color-primary-dark: #01505D;
+    --color-background: #000000;
+    --color-border: #383838;
+    --color-paragraph: #aaaaaa;
+    --color-secondary: #6d6d6d;
     --color-black: #000000;
     --color-gray: #888;
     --color-error: #e7000b;
     --breakpoint-sm: 700px;
-    --breakpoint-md: 1000px;
+    --breakpoint-md: 1200px;
     --breakpoint-lg: 1350px;
     --breakpoint-xl: 1600px;
 }
 
 @layer base {
+  html {
+    @apply h-full;
+  }
+
   body {
-    @apply text-sm text-gray !bg-black;
+    @apply text-sm text-white bg-background h-full flex flex-col;
+  }
+  
+  main {
+    @apply flex-grow bg-background;
   }
 
   h1 {
@@ -21,7 +34,7 @@
   }
 
   h2 {
-    @apply font-semibold text-lg xl:text-2xl text-primary;
+    @apply font-semibold text-white text-4xl;
   }
 
   h3 {
@@ -32,8 +45,8 @@
     @apply border-gray border rounded-md p-2 outline-primary [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none;
   }
 
-  main {
-    @apply pb-26;
+  p {
+    @apply text-paragraph;
   }
 }
 
@@ -43,7 +56,7 @@
   }
 
   .Toastify__toast {
-    @apply !bg-black ;
+    @apply !bg-background ;
   }
 
   .Toastify__toast--error {
@@ -63,16 +76,8 @@
   content: '';
 }
 
-@utility underline-animated {
-  @apply relative after:absolute after:bottom-[-10px] after:left-0 after:w-0 after:h-[2.5px] after:bg-white after:empty-content after:transition-all after:rounded-sm after:pointer-events-none hover:after:w-full;
-}
-
-@utility underline-animated-active {
-  @apply relative after:absolute after:bottom-[-10px] after:left-0 after:w-full after:h-[2.5px] after:bg-primary after:empty-content after:transition-all after:rounded-sm after:pointer-events-none;
-}
-
 @utility bg-overlay {
-  @apply relative z-10 after:empty-content after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/30 after:z-20 after:pointer-events-none;
+  @apply relative z-10 after:empty-content after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-background/70 after:z-20 after:pointer-events-none;
 }
 
 @utility invalid-input {

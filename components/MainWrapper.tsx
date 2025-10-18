@@ -4,7 +4,7 @@ type MainWrapperProps = {
   h1: ReactNode
   h2?: ReactNode
   description?: ReactNode
-  children: ReactNode
+  children?: ReactNode
 }
 
 export const MainWrapper = ({
@@ -14,20 +14,20 @@ export const MainWrapper = ({
   children,
 }: MainWrapperProps) => (
   <main className="flex flex-col items-center">
-    <section className="flex flex-col bg-top md:max-h-[70vh] md:bg-position-[center_25%] bg-size-[100%] h-[65vw] text-white bg-[url('/background.jpg')] bg-no-repeat bg-overlay w-full text-center md:min-h-[650px] xl:min-h-[1100px]">
-      <div className="flex flex-col items-center justify-center h-full xl:justify-end pb-0 px-2 pt-2 md:pt-20 md:px-20 xl:px-40 xl:pt-0 gap-5 sm:max-h-[85%] xl:max-h-[70%] z-30">
-        <h1 className="mt-[15%] xl:mt-[8%] xl:mb-4">{h1}</h1>
+    <section className="flex flex-col h-[25vh] bg-top md:max-h-[70vh] md:bg-position-[center_25%] bg-size-[100%] md:h-[60vh] bg-no-repeat bg-overlay w-full text-center md:min-h-[650px]">
+      <div className="flex flex-col items-center justify-center pb-5 h-full px-2 pt-2 md:pt-20 md:px-20 xl:px-40 gap-5 sm:max-h-[85%] xl:max-h-[70%] z-30 oveflow-y-auto">
+        <h1 className="xl:mb-4 text-primary">{h1}</h1>
         {h2 && <h2 className="hidden md:block text-white">{h2}</h2>}
 
         {description && (
-          <div className="hidden md:block text-lg xl:text-xl xl:max-w-7xl">
+          <div className="text-start hidden md:block text-lg xl:text-xl md:max-w-6xl xl:max-w-7xl whitespace-pre-wrap md:px-20 xl:px-0">
             {description}
           </div>
         )}
       </div>
 
       <svg
-        className="rotate-180 fill-black w-full mt-auto mb-[-1px] drop-shadow-[0px_15px_7px_var(--color-primary)]"
+        className="rotate-180 fill-background w-full mt-auto mb-[-1px] drop-shadow-[0px_15px_7px_var(--color-primary)]"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1920 192"
@@ -44,9 +44,11 @@ H0V6.2z"
 
     <div className="flex flex-col pt-4 px-4 gap-10 md:gap-20 lg:gap-40 w-full max-w-5xl mt-[-1px]">
       {(h2 || description) && (
-        <section className="md:hidden w-full md:w-1/2 text-center">
+        <section className="md:hidden w-full md:w-1/2">
           {h2 && <h2 className="mb-5 text-primary">{h2}</h2>}
-          {description && <div>{description}</div>}
+          {description && (
+            <div className="whitespace-pre-wrap">{description}</div>
+          )}
         </section>
       )}
 

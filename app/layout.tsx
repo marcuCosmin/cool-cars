@@ -5,7 +5,6 @@ import { GoogleAnalytics } from "@next/third-parties/google"
 import "./globals.css"
 
 import { Header } from "@/components/Header/Header"
-import { Banner } from "@/components/Banner"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -80,7 +79,6 @@ const RooutLayout = async ({ children }: RootLayoutProps) => (
       <GoogleAnalytics gaId="AW-17129798926" />
     </head>
     <body className={`bg-white ${inter.className}`}>
-      <Banner />
       <Header />
       {children}
     </body>

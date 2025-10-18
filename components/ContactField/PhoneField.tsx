@@ -43,7 +43,7 @@ export const PhoneField = ({
         popoverRect={popoverRect}
         position={position}
       >
-        <div className="flex flex-col items-center bg-black rounded-md p-5 gap-3">
+        <div className="flex flex-col items-center bg-background rounded-md p-5 gap-3">
           <a
             href={whatsAppHref}
             target="_blank"
@@ -89,4 +89,3 @@ export const PhoneField = ({
     </Popover>
   )
 }
-
