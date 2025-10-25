@@ -48,6 +48,10 @@
   p {
     @apply text-paragraph;
   }
+
+  button {
+    @apply cursor-pointer;
+  }
 }
 
 @layer components {

@@ -3,6 +3,7 @@ import { type Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
+import { Fragment } from "react"
 import { Plus } from "react-bootstrap-icons"
 
 import { Carousel } from "@/components/Carousel/Carousel"
@@ -97,6 +98,36 @@ const section3InfoCardsContent = [
       "Cool Cars keeps your business on the road with expert fleet repair management.",
     imageSrc: "/home-third-section/item-6.jpg",
     href: "/services",
+  },
+]
+
+const section4Testimonials = [
+  {
+    author: "Tom Barrett",
+    description:
+      "Quick turnaround and a spotless job. You’d never know it was damaged.",
+  },
+  {
+    author: "Sophie Miller",
+    description:
+      "Brilliant finish and perfect colour. Great attention to detail.",
+  },
+  {
+    author: "Claire Hughes",
+    description:
+      "It’s not a write off with Cool Cars! Smooth process, great result.",
+  },
+  {
+    author: "Mark Reynolds",
+    description: "Great attention to detail. Deep shine, looks brand new!",
+  },
+  {
+    author: "Olivia Chapman",
+    description: "The new mod fits perfectly and looks smart. Great work!",
+  },
+  {
+    author: "Simon Whitaker",
+    description: "They keep our vans running and always stick to their word.",
   },
 ]
 
@@ -242,7 +273,35 @@ export default function Home() {
         </ul>
       </section>
 
-      <Carousel />
+      <section className="flex flex-col gap-5 max-w-7xl mx-auto w-full">
+        <h2 className="text-center text-primary text-xl">Testimonials</h2>
+        <h3 className="mb-3 text-center text-4xl text-white">
+          What Our Clients Say.
+        </h3>
+
+        <Carousel>
+          {section4Testimonials.map(({ author, description }, index) => (
+            <Fragment key={index}>
+              <Image
+                src="/home-fourth-section/quote.png"
+                alt=""
+                width={40}
+                height={40}
+                aria-hidden="true"
+              />
+
+              <blockquote className="text-2xl italic font-bold my-7.5">
+                {description}
+              </blockquote>
+
+              <cite className="block not-italic font-bold text-xl text-secondary">
+                {author}
+              </cite>
+              <p className="text-primary">Customer</p>
+            </Fragment>
+          ))}
+        </Carousel>
+      </section>
     </main>
   )
 }
