@@ -11,7 +11,10 @@ import { getItemWidth, getTransformX } from "./Carousel.utils"
 import type { CarouselProps } from "./Carousel.model"
 
 type UseCarouselDragProps = Required<
-  Pick<CarouselProps, "slidesShown" | "loop" | "transitionDuration">
+  Pick<
+    CarouselProps,
+    "slidesShown" | "loop" | "transitionDuration" | "itemsGap"
+  >
 > & {
   containerRef: RefObject<HTMLDivElement | null>
   listRef: RefObject<HTMLUListElement | null>
@@ -27,17 +30,16 @@ export const useCarouselDrag = ({
   loop,
   transitionDuration,
   itemsCount,
+  itemsGap,
   setIsTransitioning,
   setTransformX,
 }: UseCarouselDragProps) => {
-  const InitialTransformX = useRef(0)
+  const initialTransformX = useRef(0)
   const prevClientX = useRef(0)
   const isDraggingRef = useRef(false)
 
   const onDragStart = (event: MouseEvent | TouchEvent) => {
     const eventTarget = event.target as HTMLElement | null
-    const clientX =
-      event instanceof MouseEvent ? event.clientX : event.touches[0].clientX
 
     if (
       !eventTarget ||
@@ -47,10 +49,13 @@ export const useCarouselDrag = ({
       return
     }
 
-    const containerRect = containerRef.current.getBoundingClientRect()
-    const listRect = listRef.current.getBoundingClientRect()
+    const clientX =
+      event instanceof MouseEvent ? event.clientX : event.touches[0].clientX
 
-    InitialTransformX.current = listRect.x - containerRect.x
+    initialTransformX.current = getTransformX({
+      containerRef,
+      listRef,
+    })
     prevClientX.current = clientX
 
     setIsTransitioning(false)
@@ -65,6 +70,7 @@ export const useCarouselDrag = ({
     const itemWidth = getItemWidth({
       slidesShown,
       containerElement: containerRef.current,
+      itemsGap,
     })
 
     const currentTransformX = getTransformX({
@@ -79,14 +85,15 @@ export const useCarouselDrag = ({
 
       if (loop) {
         setTimeout(() => {
+          const itemIndex = itemsCount - slidesShown * 2
           setIsTransitioning(false)
-          setTransformX(-itemWidth * (itemsCount - slidesShown * 2))
+          setTransformX((-itemWidth - itemsGap) * itemIndex)
         }, transitionDuration)
       }
       return
     }
 
-    const maxTransformX = -itemWidth * (itemsCount - slidesShown)
+    const maxTransformX = (-itemWidth - itemsGap) * (itemsCount - slidesShown)
 
     if (currentTransformX < maxTransformX) {
       setTransformX(maxTransformX)
@@ -96,16 +103,18 @@ export const useCarouselDrag = ({
       if (loop) {
         setTimeout(() => {
           setIsTransitioning(false)
-          setTransformX(-itemWidth * slidesShown)
+          setTransformX((-itemWidth - itemsGap) * slidesShown)
         }, transitionDuration)
       }
       return
     }
 
-    const diff = currentTransformX - InitialTransformX.current
+    const diff = currentTransformX - initialTransformX.current
     const slidesMoved = Math.round(diff / itemWidth)
 
-    setTransformX(InitialTransformX.current + slidesMoved * itemWidth)
+    setTransformX(
+      initialTransformX.current + slidesMoved * (itemWidth + itemsGap)
+    )
     setIsTransitioning(true)
     isDraggingRef.current = false
   }
@@ -118,6 +127,7 @@ export const useCarouselDrag = ({
     const itemWidth = getItemWidth({
       slidesShown,
       containerElement: containerRef.current,
+      itemsGap,
     })
 
     const clientX =

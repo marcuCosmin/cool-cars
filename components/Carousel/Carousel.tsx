@@ -18,6 +18,7 @@ export const Carousel = ({
   loop = true,
   transitionDuration = 300,
   children,
+  itemsGap = 20,
 }: CarouselProps) => {
   const initialItems = Children.toArray(children)
   const items = loop
@@ -34,12 +35,11 @@ export const Carousel = ({
   const itemWidth = getItemWidth({
     slidesShown,
     containerElement: containerRef.current,
+    itemsGap,
   })
-  const firstActiveIndex = loop ? slidesShown : 0
-  const initialTransformX = -itemWidth * firstActiveIndex
 
   const [isTransitioning, setIsTransitioning] = useState(true)
-  const [transformX, setTransformX] = useState(initialTransformX)
+  const [transformX, setTransformX] = useState(0)
 
   useCarouselDrag({
     containerRef,
@@ -48,6 +48,7 @@ export const Carousel = ({
     loop,
     transitionDuration,
     itemsCount: items.length,
+    itemsGap,
     setIsTransitioning,
     setTransformX,
   })
@@ -59,19 +60,25 @@ export const Carousel = ({
     const itemWidth = getItemWidth({
       slidesShown,
       containerElement: containerRef.current,
+      itemsGap,
     })
 
+    const originalSlideSpace = -itemWidth - itemsGap
+
     if (direction === "right") {
-      const transformXLimit = -itemWidth * (items.length - slidesShown)
+      const gapLimitExtraSpace = itemsGap * (slidesShown - 1)
+      const transformXLimit =
+        (-itemWidth - gapLimitExtraSpace) * (items.length - slidesShown)
 
       isLimitReached = transformX - itemWidth < transformXLimit
 
-      originalSlidesTransformX = -itemWidth * slidesShown
+      originalSlidesTransformX = originalSlideSpace * slidesShown
     } else {
       const transformXLimit = 0
 
       isLimitReached = transformX + itemWidth > transformXLimit
-      originalSlidesTransformX = -itemWidth * (items.length - slidesShown * 2)
+      originalSlidesTransformX =
+        originalSlideSpace * (items.length - slidesShown * 2)
     }
 
     if (isLimitReached && loop) {
@@ -82,7 +89,9 @@ export const Carousel = ({
     setTimeout(() => {
       setIsTransitioning(true)
       setTransformX(prev =>
-        direction === "right" ? prev - itemWidth : prev + itemWidth
+        direction === "right"
+          ? prev - itemWidth - itemsGap
+          : prev + itemWidth + itemsGap
       )
     }, 0)
   }
@@ -115,6 +124,7 @@ export const Carousel = ({
             ref={listRef}
             className="flex w-fit"
             style={{
+              gap: `${itemsGap}px`,
               transform: `translateX(${transformX}px)`,
               transition: isTransitioning
                 ? `transform ${transitionDuration}ms ease`
@@ -138,6 +148,7 @@ export const Carousel = ({
                   style={{ width: itemWidth }}
                 >
                   {item}
+                  {index}
                 </li>
               )
             })}
@@ -176,19 +187,19 @@ export const Carousel = ({
               itemWidth,
               slidesShown,
               itemsCount: items.length,
+              itemsGap,
             })
 
-          const matchingTransformX = -itemWidth * index
+          const matchingTransformX = (-itemWidth - itemsGap) * index
 
-          const isDuplicateActive =
-            Math.trunc(transformX) === duplicateMatchingTransformX
+          const isDuplicateActive = transformX === duplicateMatchingTransformX
 
           const isActive =
-            Math.trunc(transformX) === matchingTransformX || isDuplicateActive
+            transformX === matchingTransformX || isDuplicateActive
 
           const onClick = () => {
             setIsTransitioning(true)
-            setTransformX(-itemWidth * index)
+            setTransformX((-itemWidth - itemsGap) * index)
           }
 
           return (

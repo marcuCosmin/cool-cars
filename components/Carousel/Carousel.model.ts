@@ -4,4 +4,5 @@ export type CarouselProps = PropsWithChildren<{
   slidesShown?: number
   loop?: boolean
   transitionDuration?: number
+  itemsGap?: number
 }>

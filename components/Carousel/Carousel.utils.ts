@@ -1,22 +1,28 @@
 import { RefObject } from "react"
 import { CarouselProps } from "./Carousel.model"
 
-type GetItemWidthProps = Required<Pick<CarouselProps, "slidesShown">> & {
+type GetItemWidthProps = Required<
+  Pick<CarouselProps, "slidesShown" | "itemsGap">
+> & {
   containerElement: HTMLDivElement | null
 }
 
 export const getItemWidth = ({
   slidesShown,
   containerElement,
+  itemsGap,
 }: GetItemWidthProps) => {
   if (!containerElement) {
     return 0
   }
 
-  const containerWidth = containerElement.getBoundingClientRect().width
+  const gapExtraSpace = itemsGap * (slidesShown - 1)
+
+  const containerWidth =
+    containerElement.getBoundingClientRect().width - gapExtraSpace
   const itemWidth = containerWidth / slidesShown
 
-  return itemWidth
+  return Math.round(itemWidth)
 }
 
 type IsItemHiddenProps = {
@@ -62,11 +68,13 @@ export const getTransformX = ({
   const containerRect = containerRef.current.getBoundingClientRect()
   const listRect = listRef.current.getBoundingClientRect()
 
-  return listRect.x - containerRect.x
+  const transformX = listRect.x - containerRect.x
+
+  return Math.round(transformX)
 }
 
 type GetItemDuplicateMatchingTransformXProps = Required<
-  Pick<CarouselProps, "loop" | "slidesShown">
+  Pick<CarouselProps, "loop" | "slidesShown" | "itemsGap">
 > & {
   index: number
   itemsCount: number
@@ -79,6 +87,7 @@ export const getItemDuplicateMatchingTransformX = ({
   itemWidth,
   slidesShown,
   itemsCount,
+  itemsGap,
 }: GetItemDuplicateMatchingTransformXProps) => {
   if (!loop) {
     return
@@ -95,14 +104,14 @@ export const getItemDuplicateMatchingTransformX = ({
 
   if (hasDuplicateOnLeft) {
     const duplicateIndex = index - (itemsCount - slidesShown * 2)
-    const duplicateMatchingTransformX = -itemWidth * duplicateIndex
+    const duplicateMatchingTransformX = (-itemWidth - itemsGap) * duplicateIndex
 
     return duplicateMatchingTransformX
   }
 
   const duplicateIndex = itemsCount - slidesShown * 2 + index
 
-  const duplicateMatchingTransformX = -itemWidth * duplicateIndex
+  const duplicateMatchingTransformX = (-itemWidth - itemsGap) * duplicateIndex
 
   return duplicateMatchingTransformX
 }
