@@ -25,21 +25,23 @@ export const getItemWidth = ({
   return Math.round(itemWidth)
 }
 
-type IsItemHiddenProps = {
+type IsItemHiddenProps = Required<
+  Pick<CarouselProps, "slidesShown" | "itemsGap">
+> & {
   index: number
   transformX: number
   itemWidth: number
-  slidesShown: number
 }
 
 export const isItemHidden = ({
   index,
   transformX,
   itemWidth,
+  itemsGap,
   slidesShown,
 }: IsItemHiddenProps) => {
-  const minVisibleX = -(index + 1) * itemWidth
-  const maxVisibleX = -1 * itemWidth * (index - slidesShown)
+  const minVisibleX = -(index + 1) * (itemWidth + itemsGap)
+  const maxVisibleX = (-itemWidth - itemsGap) * (index - slidesShown)
 
   if (minVisibleX >= transformX) {
     return true

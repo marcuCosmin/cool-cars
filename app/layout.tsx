@@ -2,9 +2,12 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import { GoogleAnalytics } from "@next/third-parties/google"
 
-import "./globals.css"
+import { ToastContainer } from "react-toastify"
+
+import "./index.css"
 
 import { Header } from "@/components/Header/Header"
+import { Footer } from "@/components/Footer/Footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -78,9 +81,17 @@ const RooutLayout = async ({ children }: RootLayoutProps) => (
       />
       <GoogleAnalytics gaId="AW-17129798926" />
     </head>
-    <body className={`bg-white ${inter.className}`}>
+    <body className={inter.className}>
       <Header />
       {children}
+      <ToastContainer
+        position="top-right"
+        hideProgressBar
+        icon={false}
+        closeButton={false}
+        limit={1}
+      />
+      <Footer />
     </body>
   </html>
 )

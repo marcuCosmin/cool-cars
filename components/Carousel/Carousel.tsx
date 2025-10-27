@@ -1,15 +1,22 @@
 "use client"
 
-import { Children, useRef, useState } from "react"
+import { Children, useCallback, useRef, useState } from "react"
 
 import {
   getItemDuplicateMatchingTransformX,
   getItemWidth,
+  getTransformX,
   isItemHidden,
 } from "./Carousel.utils"
-import { ChevronLeft, ChevronRight } from "react-bootstrap-icons"
+import {
+  ChevronLeft,
+  ChevronRight,
+  PauseCircle,
+  PlayCircle,
+} from "react-bootstrap-icons"
 
 import { useCarouselDrag } from "./useCarouselDrag"
+import { useCarouselAutoSlide } from "./useCarouselAutoSlide"
 
 import type { CarouselProps } from "./Carousel.model"
 
@@ -41,6 +48,63 @@ export const Carousel = ({
   const [isTransitioning, setIsTransitioning] = useState(true)
   const [transformX, setTransformX] = useState(0)
 
+  const onSlide = useCallback(
+    (direction: "left" | "right") => {
+      let isLimitReached = false
+      let originalSlidesTransformX = 0
+
+      const itemWidth = getItemWidth({
+        slidesShown,
+        containerElement: containerRef.current,
+        itemsGap,
+      })
+
+      const transformX = getTransformX({
+        containerRef: containerRef,
+        listRef: listRef,
+      })
+
+      const originalSlideSpace = -itemWidth - itemsGap
+
+      if (direction === "right") {
+        const gapLimitExtraSpace = itemsGap * (slidesShown - 1)
+        const transformXLimit =
+          (-itemWidth - gapLimitExtraSpace) * (items.length - slidesShown)
+
+        isLimitReached = transformX - itemWidth < transformXLimit
+
+        originalSlidesTransformX = originalSlideSpace * slidesShown
+      } else {
+        const transformXLimit = 0
+
+        isLimitReached = transformX + itemWidth > transformXLimit
+        originalSlidesTransformX =
+          originalSlideSpace * (items.length - slidesShown * 2)
+      }
+
+      if (isLimitReached && loop) {
+        setIsTransitioning(false)
+        setTransformX(originalSlidesTransformX)
+      }
+
+      setTimeout(() => {
+        setIsTransitioning(true)
+        setTransformX(prev =>
+          direction === "right"
+            ? prev - itemWidth - itemsGap
+            : prev + itemWidth + itemsGap
+        )
+      }, 0)
+    },
+    [slidesShown]
+  )
+
+  const onSlideLeft = useCallback(() => onSlide("left"), [onSlide])
+  const onSlideRight = useCallback(() => onSlide("right"), [onSlide])
+
+  const { isAutoSliding, setIsAutoSliding } = useCarouselAutoSlide({
+    onSlideRight,
+  })
   useCarouselDrag({
     containerRef,
     listRef,
@@ -53,51 +117,9 @@ export const Carousel = ({
     setTransformX,
   })
 
-  const onSlide = (direction: "left" | "right") => {
-    let isLimitReached = false
-    let originalSlidesTransformX = 0
-
-    const itemWidth = getItemWidth({
-      slidesShown,
-      containerElement: containerRef.current,
-      itemsGap,
-    })
-
-    const originalSlideSpace = -itemWidth - itemsGap
-
-    if (direction === "right") {
-      const gapLimitExtraSpace = itemsGap * (slidesShown - 1)
-      const transformXLimit =
-        (-itemWidth - gapLimitExtraSpace) * (items.length - slidesShown)
-
-      isLimitReached = transformX - itemWidth < transformXLimit
-
-      originalSlidesTransformX = originalSlideSpace * slidesShown
-    } else {
-      const transformXLimit = 0
-
-      isLimitReached = transformX + itemWidth > transformXLimit
-      originalSlidesTransformX =
-        originalSlideSpace * (items.length - slidesShown * 2)
-    }
-
-    if (isLimitReached && loop) {
-      setIsTransitioning(false)
-      setTransformX(originalSlidesTransformX)
-    }
-
-    setTimeout(() => {
-      setIsTransitioning(true)
-      setTransformX(prev =>
-        direction === "right"
-          ? prev - itemWidth - itemsGap
-          : prev + itemWidth + itemsGap
-      )
-    }, 0)
-  }
-
-  const onSlideLeft = () => onSlide("left")
-  const onSlideRight = () => onSlide("right")
+  const onFocus = () => setIsAutoSliding(false)
+  const onMouseEnter = () => setIsAutoSliding(false)
+  const onMouseLeave = () => setIsAutoSliding(true)
 
   return (
     <div
@@ -105,8 +127,59 @@ export const Carousel = ({
       aria-roledescription="carousel"
       className="flex flex-col items-center w-full select-none"
       aria-label="Testimonials"
+      onFocus={onFocus}
     >
-      <div className="flex items-center gap-5 w-full h-full">
+      <div
+        ref={containerRef}
+        className="overflow-hidden w-full h-full"
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
+        <ul
+          aria-atomic="false"
+          aria-live={isAutoSliding ? "off" : "polite"}
+          ref={listRef}
+          className="flex w-fit"
+          style={{
+            gap: `${itemsGap}px`,
+            transform: `translateX(${transformX}px)`,
+            transition: isTransitioning
+              ? `transform ${transitionDuration}ms ease`
+              : "none",
+          }}
+        >
+          {items.map((item, index) => {
+            const itemWidth = getItemWidth({
+              slidesShown,
+              containerElement: containerRef.current,
+              itemsGap,
+            })
+
+            const hidden = isItemHidden({
+              index,
+              transformX,
+              itemWidth,
+              slidesShown,
+              itemsGap,
+            })
+
+            return (
+              <li
+                className="shadow-sm p-2"
+                role="tabpanel"
+                key={index}
+                aria-hidden={hidden}
+                id={`slide-${index + 1}`}
+                style={{ width: itemWidth }}
+              >
+                {item}
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+
+      <div className="flex items-center">
         <button
           type="button"
           className="p-2 text-primary hover:text-white duration-300 transition-colors"
@@ -115,46 +188,16 @@ export const Carousel = ({
         >
           <ChevronLeft size={40} />
         </button>
-
-        <div
-          ref={containerRef}
-          className="overflow-hidden w-full h-full"
+        <button
+          type="button"
+          className="p-2 text-primary hover:text-white duration-300 transition-colors"
+          onClick={() => setIsAutoSliding(!isAutoSliding)}
+          aria-label={
+            isAutoSliding ? "Pause auto sliding" : "Play auto sliding"
+          }
         >
-          <ul
-            ref={listRef}
-            className="flex w-fit"
-            style={{
-              gap: `${itemsGap}px`,
-              transform: `translateX(${transformX}px)`,
-              transition: isTransitioning
-                ? `transform ${transitionDuration}ms ease`
-                : "none",
-            }}
-          >
-            {items.map((item, index) => {
-              const hidden = isItemHidden({
-                index,
-                transformX,
-                itemWidth,
-                slidesShown,
-              })
-
-              return (
-                <li
-                  className="shadow-sm shadow-green-300 p-2"
-                  role="tabpanel"
-                  key={index}
-                  aria-hidden={hidden}
-                  style={{ width: itemWidth }}
-                >
-                  {item}
-                  {index}
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-
+          {isAutoSliding ? <PauseCircle size={40} /> : <PlayCircle size={40} />}
+        </button>
         <button
           type="button"
           className="p-2 text-primary hover:text-white duration-300 transition-colors"
@@ -207,6 +250,8 @@ export const Carousel = ({
               type="button"
               role="tab"
               key={index}
+              aria-selected={isActive}
+              aria-controls={`slide-${index + 1}`}
               aria-label={`Go to slide ${index + 1}`}
               className="group"
               onClick={onClick}

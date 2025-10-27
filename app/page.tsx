@@ -7,6 +7,8 @@ import { Fragment } from "react"
 import { Plus } from "react-bootstrap-icons"
 
 import { Carousel } from "@/components/Carousel/Carousel"
+import { SocialMediaLinks } from "@/components/SocialMediaLinks/SocialMediaLinks"
+import { AddressFields } from "@/components/AddressFields/AddressFields"
 
 export const metadata: Metadata = {
   title:
@@ -137,10 +139,10 @@ export default function Home() {
       <section className="bg-[url('/home-first-section/main.jpg')] bg-no-repeat bg-cover bg-left bg-overlay text-white h-full md:max-h-[70vh] min-h-[750px]">
         <div className="flex flex-col items-center h-full relative z-[50] text-center max-w-7xl mx-auto">
           <div className="flex flex-col justify-center items-center h-full gap-5 max-w-2xl text-center px-2.5 mb-10 pt-10">
-            <h1 className="text-primary font-semibold text-xl text-shadow-black text-shadow-md">
+            <h2 className=" text-shadow-black text-shadow-md">
               Expert Car Body Repairs
-            </h1>
-            <h2>Flawless Care for Every Vehicle</h2>
+            </h2>
+            <h3>Flawless Care for Every Vehicle</h3>
             <p className="text-base text-white">
               From small dents and scratches to full resprays and accident
               repairs, our technicians deliver flawless results that make your
@@ -236,11 +238,10 @@ export default function Home() {
       </section>
 
       <section className="max-w-7xl mx-auto p-5 md:p-0">
-        <h2 className="text-center mb-10">
-          Complete Solutions for All Your Car Needs
-        </h2>
+        <h2>Our Solutions</h2>
+        <h3 className="mb-10">Complete Solutions for All Your Car Needs</h3>
 
-        <ul className="flex flex-col items-center md:grid md:grid-cols-3 gap-10">
+        <ul className="flex flex-col items-center md:grid md:grid-cols-3 gap-10 items-start">
           {section3InfoCardsContent.map(
             ({ title, description, imageSrc, href }, index) => (
               <li
@@ -257,7 +258,7 @@ export default function Home() {
                   height={500}
                 />
                 <hr />
-                <h3 className="text-white">{title}</h3>
+                <h3 className="text-white text-3xl">{title}</h3>
                 <p>{description}</p>
 
                 <Link
@@ -274,10 +275,8 @@ export default function Home() {
       </section>
 
       <section className="flex flex-col gap-5 max-w-7xl mx-auto w-full">
-        <h2 className="text-center text-primary text-xl">Testimonials</h2>
-        <h3 className="mb-3 text-center text-4xl text-white">
-          What Our Clients Say.
-        </h3>
+        <h2>Testimonials</h2>
+        <h3 className="mb-3">What Our Clients Say.</h3>
 
         <Carousel>
           {section4Testimonials.map(({ author, description }, index) => (
@@ -301,6 +300,24 @@ export default function Home() {
             </Fragment>
           ))}
         </Carousel>
+      </section>
+
+      <section className="flex flex-col md:flex-row justify-center items-center w-full max-w-7xl mx-auto px-5 md:px-0 gap-10 md:gap-0">
+        <div className="flex flex-col items-center md:items-start mr-0 md:mr-auto max-w-md w-full">
+          <h2 className="text-center md:text-start mb-10">Contact Us</h2>
+          <h3 className="max-w-md text-center md:text-start mb-10">
+            Have a Question? Get in Touch!
+          </h3>
+
+          <AddressFields
+            showIcons={false}
+            className="flex-col items-center md:items-start text-center md:text-start gap-5 text-lg mb-5 w-full"
+          />
+
+          <SocialMediaLinks />
+        </div>
+
+        <ContactForm />
       </section>
     </main>
   )

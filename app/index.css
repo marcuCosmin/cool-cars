@@ -22,7 +22,7 @@
   }
 
   body {
-    @apply text-sm text-white bg-background h-full flex flex-col;
+    @apply text-base text-white bg-background h-full flex flex-col;
   }
   
   main {
@@ -34,15 +34,23 @@
   }
 
   h2 {
-    @apply font-semibold text-white text-4xl;
+    @apply text-xl text-primary text-center;
   }
 
   h3 {
-    @apply font-semibold sm:text-lg xl:text-xl text-primary;
+    @apply text-center text-white text-5xl font-bold;
+  }
+
+  h5 {
+    @apply text-xl font-semibold;
   }
 
   input, textarea {
-    @apply border-gray border rounded-md p-2 outline-primary [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none;
+    @apply border-border border-b py-3.5 duration-300 focus:border-primary outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none;
+  }
+
+  textarea {
+    @apply resize-none;
   }
 
   p {
@@ -50,7 +58,15 @@
   }
 
   button {
-    @apply cursor-pointer;
+    @apply cursor-pointer p-3 font-semibold duration-300 transition-colors;
+  }
+
+  a {
+    @apply text-white duration-300 transition-colors hover:text-primary;
+  }
+
+  address {
+    @apply not-italic;
   }
 }
 
@@ -82,8 +98,4 @@
 
 @utility bg-overlay {
   @apply relative z-10 after:empty-content after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-background/70 after:z-20 after:pointer-events-none;
-}
-
-@utility invalid-input {
-  @apply border-error focus:outline-error;
 }

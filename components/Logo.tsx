@@ -1,4 +1,4 @@
-export const HeaderLogo = () => (
+export const Logo = () => (
   <svg
     className="h-[100px]"
     xmlns="http://www.w3.org/2000/svg"

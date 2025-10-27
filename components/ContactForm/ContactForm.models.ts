@@ -3,4 +3,5 @@ export type Inputs = {
   email: string
   phone: string
   message: string
+  agreement: boolean
 }

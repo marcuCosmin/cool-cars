@@ -1,20 +1,16 @@
 "use client"
 
-import Link from "next/link"
-
 import { useState } from "react"
 import { List, X } from "react-bootstrap-icons"
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react"
 
-import { HeaderNavItem } from "./HeaderNavItem"
-import { HeaderLogo } from "./HeaderLogo"
+import { SocialMediaLinks } from "@/components/SocialMediaLinks/SocialMediaLinks"
+import { Logo } from "@/components/Logo"
+import { AddressFields } from "@/components/AddressFields/AddressFields"
 
-import {
-  addresses,
-  leftSideNavLinks,
-  rightSideNavLinks,
-  socialMediaLinks,
-} from "./Header.constants"
+import { HeaderNavItem } from "./HeaderNavItem"
+
+import { leftSideNavLinks, rightSideNavLinks } from "./Header.constants"
 
 export const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -31,65 +27,9 @@ export const Header = () => {
     >
       <div className="flex md:flex-col w-full max-w-7xl">
         <div className="justify-between w-full hidden md:flex">
-          <ul className="flex items-center gap-2">
-            {socialMediaLinks.map(({ Icon, href, ariaLabel }, index) => (
-              <li key={index}>
-                <Link
-                  href={href}
-                  aria-label={ariaLabel}
-                  target="_blank"
-                  className="hover:text-primary transition-colors border-1 p-2 h-fit block border-border"
-                >
-                  <Icon
-                    className="w-4 h-4"
-                    aria-hidden="true"
-                  />
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <SocialMediaLinks size="sm" />
 
-          <address className="flex items-center gap-12">
-            {addresses.map((address, index) => {
-              const containerClassName = "flex items-center gap-2"
-              const iconClassName = "w-4 h-4 fill-primary"
-
-              if (address.type === "text") {
-                const { text, Icon } = address
-
-                return (
-                  <div
-                    className={containerClassName}
-                    key={index}
-                  >
-                    <Icon
-                      className={iconClassName}
-                      aria-hidden="true"
-                    />
-                    <span>{text}</span>
-                  </div>
-                )
-              }
-
-              if (address.type === "link") {
-                const { text, Icon, href } = address
-
-                return (
-                  <Link
-                    className={containerClassName}
-                    key={index}
-                    href={href}
-                  >
-                    <Icon
-                      className={iconClassName}
-                      aria-hidden="true"
-                    />
-                    <span>{text}</span>
-                  </Link>
-                )
-              }
-            })}
-          </address>
+          <AddressFields className="flex-row items-center gap-12" />
         </div>
 
         <hr className="text-secondary w-full my-2 hidden md:block" />
@@ -104,7 +44,7 @@ export const Header = () => {
             ))}
           </ul>
 
-          <HeaderLogo />
+          <Logo />
 
           <ul className={navListClassName}>
             {rightSideNavLinks.map((props, index) => (
@@ -143,7 +83,7 @@ export const Header = () => {
               className="relative z-[9999] p-5 h-full bg-background duration-300 delay-300 ease-in-out data-closed:-translate-x-full"
             >
               <div className="flex justify-between items-start">
-                <HeaderLogo />
+                <Logo />
 
                 <button
                   type="button"

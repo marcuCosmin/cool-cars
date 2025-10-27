@@ -18,7 +18,7 @@ export const HeaderNavItem = ({ href, text, links }: HeaderNavItemProps) => {
       <li>
         <Menu>
           <MenuButton
-            className={`${itemClassName} flex items-center gap-0.5 data-open:text-primary focus:outline-none focus-visible:text-primary rounded-sm`}
+            className={`${itemClassName} p-0 flex items-center gap-0.5 data-open:text-primary focus:outline-none focus-visible:text-primary rounded-sm`}
           >
             {text}
             <Plus

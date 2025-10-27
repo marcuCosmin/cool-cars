@@ -1,15 +1,17 @@
 "use client"
 
+import { Send } from "react-bootstrap-icons"
 import { ToastContainer, toast } from "react-toastify"
 import { useForm, type SubmitHandler } from "react-hook-form"
 
 import { validate as isValidEmail } from "email-validator"
 
-import { FormField } from "./FormField"
+import { Loader } from "@/components/Loader"
 import { Toast } from "./Toast"
-import { Loader } from "../Loader"
 
-import { sendEmail } from "./sendEmail"
+import { ContactFormField } from "./ContactFormField"
+
+import { sendEmail } from "./ContactForm.utils"
 
 import type { Inputs } from "./ContactForm.models"
 
@@ -65,14 +67,12 @@ export const ContactForm = () => {
   return (
     <>
       <form
-        className="relative z-10 flex flex-col gap-4 m-auto w-full max-w-md md:max-w-xl"
+        className="relative flex flex-col gap-5 w-full max-w-md md:max-w-xl"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h3 className="text-center mb-5 text-lg md:text-2xl">
-          Get a quick free quote
-        </h3>
+        <h3 className="text-start mb-5 text-4xl">Contact Us</h3>
         {isSubmitting && <Loader />}
-        <FormField
+        <ContactFormField
           {...register("name", { required: true, maxLength: 30 })}
           type="text"
           label="Name"
@@ -82,7 +82,7 @@ export const ContactForm = () => {
               : undefined
           }
         />
-        <FormField
+        <ContactFormField
           {...register("email", {
             validate: isValidEmail,
           })}
@@ -90,34 +90,37 @@ export const ContactForm = () => {
           label="Email"
           error={errors.email ? "Invalid email address" : undefined}
         />
-        <FormField
+        <ContactFormField
           {...register("phone", { required: true, pattern: /^07\d{9}$/ })}
           type="number"
           label="Phone number"
           error={errors.phone ? "Invalid phone number" : undefined}
         />
-        <FormField
+        <ContactFormField
           {...register("message", { required: true, minLength: 20 })}
-          rows={10}
+          rows={6}
           type="textarea"
           label="Message"
+          placeholder="How can we help you? Feel free to get in touch!"
           error={
             errors.message
               ? "Message is required and must be longer than 20 characters"
               : undefined
           }
         />
+        <ContactFormField
+          {...register("agreement", { required: true })}
+          type="checkbox"
+          label="I agree that my data is collected and stored."
+          error={errors.agreement ? "This field is required" : undefined}
+        />
 
-        {!isSubmitting && <input type="submit" />}
+        {!isSubmitting && (
+          <button className="bg-primary uppercase flex items-center justify-center gap-2.5 w-fit hover:text-black hover:bg-white px-10">
+            <Send /> Get in Touch
+          </button>
+        )}
       </form>
-
-      <ToastContainer
-        position="top-right"
-        hideProgressBar
-        icon={false}
-        closeButton={false}
-        limit={1}
-      />
     </>
   )
 }
