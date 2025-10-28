@@ -137,7 +137,7 @@ export default function Home() {
   return (
     <main className="flex flex-col gap-20">
       <section className="bg-[url('/home-first-section/main.jpg')] bg-no-repeat bg-cover bg-left bg-overlay text-white h-full md:max-h-[70vh] min-h-[750px]">
-        <div className="flex flex-col items-center h-full relative z-[50] text-center max-w-7xl mx-auto">
+        <div className="flex flex-col items-center h-full text-center max-w-7xl mx-auto">
           <div className="flex flex-col justify-center items-center h-full gap-5 max-w-2xl text-center px-2.5 mb-10 pt-10">
             <h2 className=" text-shadow-black text-shadow-md">
               Expert Car Body Repairs
@@ -151,7 +151,7 @@ export default function Home() {
 
             <Link
               href="/contact"
-              className="uppercase bg-primary p-3 font-semibold text-black rounded-lg border-primary border-2 hover:bg-transparent hover:text-white duration-300 transition-colors"
+              className="link-button bg-primary text-black border-primary hover:bg-transparent hover:text-white"
             >
               Get in touch
             </Link>

@@ -79,7 +79,7 @@ export const ContactFormField = ({
       >
         <span
           id={labelId}
-          className={`transition-colors duration-300 group-focus-within:text-primary ${error ? "text-red-600" : "text-secondary"}`}
+          className={`transition-colors duration-300 group-focus-within:text-primary ${error ? "text-error" : "text-secondary"}`}
         >
           {label}
         </span>
@@ -89,7 +89,7 @@ export const ContactFormField = ({
       {error && (
         <span
           id={errorElementId}
-          className="text-red-600 text-sm"
+          className="text-error text-sm"
           aria-live="assertive"
         >
           {error}

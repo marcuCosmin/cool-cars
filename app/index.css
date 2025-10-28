@@ -68,6 +68,10 @@
   address {
     @apply not-italic;
   }
+
+  hr {
+    @apply text-border;
+  }
 }
 
 @layer components {
@@ -97,5 +101,18 @@
 }
 
 @utility bg-overlay {
-  @apply relative z-10 after:empty-content after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-background/70 after:z-20 after:pointer-events-none;
+  @apply relative z-10 after:empty-content after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-background/70 after:z-20 after:pointer-events-none [&>*]:relative [&>*]:z-30;
+}
+
+@utility link-button {
+ @apply uppercase p-3 font-semibold rounded-lg border-1 hover:bg-transparent duration-300 transition-colors;
+}
+
+@utility main-container-legal-page {
+  @apply flex flex-col gap-5 px-5 pt-10;
+  @apply [&_section]:flex [&_section]:flex-col [&_section]:gap-5 [&_section]:max-w-7xl [&_section]:mx-auto [&_section]:w-full [&_section_first-child]:m-0 [&_section_first-child]:px-0;
+  @apply [&_h2]:text-2xl [&_h2]:text-start [&_h2]:text-white [&_h2]:font-bold;
+  @apply [&_h3]:text-xl [&_h3]:text-start;
+  @apply [&_b]:text-white;
+  @apply [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-5 [&_ul]:pl-10 [&_ul]:list-disc [&_ul]:text-paragraph;
 }

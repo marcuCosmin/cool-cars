@@ -2,8 +2,6 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import { GoogleAnalytics } from "@next/third-parties/google"
 
-import { ToastContainer } from "react-toastify"
-
 import "./index.css"
 
 import { Header } from "@/components/Header/Header"
@@ -84,13 +82,6 @@ const RooutLayout = async ({ children }: RootLayoutProps) => (
     <body className={inter.className}>
       <Header />
       {children}
-      <ToastContainer
-        position="top-right"
-        hideProgressBar
-        icon={false}
-        closeButton={false}
-        limit={1}
-      />
       <Footer />
     </body>
   </html>

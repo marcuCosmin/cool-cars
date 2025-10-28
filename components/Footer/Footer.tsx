@@ -21,7 +21,7 @@ export const Footer = () => {
 
         <Link
           href="/contact"
-          className="uppercase bg-transparent p-3 font-semibold text-white rounded-lg border-white border-1  hover:bg-primary hover:border-primary duration-300 transition-colors"
+          className="link-button bg-transparent text-white border-white hover:bg-primary hover:border-primary"
         >
           Get in touch
         </Link>

@@ -4,32 +4,40 @@ import { mergeClassNames } from "@/utils/mergeClassNames"
 
 import { addresses } from "./AddressFields.const"
 
+import type { AddressFieldsIds } from "./AddressFields.models"
+
 type AddressFieldsProps = {
   className?: string
   showIcons?: boolean
   showLabels?: boolean
+  shownFields?: AddressFieldsIds[]
 }
 
 export const AddressFields = ({
   showIcons = true,
   className,
   showLabels,
+  shownFields = ["address", "email", "phone"],
 }: AddressFieldsProps) => {
   const containerClassName = mergeClassNames("flex flex-col", className)
 
   return (
     <address className={containerClassName}>
-      {addresses.map((address, index) => {
+      {addresses.map(address => {
         const containerClassName = "flex items-center gap-2"
         const iconClassName = "min-w-4 min-h-4 fill-primary"
 
+        if (!shownFields.includes(address.id)) {
+          return null
+        }
+
         if (address.type === "text") {
-          const { text, Icon, label } = address
+          const { text, Icon, label, id } = address
 
           return (
             <p
               className={containerClassName}
-              key={index}
+              key={id}
             >
               {showIcons && (
                 <Icon
@@ -44,11 +52,11 @@ export const AddressFields = ({
         }
 
         if (address.type === "link") {
-          const { text, Icon, href } = address
+          const { text, Icon, href, id } = address
 
           return (
             <p
-              key={index}
+              key={id}
               className="flex gap-2"
             >
               {showLabels && <span>{address.label}:</span>}

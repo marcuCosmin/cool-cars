@@ -1,37 +1,48 @@
 import {
   EnvelopeFill,
   GeoAltFill,
+  Globe2,
   TelephoneFill,
   type Icon,
 } from "react-bootstrap-icons"
 
-type AddressItem =
-  | {
-      text: string
-      Icon: Icon
-      type: "text"
-      label: string
-    }
-  | {
-      text: string
-      href: string
-      Icon: Icon
-      type: "link"
-      label: string
-    }
+import {
+  email,
+  phoneNumberText,
+  phoneNumberValue,
+  website,
+} from "@/globals/constants"
 
-const displayedPhoneNumber = "+44 7421 535 039"
-const phoneNumber = displayedPhoneNumber.replaceAll(" ", "")
-const email = "contact@cool-cars.co.uk"
+import type { AddressFieldsIds } from "./AddressFields.models"
+
+type AddressItemCommonProps = {
+  id: AddressFieldsIds
+  Icon: Icon
+  label: string
+  text: string
+}
+
+type AddressItemTextProps = AddressItemCommonProps & {
+  type: "text"
+}
+
+type AddressItemLinkProps = AddressItemCommonProps & {
+  type: "link"
+  href: string
+}
+
+type AddressItem = AddressItemTextProps | AddressItemLinkProps
 
 export const addresses: AddressItem[] = [
   {
+    id: "address",
     type: "text",
     Icon: GeoAltFill,
     text: "Unit 16, Swanmore Business Park, Lower Chase Road, Swanmore, SO322PB",
     label: "Address",
   },
   {
+    id: "email",
     type: "link",
     href: `mailto:${email}`,
     Icon: EnvelopeFill,
@@ -39,10 +50,19 @@ export const addresses: AddressItem[] = [
     label: "Email",
   },
   {
+    id: "phone",
     type: "link",
-    href: `tel:${phoneNumber}`,
+    href: `tel:${phoneNumberValue}`,
     Icon: TelephoneFill,
-    text: displayedPhoneNumber,
+    text: phoneNumberText,
     label: "Telephone",
+  },
+  {
+    id: "website",
+    type: "link",
+    href: website,
+    Icon: Globe2,
+    text: "www.cool-cars.co.uk",
+    label: "Website",
   },
 ]
