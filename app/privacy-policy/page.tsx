@@ -66,26 +66,46 @@ const section8Items = [
 export default function PrivacyPolicy() {
   return (
     <main className="main-container-legal-page">
-      <section className="bg-[url('/privacy-policy/main.jpg')] bg-cover bg-no-repeat bg-center bg-overlay max-w-auto m-0 w-full">
-        <h1>Privacy Policy – Cool Cars</h1>
-        <p>
-          <b>Last updated:</b> 16/10/2025
-        </p>
-        <p>
-          Welcome to <b>Cool Cars</b> (“we”, “our”, “us”).
-        </p>
+      <section className="bg-[url('/privacy-policy-banner.jpg')]">
+        <div className="first-section-main-content">
+          <h1>Privacy Policy – Cool Cars</h1>
+          <p>
+            <b>Last updated:</b> 16/10/2025
+          </p>
+          <p>
+            Welcome to <b>Cool Cars</b> (“we”, “our”, “us”).
+          </p>
+
+          <p>
+            We respect your privacy and are committed to protecting your
+            personal information.
+          </p>
+          <p>
+            This Privacy Policy explains how we collect, use, and safeguard your
+            data when you visit our website{" "}
+            <Link href="https://cool-cars.co.uk">cool-cars.co.uk</Link> or
+            interact with our services.
+          </p>
+          <p>By using our website, you agree to this policy.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>1. Who We Are</h2>
+
+        <p>Cool Cars is a UK-based vehicle repair and detailing business.</p>
+
+        <AddressFields
+          className="gap-5"
+          shownFields={["phone", "email", "website", "address"]}
+          showIcons={false}
+          showLabels
+        />
 
         <p>
-          We respect your privacy and are committed to protecting your personal
-          information.
+          We are the <b>data controller</b> for the purposes of the UK General
+          Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
         </p>
-        <p>
-          This Privacy Policy explains how we collect, use, and safeguard your
-          data when you visit our website{" "}
-          <Link href="https://cool-cars.co.uk">cool-cars.co.uk</Link> or
-          interact with our services.
-        </p>
-        <p>By using our website, you agree to this policy.</p>
       </section>
 
       <hr />
@@ -130,6 +150,8 @@ export default function PrivacyPolicy() {
         </p>
       </section>
 
+      <hr />
+
       <section>
         <h2>4. Lawful Basis for Processing</h2>
 
@@ -170,9 +192,7 @@ export default function PrivacyPolicy() {
 
         <p>
           Our website uses <b>cookies</b> — small text files stored on your
-          device — to improve site performance and user experience. Our website
-          uses cookies — small text files stored on your device — to improve
-          site performance and user experience.
+          device — to improve site performance and user experience.
         </p>
         <p>
           We may use tools like <b>Google Analytics</b> to collect anonymous

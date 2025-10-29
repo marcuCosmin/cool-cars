@@ -26,7 +26,10 @@
   }
   
   main {
-    @apply flex-grow bg-background;
+    @apply flex flex-col flex-grow bg-background;
+    @apply [&_section]:max-w-7xl [&_section]:mx-auto [&_section]:w-full;
+    @apply [&_section:first-child]:max-w-full [&_section:first-child]:mx-0 [&_section:first-child]:text-white [&_section:first-child]:h-full [&_section:first-child]:md:max-h-[70vh] [&_section:first-child]:min-h-[750px] [&_section:first-child]:flex [&_section:first-child]:flex-col [&_section:first-child]:items-center [&_section:first-child]:justify-center [&_section:first-child]:bg-cover [&_section:first-child]:bg-no-repeat [&_section:first-child]:bg-left [&_section:first-child]:bg-overlay;
+    @apply [&_section:first-child>div]:max-w-2xl [&_section:first-child>div]:flex [&_section:first-child>div]:flex-col [&_section:first-child>div]:items-center [&_section:first-child>div]:justify-center [&_section:first-child>div]:gap-5 [&_section:first-child>div]:text-center;
   }
 
   h1 {
@@ -108,11 +111,17 @@
  @apply uppercase p-3 font-semibold rounded-lg border-1 hover:bg-transparent duration-300 transition-colors;
 }
 
+@utility first-section-main-content {
+  @apply flex flex-col justify-center items-center h-full gap-5 max-w-2xl text-center [&_p]:text-white;
+}
+
 @utility main-container-legal-page {
-  @apply flex flex-col gap-5 px-5 pt-10;
-  @apply [&_section]:flex [&_section]:flex-col [&_section]:gap-5 [&_section]:max-w-7xl [&_section]:mx-auto [&_section]:w-full [&_section_first-child]:m-0 [&_section_first-child]:px-0;
-  @apply [&_h2]:text-2xl [&_h2]:text-start [&_h2]:text-white [&_h2]:font-bold;
+  @apply flex flex-col gap-5;
+  @apply [&_section]:flex [&_section]:flex-col [&_section]:gap-5 [&_section]:max-w-2xl [&_section]:px-5;
+  @apply [&_section:first-child]:max-w-full;
+  @apply [&_h2]:text-2xl [&_h2]:text-center [&_h2]:text-white [&_h2]:font-bold;
   @apply [&_h3]:text-xl [&_h3]:text-start;
   @apply [&_b]:text-white;
-  @apply [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-5 [&_ul]:pl-10 [&_ul]:list-disc [&_ul]:text-paragraph;
+  @apply [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-5 [&_ul]:pl-10 [&_ul]:list-disc [&_ul]:text-paragraph [&_ul]:w-full;
+  @apply [&_hr]:max-w-2xl [&_hr]:w-full [&_hr]:mx-auto;
 }

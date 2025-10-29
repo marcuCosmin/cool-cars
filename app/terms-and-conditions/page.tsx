@@ -70,24 +70,24 @@ const sectionsWithLists = [
 export default function TermsAndConditionsPage() {
   return (
     <main className="main-container-legal-page">
-      <section className="flex flex-col gap-5">
-        <h1>Terms and Conditions</h1>
-        <p>
-          <b>Last updated:</b> 16/10/2025
-        </p>
-        <p>
-          Welcome to <b>Cool Cars</b> (“we”, “our”, “us”). These Terms and
-          Conditions outline the rules and guidelines for using our website{" "}
-          <Link href="https://cool-cars.co.uk">cool-cars.co.uk</Link> and any
-          related services provided by <b>Cool Cars</b>.
-        </p>
-        <p>
-          By accessing or using this website, you agree to be bound by these
-          Terms. If you do not agree, please do not use our site.
-        </p>
+      <section className="bg-[url('/terms-and-conditions-banner.jpg')]">
+        <div className="first-section-main-content">
+          <h1>Terms and Conditions</h1>
+          <p>
+            <b>Last updated:</b> 16/10/2025
+          </p>
+          <p>
+            Welcome to <b>Cool Cars</b> (“we”, “our”, “us”). These Terms and
+            Conditions outline the rules and guidelines for using our website{" "}
+            <Link href="https://cool-cars.co.uk">cool-cars.co.uk</Link> and any
+            related services provided by <b>Cool Cars</b>.
+          </p>
+          <p>
+            By accessing or using this website, you agree to be bound by these
+            Terms. If you do not agree, please do not use our site.
+          </p>
+        </div>
       </section>
-
-      <hr />
 
       <section>
         <h2>1. About Us</h2>
@@ -97,6 +97,7 @@ export default function TermsAndConditionsPage() {
         </p>
 
         <AddressFields
+          className="gap-5"
           showIcons={false}
           showLabels
           shownFields={["phone", "email", "website", "address"]}

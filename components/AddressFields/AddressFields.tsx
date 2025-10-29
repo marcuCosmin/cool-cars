@@ -45,8 +45,8 @@ export const AddressFields = ({
                   aria-hidden="true"
                 />
               )}
-              {showLabels && <span>{label}:</span>}
-              <span>{text}</span>
+              {showLabels && `${label}: `}
+              {text}
             </p>
           )
         }

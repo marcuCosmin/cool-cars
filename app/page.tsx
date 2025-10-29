@@ -24,17 +24,17 @@ const section1InfoCardsContent = [
   {
     title: "Masters of Aesthetic Repairs",
     description: "Driven by detail, defined by expert craftsmanship",
-    imageSrc: "/home-first-section/driving-cert.webp",
+    imageSrc: "/driving-cert.webp",
   },
   {
     title: "We have all the right tools",
     description: "And use only the very best materials",
-    imageSrc: "/home-first-section/toolbox.png",
+    imageSrc: "/toolbox.png",
   },
   {
     title: "Get back on the road",
     description: "Proper care, without the high-end price tag",
-    imageSrc: "/home-first-section/wheel-key.webp",
+    imageSrc: "/wheel-key.webp",
   },
 ]
 
@@ -42,19 +42,19 @@ const section2InfoCardsContent = [
   {
     title: "Dent & Scratch Treatment",
     description: "However big or small, trust Cool Cars to smooth things out.",
-    imageSrc: "/home-second-section/car-door.webp",
+    imageSrc: "/car-door.webp",
   },
   {
     title: "Trusted by Insurers",
     description:
       "When accidents happen, we’re who the insurers contact to get you back on the road.",
-    imageSrc: "/home-second-section/car-tick.webp",
+    imageSrc: "/car-tick.webp",
   },
   {
     title: "Really a write off?",
     description:
       "Speak to Cool Cars before you scrap your car. We’ll give you the true expert opinion.",
-    imageSrc: "/home-second-section/wheel.webp",
+    imageSrc: "/wheel.webp",
   },
 ]
 
@@ -63,42 +63,42 @@ const section3InfoCardsContent = [
     title: "Vehicle Body Repairs",
     description:
       "From small dents to major accident damage, Cool Cars provides quality car body repairs at fair prices.",
-    imageSrc: "/home-third-section/item-1.jpg",
+    imageSrc: "/home-third-section-item-1.jpg",
     href: "/services",
   },
   {
     title: "Car Resprays & Paintwork",
     description:
       "From quick touch-ups to full paint jobs, we deliver high-quality finishes at fair prices.",
-    imageSrc: "/home-third-section/item-2.jpg",
+    imageSrc: "/home-third-section-item-2.jpg",
     href: "/services",
   },
   {
     title: "Accident Repairs",
     description:
       "Cool Cars delivers reliable, high-quality accident repairs that get you back on the road fast",
-    imageSrc: "/home-third-section/item-3.jpg",
+    imageSrc: "/home-third-section-item-3.jpg",
     href: "/services",
   },
   {
     title: "Paint Correction & Car Polishing",
     description:
       "Bring back your car’s shine with professional paint correction and polishing from Cool Cars.",
-    imageSrc: "/home-third-section/item-4.jpg",
+    imageSrc: "/home-third-section-item-4.jpg",
     href: "/services",
   },
   {
     title: "Custom Bodywork & Modifications",
     description:
       "Custom Bodywork & Modifications”, create lower text “From subtle upgrades to bold styling changes, we deliver great-looking results at prices that make sense.",
-    imageSrc: "/home-third-section/item-5.jpg",
+    imageSrc: "/home-third-section-item-5.jpg",
     href: "/services",
   },
   {
     title: "Fleet Repair Management",
     description:
       "Cool Cars keeps your business on the road with expert fleet repair management.",
-    imageSrc: "/home-third-section/item-6.jpg",
+    imageSrc: "/home-third-section-item-6.jpg",
     href: "/services",
   },
 ]
@@ -135,15 +135,15 @@ const section4Testimonials = [
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-20">
-      <section className="bg-[url('/home-first-section/main.jpg')] bg-no-repeat bg-cover bg-left bg-overlay text-white h-full md:max-h-[70vh] min-h-[750px]">
+    <main className="gap-20">
+      <section className="bg-[url('/home-first-section-banner.jpg')]">
         <div className="flex flex-col items-center h-full text-center max-w-7xl mx-auto">
-          <div className="flex flex-col justify-center items-center h-full gap-5 max-w-2xl text-center px-2.5 mb-10 pt-10">
-            <h2 className=" text-shadow-black text-shadow-md">
+          <div className="first-section-main-content px-2.5 mb-10 pt-10">
+            <h2 className="text-shadow-black text-shadow-md">
               Expert Car Body Repairs
             </h2>
             <h3>Flawless Care for Every Vehicle</h3>
-            <p className="text-base text-white">
+            <p className="text-base">
               From small dents and scratches to full resprays and accident
               repairs, our technicians deliver flawless results that make your
               vehicle shine.
@@ -185,10 +185,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[url('/home-second-section/main.jpg')] md:bg-none bg-no-repeat bg-cover bg-left bg-overlay">
+      <section className="bg-[url('/home-second-section-banner.jpg')] md:bg-none bg-no-repeat bg-cover bg-left bg-overlay">
         <div className="flex flex-col md:flex-row md:justify-between relative z-[50] max-w-7xl mx-auto">
           <Image
-            src="/home-second-section/main.jpg"
+            src="/home-second-section-banner.jpg"
             alt=""
             className="hidden md:block h-full"
             height={500}
@@ -228,7 +228,7 @@ export default function Home() {
           </div>
 
           <Image
-            src="/home-second-section/secondary.jpeg"
+            src="/home-second-section-banner-secondary.jpeg"
             alt=""
             className="hidden md:block h-full"
             height={500}
@@ -282,7 +282,7 @@ export default function Home() {
           {section4Testimonials.map(({ author, description }, index) => (
             <Fragment key={index}>
               <Image
-                src="/home-fourth-section/quote.png"
+                src="/quote.png"
                 alt=""
                 width={40}
                 height={40}
