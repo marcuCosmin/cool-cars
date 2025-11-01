@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://cool-cars.co.uk/about</loc><lastmod>2025-07-10T12:50:49.772Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://cool-cars.co.uk</loc><lastmod>2025-07-10T12:50:49.772Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://cool-cars.co.uk/contact</loc><lastmod>2025-07-10T12:50:49.772Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://cool-cars.co.uk/services</loc><lastmod>2025-07-10T12:50:49.772Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://cool-cars.co.uk/about</loc><lastmod>2025-11-01T20:35:42.969Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://cool-cars.co.uk/contact</loc><lastmod>2025-11-01T20:35:42.970Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://cool-cars.co.uk</loc><lastmod>2025-11-01T20:35:42.970Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://cool-cars.co.uk/privacy-policy</loc><lastmod>2025-11-01T20:35:42.970Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://cool-cars.co.uk/services/accident-repairs</loc><lastmod>2025-11-01T20:35:42.970Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://cool-cars.co.uk/services/bodywork-and-modifications</loc><lastmod>2025-11-01T20:35:42.970Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://cool-cars.co.uk/services/fleet-repair-management</loc><lastmod>2025-11-01T20:35:42.970Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://cool-cars.co.uk/services/paint-correction-and-polishing</loc><lastmod>2025-11-01T20:35:42.970Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://cool-cars.co.uk/services/resprays-and-paintwork</loc><lastmod>2025-11-01T20:35:42.970Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://cool-cars.co.uk/services/vehicle-body-repairs</loc><lastmod>2025-11-01T20:35:42.970Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://cool-cars.co.uk/terms-and-conditions</loc><lastmod>2025-11-01T20:35:42.970Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://cool-cars.co.uk/testimonials</loc><lastmod>2025-11-01T20:35:42.970Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
