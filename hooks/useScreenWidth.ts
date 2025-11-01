@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useDebouncedCallback } from "use-debounce"
 
 export const useScreenWidth = () => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+  const [screenWidth, setScreenWidth] = useState(0)
 
   const debouncedResize = useDebouncedCallback(
     () => setScreenWidth(window.innerWidth),

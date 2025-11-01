@@ -24,7 +24,7 @@ export const CarouselTabs = ({
   return (
     <div
       role="tablist"
-      className="flex gap-2.5"
+      className={`flex gap-2.5 transition-opacity duration-300 ${itemWidth ? "opacity-100" : "opacity-0"}`}
     >
       {items.map((_, index) => {
         const isLeftSideDuplicate = index < slidesShown
