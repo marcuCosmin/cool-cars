@@ -1,13 +1,11 @@
-import { ContactForm } from "@/components/ContactForm/ContactForm"
 import { type Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
 import { Plus } from "react-bootstrap-icons"
 
-import { SocialMediaLinks } from "@/components/SocialMediaLinks/SocialMediaLinks"
-import { AddressFields } from "@/components/AddressFields/AddressFields"
 import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection"
+import { ContactSection } from "@/components/ContactSection"
 
 export const metadata: Metadata = {
   title:
@@ -245,23 +243,7 @@ export default function Home() {
 
       <TestimonialsSection />
 
-      <section className="flex flex-col md:flex-row justify-center items-center w-full max-w-7xl mx-auto px-5 md:px-0 gap-10 md:gap-0">
-        <div className="flex flex-col items-center md:items-start mr-0 md:mr-auto max-w-md w-full">
-          <h2 className="text-center md:text-start mb-10">Contact Us</h2>
-          <h3 className="max-w-md text-center md:text-start mb-10">
-            Have a Question? Get in Touch!
-          </h3>
-
-          <AddressFields
-            showIcons={false}
-            className="flex-col items-center md:items-start text-center md:text-start gap-5 text-lg mb-5 w-full"
-          />
-
-          <SocialMediaLinks />
-        </div>
-
-        <ContactForm title="Contact Form" />
-      </section>
+      <ContactSection />
     </main>
   )
 }
