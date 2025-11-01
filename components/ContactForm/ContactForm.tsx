@@ -12,10 +12,21 @@ import { ContactFormField } from "./ContactFormField"
 import { sendEmail } from "./ContactForm.utils"
 
 import type { Inputs } from "./ContactForm.models"
+import { mergeClassNames } from "@/utils/mergeClassNames"
 
 const rootErrorId = "contact-form-error"
 
-export const ContactForm = () => {
+type ContactFormProps = {
+  title: string
+  description?: string
+  containerClassName?: string
+}
+
+export const ContactForm = ({
+  title,
+  description,
+  containerClassName,
+}: ContactFormProps) => {
   const {
     register,
     handleSubmit,
@@ -23,6 +34,11 @@ export const ContactForm = () => {
     setError,
     reset,
   } = useForm<Inputs>()
+
+  const formClassName = mergeClassNames(
+    `relative flex flex-col gap-5 w-full max-w-md md:max-w-xl ${containerClassName}`
+  )
+
   const onSubmit: SubmitHandler<Inputs> = async values => {
     try {
       const error = await sendEmail(values)
@@ -48,73 +64,76 @@ export const ContactForm = () => {
   }
 
   return (
-    <>
-      <form
-        aria-describedby={rootErrorId}
-        className="relative flex flex-col gap-5 w-full max-w-md md:max-w-xl"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <h3 className="text-start mb-5 text-4xl">Contact Us</h3>
-        {isSubmitting && <Loader />}
-        <ContactFormField
-          {...register("name", { required: true, maxLength: 30 })}
-          type="text"
-          label="Name"
-          error={
-            errors.name
-              ? "Name is required and must be less than 30 characters"
-              : undefined
-          }
-        />
-        <ContactFormField
-          {...register("email", {
-            validate: isValidEmail,
-          })}
-          type="text"
-          label="Email"
-          error={errors.email ? "Invalid email address" : undefined}
-        />
-        <ContactFormField
-          {...register("phone", { required: true, pattern: /^07\d{9}$/ })}
-          type="number"
-          label="Phone number"
-          error={errors.phone ? "Invalid phone number" : undefined}
-        />
-        <ContactFormField
-          {...register("message", { required: true, minLength: 20 })}
-          rows={6}
-          type="textarea"
-          label="Message"
-          placeholder="How can we help you? Feel free to get in touch!"
-          error={
-            errors.message
-              ? "Message is required and must be longer than 20 characters"
-              : undefined
-          }
-        />
-        <ContactFormField
-          {...register("agreement", { required: true })}
-          type="checkbox"
-          label="I agree that my data is collected and stored."
-          error={errors.agreement ? "This field is required" : undefined}
-        />
+    <form
+      aria-labelledby=""
+      aria-describedby={rootErrorId}
+      className={formClassName}
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <h3 className="mb-5 text-4xl">{title}</h3>
 
-        {errors.root && (
-          <span
-            id={rootErrorId}
-            className="text-error text-sm"
-            aria-live="assertive"
-          >
-            {errors.root.message}
-          </span>
-        )}
+      {description && <p className="mb-5">{description}</p>}
 
-        {!isSubmitting && (
-          <button className="bg-primary uppercase flex items-center justify-center gap-2.5 w-fit hover:text-black hover:bg-white px-10">
-            <Send /> Get in Touch
-          </button>
-        )}
-      </form>
-    </>
+      {isSubmitting && <Loader />}
+
+      <ContactFormField
+        {...register("name", { required: true, maxLength: 30 })}
+        type="text"
+        label="Name"
+        error={
+          errors.name
+            ? "Name is required and must be less than 30 characters"
+            : undefined
+        }
+      />
+      <ContactFormField
+        {...register("email", {
+          validate: isValidEmail,
+        })}
+        type="text"
+        label="Email"
+        error={errors.email ? "Invalid email address" : undefined}
+      />
+      <ContactFormField
+        {...register("phone", { required: true, pattern: /^07\d{9}$/ })}
+        type="number"
+        label="Phone number"
+        error={errors.phone ? "Invalid phone number" : undefined}
+      />
+      <ContactFormField
+        {...register("message", { required: true, minLength: 20 })}
+        rows={6}
+        type="textarea"
+        label="Message"
+        placeholder="How can we help you? Feel free to get in touch!"
+        error={
+          errors.message
+            ? "Message is required and must be longer than 20 characters"
+            : undefined
+        }
+      />
+      <ContactFormField
+        {...register("agreement", { required: true })}
+        type="checkbox"
+        label="I agree that my data is collected and stored."
+        error={errors.agreement ? "This field is required" : undefined}
+      />
+
+      {errors.root && (
+        <span
+          id={rootErrorId}
+          className="text-error text-sm"
+          aria-live="assertive"
+        >
+          {errors.root.message}
+        </span>
+      )}
+
+      {!isSubmitting && (
+        <button className="bg-primary uppercase flex items-center justify-center gap-2.5 w-fit hover:text-black hover:bg-white px-10">
+          <Send /> Get in Touch
+        </button>
+      )}
+    </form>
   )
 }

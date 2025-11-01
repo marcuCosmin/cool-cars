@@ -103,6 +103,7 @@ export const Header = () => {
                   (props, index) => (
                     <HeaderNavItem
                       {...props}
+                      onNavClose={onNavClose}
                       key={index}
                     />
                   )

@@ -79,7 +79,7 @@ export const ContactFormField = ({
       >
         <span
           id={labelId}
-          className={`transition-colors duration-300 group-focus-within:text-primary ${error ? "text-error" : "text-secondary"}`}
+          className={`text-start transition-colors duration-300 group-focus-within:text-primary ${error ? "text-error" : "text-secondary"}`}
         >
           {label}
         </span>

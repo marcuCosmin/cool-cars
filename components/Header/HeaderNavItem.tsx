@@ -4,12 +4,22 @@ import { usePathname } from "next/navigation"
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
 import { Plus } from "react-bootstrap-icons"
 
-import type { HeaderNavItemProps } from "./Header.model"
+import type { HeaderNavItem as HeaderNavItemType } from "./Header.model"
 
-export const HeaderNavItem = ({ href, text, links }: HeaderNavItemProps) => {
+type HeaderNavItemProps = HeaderNavItemType & {
+  onNavClose?: () => void
+}
+
+export const HeaderNavItem = ({
+  href,
+  text,
+  links,
+  onNavClose,
+}: HeaderNavItemProps) => {
   const pathname = usePathname()
 
-  const isActive = pathname === href
+  const isActive =
+    pathname === href || links?.some(link => link.href === pathname)
 
   const itemClassName = `cursor-pointer text-base font-semibold hover:text-primary transition-colors ${isActive ? "text-primary" : "text-white"}`
 
@@ -39,7 +49,24 @@ export const HeaderNavItem = ({ href, text, links }: HeaderNavItemProps) => {
                 key={index}
                 className="data-focus:text-primary transition-colors font-semibold text-base"
               >
-                <Link href={href}>{text}</Link>
+                {({ close }) => {
+                  const onClick = () => {
+                    close()
+                    onNavClose?.()
+                  }
+
+                  const isActive = pathname === href
+
+                  return (
+                    <Link
+                      href={href}
+                      onClick={onClick}
+                      className={`${isActive ? "text-primary" : "text-white"}`}
+                    >
+                      {text}
+                    </Link>
+                  )
+                }}
               </MenuItem>
             ))}
           </MenuItems>
@@ -52,7 +79,8 @@ export const HeaderNavItem = ({ href, text, links }: HeaderNavItemProps) => {
     <li className={itemClassName}>
       <Link
         href={href}
-        className="outline-none focus-visible:text-primary"
+        className={`outline-none focus-visible:text-primary ${isActive ? "text-primary" : "text-white"}`}
+        onClick={onNavClose}
       >
         {text}
       </Link>

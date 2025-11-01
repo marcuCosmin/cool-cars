@@ -1,25 +1,27 @@
 import { useEffect, useState } from "react"
 
 type UseCarouselAutoSlideProps = {
+  isDragging: boolean
   onSlideRight: () => void
 }
 
 export const useCarouselAutoSlide = ({
+  isDragging,
   onSlideRight,
 }: UseCarouselAutoSlideProps) => {
   const [isAutoSliding, setIsAutoSliding] = useState(true)
 
   useEffect(() => {
-    if (!isAutoSliding) {
+    if (!isAutoSliding || isDragging) {
       return
     }
 
     const intervalId = setInterval(() => {
       onSlideRight()
-    }, 3000)
+    }, 300000)
 
     return () => clearInterval(intervalId)
-  }, [isAutoSliding, onSlideRight])
+  }, [isAutoSliding, isDragging, onSlideRight])
 
   return { isAutoSliding, setIsAutoSliding }
 }

@@ -1,9 +1,8 @@
 import { RefObject } from "react"
 import { CarouselProps } from "./Carousel.model"
 
-type GetItemWidthProps = Required<
-  Pick<CarouselProps, "slidesShown" | "itemsGap">
-> & {
+type GetItemWidthProps = Required<Pick<CarouselProps, "itemsGap">> & {
+  slidesShown: number
   containerElement: HTMLDivElement | null
 }
 
@@ -25,9 +24,8 @@ export const getItemWidth = ({
   return Math.round(itemWidth)
 }
 
-type IsItemHiddenProps = Required<
-  Pick<CarouselProps, "slidesShown" | "itemsGap">
-> & {
+type IsItemHiddenProps = Required<Pick<CarouselProps, "itemsGap">> & {
+  slidesShown: number
   index: number
   transformX: number
   itemWidth: number
@@ -76,8 +74,9 @@ export const getTransformX = ({
 }
 
 type GetItemDuplicateMatchingTransformXProps = Required<
-  Pick<CarouselProps, "loop" | "slidesShown" | "itemsGap">
+  Pick<CarouselProps, "loop" | "itemsGap">
 > & {
+  slidesShown: number
   index: number
   itemsCount: number
   itemWidth: number
@@ -116,4 +115,34 @@ export const getItemDuplicateMatchingTransformX = ({
   const duplicateMatchingTransformX = (-itemWidth - itemsGap) * duplicateIndex
 
   return duplicateMatchingTransformX
+}
+
+type GetSlidesShownProps = Required<
+  Pick<CarouselProps, "slidesShownConfig">
+> & {
+  screenWidth: number
+}
+
+export const getSlidesShown = ({
+  slidesShownConfig,
+  screenWidth,
+}: GetSlidesShownProps) => {
+  const { min, breakPoints } = slidesShownConfig
+
+  if (!breakPoints) {
+    return min
+  }
+
+  let slidesShown = min
+
+  Object.keys(breakPoints).forEach(key => {
+    const breakpoint = Number(key)
+    const slidesAtBreakpoint = breakPoints[breakpoint]
+
+    if (screenWidth >= breakpoint) {
+      slidesShown = slidesAtBreakpoint
+    }
+  })
+
+  return slidesShown
 }

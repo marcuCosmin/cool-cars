@@ -3,7 +3,7 @@ type LinkConfig = {
   text: string
 }
 
-export type HeaderNavItemProps = {
+export type HeaderNavItem = {
   href?: string
   links?: LinkConfig[]
   text: string

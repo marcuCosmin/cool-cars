@@ -11,11 +11,9 @@ import { getItemWidth, getTransformX } from "./Carousel.utils"
 import type { CarouselProps } from "./Carousel.model"
 
 type UseCarouselDragProps = Required<
-  Pick<
-    CarouselProps,
-    "slidesShown" | "loop" | "transitionDuration" | "itemsGap"
-  >
+  Pick<CarouselProps, "loop" | "transitionDuration" | "itemsGap">
 > & {
+  slidesShown: number
   containerRef: RefObject<HTMLDivElement | null>
   listRef: RefObject<HTMLUListElement | null>
   itemsCount: number
@@ -185,5 +183,7 @@ export const useCarouselDrag = ({
       window.removeEventListener("mousemove", onDrag)
       window.removeEventListener("touchmove", onDrag)
     }
-  }, [])
+  }, [slidesShown])
+
+  return { isDragging: isDraggingRef.current }
 }

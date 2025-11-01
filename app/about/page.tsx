@@ -1,5 +1,6 @@
 import { type Metadata } from "next"
 import Image from "next/image"
+import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection"
 
 export const metadata: Metadata = {
   title: "About Us | Cool Cars",
@@ -27,7 +28,7 @@ export default function About() {
   return (
     <main className="gap-20">
       <section className="bg-[url('/about-banner.jpg')]">
-        <h1>About Us</h1>{" "}
+        <h1>About Us</h1>
       </section>
 
       <section className="flex gap-10 p-5 bg-[url('/about-second-section-banner.jpg')] bg-cover bg-left bg-overlay bg-no-repeat text-center md:text-start md:bg-none">
@@ -37,7 +38,7 @@ export default function About() {
           alt=""
           aria-hidden="true"
           width={500}
-          height={700}
+          height={750}
         />
 
         <div className="flex flex-col gap-10">
@@ -72,7 +73,7 @@ export default function About() {
       </section>
 
       <section className="flex flex-col md:flex-row gap-10 p-5">
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 max-w-2xl mx-auto">
           <h2 className="md:text-start">Our Value</h2>
           <h3 className="md:text-start md:max-w-lg">
             Your Satisfaction, Our Priority.
@@ -106,6 +107,8 @@ export default function About() {
           ))}
         </ul>
       </section>
+
+      <TestimonialsSection />
     </main>
   )
 }
