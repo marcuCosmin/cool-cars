@@ -61,7 +61,7 @@ export const HeaderNavItem = ({
                     <Link
                       href={href}
                       onClick={onClick}
-                      className={`${isActive ? "text-primary" : "text-white"}`}
+                      className={`${isActive ? "text-primary" : ""}`}
                     >
                       {text}
                     </Link>
@@ -79,7 +79,7 @@ export const HeaderNavItem = ({
     <li className={itemClassName}>
       <Link
         href={href}
-        className={`outline-none focus-visible:text-primary ${isActive ? "text-primary" : "text-white"}`}
+        className={`outline-none focus-visible:text-primary ${isActive ? "text-primary" : ""}`}
         onClick={onNavClose}
       >
         {text}
