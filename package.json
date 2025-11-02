@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "postbuild": "next-sitemap && cp -r public .next/standalone",
-    "build": "next build && cp -r .next/static .next/standalone/.next",
+    "postbuild": "next-sitemap && cp -r public .next/standalone && cp -r .next/static .next/standalone/.next",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "start:prod": "node server.js"
