@@ -1,31 +1,31 @@
-on: 
+on:
   push:
     branches:
       - main
 name: Deploy website on push
 jobs:
   deploy:
-    name:  Deploy
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.15.0'
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Build Project
-      run: npm install && npm run build
-      env:
-        NEXT_PUBLIC_API_URL: https://api.cool-cars-garage.co.uk/mail
-        NEXT_PUBLIC_EMAIL: contact@cool-cars.co.uk
-    
-    - name: Upload to FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: .next/standalone/
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.15.0"
+
+      - name: Build Project
+        run: npm install && npm run build
+        env:
+          NEXT_PUBLIC_API_URL: https://api.cool-cars-garage.co.uk/mail
+          NEXT_PUBLIC_EMAIL: contact@cool-cars.co.uk
+
+      - name: Upload to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: .next/standalone/
