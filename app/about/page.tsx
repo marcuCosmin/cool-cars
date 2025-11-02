@@ -31,10 +31,10 @@ export default function About() {
         <h1>About Us</h1>
       </section>
 
-      <section className="flex gap-10 p-5 bg-[url('/about-second-section-banner.jpg')] bg-cover bg-left bg-overlay bg-no-repeat text-center md:text-start md:bg-none">
+      <section className="flex gap-10 p-5 bg-[url('/about-first-section.jpg')] bg-cover bg-left bg-overlay bg-no-repeat text-center md:text-start md:bg-none">
         <Image
           className="hidden md:block"
-          src="/about/second-section.jpg"
+          src="/about-first-section.jpg"
           alt=""
           aria-hidden="true"
           width={500}
