@@ -16,4 +16,8 @@ export const routes = {
     "/services/paint-correction-and-polishing",
   servicesBodyworkAndModifications: "/services/bodywork-and-modifications",
   servicesFleetRepairManagement: "/services/fleet-repair-management",
+  pricing: "/pricing",
+  faq: "/faq",
+  testimonials: "/testimonials",
 }
+
