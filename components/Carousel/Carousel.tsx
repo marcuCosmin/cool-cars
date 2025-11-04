@@ -15,7 +15,7 @@ import { CarouselTabs } from "./CarouselTabs"
 import type { CarouselProps } from "./Carousel.model"
 
 export const Carousel = ({
-  slidesShownConfig = { min: 3 },
+  slidesShownConfig = { min: 1, breakPoints: { 650: 2, 1200: 3 } },
   loop = true,
   transitionDuration = 300,
   children,
@@ -166,3 +166,4 @@ export const Carousel = ({
     </div>
   )
 }
+
