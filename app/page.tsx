@@ -7,6 +7,8 @@ import { Plus } from "react-bootstrap-icons"
 import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection"
 import { ContactSection } from "@/components/ContactSection"
 
+import { routes } from "@/globals/constants"
+
 export const metadata: Metadata = {
   title:
     "Cool Cars | Expert Car Body Repairs, Spray Shop & Paintwork Specialists",
@@ -61,42 +63,42 @@ const section3InfoCardsContent = [
     description:
       "From small dents to major accident damage, Cool Cars provides quality car body repairs at fair prices.",
     imageSrc: "/home-third-section-item-1.jpg",
-    href: "/services",
+    href: routes.servicesVehicleBodyRepairs,
   },
   {
     title: "Car Resprays & Paintwork",
     description:
       "From quick touch-ups to full paint jobs, we deliver high-quality finishes at fair prices.",
     imageSrc: "/home-third-section-item-2.jpg",
-    href: "/services",
+    href: routes.servicesRespraysAndPaintwork,
   },
   {
     title: "Accident Repairs",
     description:
       "Cool Cars delivers reliable, high-quality accident repairs that get you back on the road fast",
     imageSrc: "/home-third-section-item-3.jpg",
-    href: "/services",
+    href: routes.servicesAccidentRepairs,
   },
   {
     title: "Paint Correction & Car Polishing",
     description:
       "Bring back your car’s shine with professional paint correction and polishing from Cool Cars.",
     imageSrc: "/home-third-section-item-4.jpg",
-    href: "/services",
+    href: routes.servicesPaintCorrectionAndPolishing,
   },
   {
     title: "Custom Bodywork & Modifications",
     description:
       "Custom Bodywork & Modifications”, create lower text “From subtle upgrades to bold styling changes, we deliver great-looking results at prices that make sense.",
     imageSrc: "/home-third-section-item-5.jpg",
-    href: "/services",
+    href: routes.servicesBodyworkAndModifications,
   },
   {
     title: "Fleet Repair Management",
     description:
       "Cool Cars keeps your business on the road with expert fleet repair management.",
     imageSrc: "/home-third-section-item-6.jpg",
-    href: "/services",
+    href: routes.servicesFleetRepairManagement,
   },
 ]
 
@@ -208,7 +210,7 @@ export default function Home() {
         <h2>Our Solutions</h2>
         <h3 className="mb-10">Complete Solutions for All Your Car Needs</h3>
 
-        <ul className="flex flex-col items-center md:grid md:grid-cols-3 gap-10 items-start">
+        <ul className="flex flex-col items-center md:grid md:grid-cols-3 gap-10 md:items-start">
           {section3InfoCardsContent.map(
             ({ title, description, imageSrc, href }, index) => (
               <li
@@ -247,3 +249,4 @@ export default function Home() {
     </main>
   )
 }
+

@@ -1,14 +1,16 @@
+import { routes } from "@/globals/constants"
+
 import type { HeaderNavItem } from "./Header.model"
 
 export const navToggleId = "nav-toggle"
 
 export const leftSideNavLinks: HeaderNavItem[] = [
   {
-    href: "/",
+    href: routes.home,
     text: "Home",
   },
   {
-    href: "/about",
+    href: routes.about,
     text: "About Us",
   },
 ]
@@ -17,22 +19,22 @@ export const rightSideNavLinks: HeaderNavItem[] = [
   {
     text: "Services",
     links: [
-      { href: "/services/vehicle-body-repairs", text: "Vehicle Body Repairs" },
+      { href: routes.servicesVehicleBodyRepairs, text: "Vehicle Body Repairs" },
       {
-        href: "/services/resprays-and-paintwork",
+        href: routes.servicesRespraysAndPaintwork,
         text: "Resprays & Paintwork",
       },
-      { href: "/services/accident-repairs", text: "Accident Repairs" },
+      { href: routes.servicesAccidentRepairs, text: "Accident Repairs" },
       {
-        href: "/services/paint-correction-and-polishing",
+        href: routes.servicesPaintCorrectionAndPolishing,
         text: "Paint Correction & Polishing",
       },
       {
-        href: "/services/bodywork-and-modifications",
+        href: routes.servicesBodyworkAndModifications,
         text: "Bodywork & Modifications",
       },
       {
-        href: "/services/fleet-repair-management",
+        href: routes.servicesFleetRepairManagement,
         text: "Fleet Repair Management",
       },
     ],
@@ -45,3 +47,4 @@ export const rightSideNavLinks: HeaderNavItem[] = [
     ],
   },
 ]
+
