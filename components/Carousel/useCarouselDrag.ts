@@ -137,8 +137,10 @@ export const useCarouselDrag = ({
       return
     }
 
-    const maxNegativeTransformX = -itemWidth * (itemsCount - 2)
-    const maxPositiveTransformX = itemWidth
+    const maxNegativeTransformX =
+      (-itemWidth - itemsGap) * (itemsCount - slidesShown / 2)
+
+    const maxPositiveTransformX = itemWidth / 2
 
     const currentTransformX = getTransformX({
       containerRef,
@@ -187,3 +189,4 @@ export const useCarouselDrag = ({
 
   return { isDragging: isDraggingRef.current }
 }
+

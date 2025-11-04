@@ -34,7 +34,7 @@ export const CarouselList = ({
   return (
     <div
       ref={containerRef}
-      className="overflow-hidden w-full h-full"
+      className="overflow-hidden w-full h-full touch-none"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -77,3 +77,4 @@ export const CarouselList = ({
     </div>
   )
 }
+
