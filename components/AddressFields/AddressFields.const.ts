@@ -7,6 +7,7 @@ import {
 } from "react-bootstrap-icons"
 
 import {
+  address,
   email,
   phoneNumberText,
   phoneNumberValue,
@@ -38,7 +39,7 @@ export const addresses: AddressItem[] = [
     id: "address",
     type: "text",
     Icon: GeoAltFill,
-    text: "Unit 16, Swanmore Business Park, Lower Chase Road, Swanmore, SO322PB",
+    text: address,
     label: "Address",
   },
   {
@@ -66,3 +67,4 @@ export const addresses: AddressItem[] = [
     label: "Website",
   },
 ]
+

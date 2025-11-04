@@ -18,10 +18,11 @@ export const useCarouselAutoSlide = ({
 
     const intervalId = setInterval(() => {
       onSlideRight()
-    }, 300000)
+    }, 3000)
 
     return () => clearInterval(intervalId)
   }, [isAutoSliding, isDragging, onSlideRight])
 
   return { isAutoSliding, setIsAutoSliding }
 }
+
