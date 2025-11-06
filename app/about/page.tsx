@@ -27,11 +27,11 @@ const thirdSectionItems = [
 export default function About() {
   return (
     <main className="gap-20">
-      <section className="bg-[url('/about-banner.jpg')]">
+      <section className="bg-[url('/_next/image?url=%2Fabout-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fabout-banner.jpg&w=828&q=75')]">
         <h1>About Us</h1>
       </section>
 
-      <section className="flex gap-10 p-5 bg-[url('/about-first-section.jpg')] bg-cover bg-left bg-overlay bg-no-repeat text-center md:text-start md:bg-none">
+      <section className="flex gap-10 p-5 bg-[url('/_next/image?url=%2Fabout-first-section.jpg&w=640&q=75')] bg-cover bg-left bg-overlay bg-no-repeat text-center md:text-start md:bg-none">
         <Image
           className="hidden md:block"
           src="/about-first-section.jpg"

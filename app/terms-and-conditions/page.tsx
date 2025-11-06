@@ -70,7 +70,7 @@ const sectionsWithLists = [
 export default function TermsAndConditionsPage() {
   return (
     <main className="main-container-legal-page">
-      <section className="bg-[url('/terms-and-conditions-banner.jpg')]">
+      <section className="bg-[url('/_next/image?url=%2Fterms-and-conditions-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fterms-and-conditions-banner.jpg&w=828&q=75')]">
         <div className="first-section-main-content">
           <h1>Terms and Conditions</h1>
           <p>

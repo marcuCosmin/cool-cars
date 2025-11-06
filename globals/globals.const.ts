@@ -19,5 +19,9 @@ export const routes = {
   pricing: "/pricing",
   faq: "/faq",
   testimonials: "/testimonials",
-}
+  privacyPolicy: "/privacy-policy",
+  termsAndConditions: "/terms-and-conditions",
+  blog: "/blog",
+} as const
 
+export type Routes = typeof routes

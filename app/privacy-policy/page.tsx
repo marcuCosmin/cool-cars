@@ -2,7 +2,7 @@ import Link from "next/link"
 
 import { AddressFields } from "@/components/AddressFields/AddressFields"
 
-import { email } from "@/globals/constants"
+import { email } from "@/globals/globals.const"
 
 const section2FirstItems = [
   "Name",
@@ -66,7 +66,7 @@ const section8Items = [
 export default function PrivacyPolicy() {
   return (
     <main className="main-container-legal-page">
-      <section className="bg-[url('/privacy-policy-banner.jpg')]">
+      <section className="bg-[url('/_next/image?url=%2Fprivacy-policy-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fprivacy-policy-banner.jpg&w=828&q=75')]">
         <div className="first-section-main-content">
           <h1>Privacy Policy – Cool Cars</h1>
           <p>

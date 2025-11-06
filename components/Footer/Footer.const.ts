@@ -1,31 +1,33 @@
+import { routes } from "@/globals/globals.const"
+
 export const services = [
-  { href: "/services/body-repairs", text: "Vehicle Body Repairs" },
-  { href: "/services/resprays-paintwork", text: "Resprays & Paintwork" },
-  { href: "/services/accident-repairs", text: "Accident Repairs" },
+  { href: routes.servicesVehicleBodyRepairs, text: "Vehicle Body Repairs" },
+  { href: routes.servicesRespraysAndPaintwork, text: "Resprays & Paintwork" },
+  { href: routes.servicesAccidentRepairs, text: "Accident Repairs" },
   {
-    href: "/services/paint-correction-polishing",
+    href: routes.servicesPaintCorrectionAndPolishing,
     text: "Paint Correction & Polishing",
   },
   {
-    href: "/services/bodywork-modifications",
+    href: routes.servicesBodyworkAndModifications,
     text: "Bodywork & Modifications",
   },
   {
-    href: "/services/fleet-repair-management",
+    href: routes.servicesFleetRepairManagement,
     text: "Fleet Repair Management",
   },
 ]
 
 export const quickLinks = [
-  { href: "/pricing", text: "Pricing" },
-  { href: "/testimonials", text: "Testimonials" },
-  { href: "/blog", text: "Blog" },
-  { href: "/faq", text: "FAQ" },
-  { href: "/contact", text: "Contact" },
+  { href: routes.pricing, text: "Pricing" },
+  { href: routes.testimonials, text: "Testimonials" },
+  { href: routes.blog, text: "Blog" },
+  { href: routes.faq, text: "FAQ" },
+  { href: routes.contact, text: "Contact" },
 ]
 
 export const policiesLinks = [
-  { href: "/terms-and-conditions", text: "Terms & Conditions" },
-  { href: "/privacy-policy", text: "Privacy Policy" },
-  { href: "/faq", text: "FAQ" },
+  { href: routes.termsAndConditions, text: "Terms & Conditions" },
+  { href: routes.privacyPolicy, text: "Privacy Policy" },
+  { href: routes.faq, text: "FAQ" },
 ]

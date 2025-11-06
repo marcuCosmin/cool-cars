@@ -1,12 +1,13 @@
-import { ServicePage } from "@/components/ServicePage"
+import { ServicePage } from "@/components/ServicePage/ServicePage"
+
+import { routes } from "@/globals/globals.const"
 
 export default function RespraysAndPaintworkServicePage() {
   return (
     <ServicePage
+      servicePathname={routes.servicesRespraysAndPaintwork}
       title="Resprays & Paintwork"
       description="A quality respray can transform your car’s appearance. At Cool Cars, we make sure it’s done right. From touch-up colour matching to changing colour entirely, our expert team delivers flawless, long-lasting finishes. We use trusted paints, precise colour-matching, and careful preparation to achieve smooth, even results every time. From small panels to full resprays, every job is handled with the same care and attention to detail. Professional work, fair pricing, and a finish that lasts."
-      bannerSrc="/resprays-and-paintwork-banner.jpg"
-      firstSectionImageSrc="/resprays-and-paintwork-first-section.jpg"
     />
   )
 }

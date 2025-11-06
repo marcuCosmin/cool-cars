@@ -1,4 +1,4 @@
-import { routes } from "@/globals/constants"
+import { routes } from "@/globals/globals.const"
 
 import type { HeaderNavItem } from "./Header.model"
 
@@ -49,4 +49,3 @@ export const rightSideNavLinks: HeaderNavItem[] = [
     ],
   },
 ]
-

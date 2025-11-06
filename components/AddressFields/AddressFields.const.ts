@@ -12,7 +12,7 @@ import {
   phoneNumberText,
   phoneNumberValue,
   website,
-} from "@/globals/constants"
+} from "@/globals/globals.const"
 
 import type { AddressFieldsIds } from "./AddressFields.models"
 
@@ -67,4 +67,3 @@ export const addresses: AddressItem[] = [
     label: "Website",
   },
 ]
-

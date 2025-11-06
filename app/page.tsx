@@ -6,8 +6,9 @@ import { Plus } from "react-bootstrap-icons"
 
 import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection"
 import { ContactSection } from "@/components/ContactSection"
+import { MapLocationSection } from "@/components/MapLocationSection"
 
-import { routes } from "@/globals/constants"
+import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
   title:
@@ -89,7 +90,7 @@ const section3InfoCardsContent = [
   {
     title: "Custom Bodywork & Modifications",
     description:
-      "Custom Bodywork & Modifications”, create lower text “From subtle upgrades to bold styling changes, we deliver great-looking results at prices that make sense.",
+      "From subtle upgrades to bold styling changes, we deliver great-looking results at prices that make sense.",
     imageSrc: "/home-third-section-item-5.jpg",
     href: routes.servicesBodyworkAndModifications,
   },
@@ -105,13 +106,13 @@ const section3InfoCardsContent = [
 export default function Home() {
   return (
     <main className="gap-20">
-      <section className="bg-[url('/home-first-section-banner.jpg')]">
-        <div className="flex flex-col items-center h-full text-center max-w-7xl mx-auto">
+      <section className="bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=828&q=75')]">
+        <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 mb-10 pt-10">
             <h2 className="text-shadow-black text-shadow-md">
               Expert Car Body Repairs
             </h2>
-            <h3>Flawless Care for Every Vehicle</h3>
+            <h1>Flawless Care for Every Vehicle</h1>
             <p className="text-base">
               From small dents and scratches to full resprays and accident
               repairs, our technicians deliver flawless results that make your
@@ -154,7 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[url('/home-second-section-banner.jpg')] md:bg-none bg-no-repeat bg-cover bg-left bg-overlay">
+      <section className="bg-[url('/_next/image?url=%2Fhome-second-section-banner.jpg&w=640&q=75')] md:bg-none bg-no-repeat bg-cover bg-left bg-overlay">
         <div className="flex flex-col md:flex-row md:justify-between relative z-[50] max-w-7xl mx-auto">
           <Image
             src="/home-second-section-banner.jpg"
@@ -207,7 +208,7 @@ export default function Home() {
       </section>
 
       <section className="max-w-7xl mx-auto p-5 md:p-0">
-        <h2>Our Solutions</h2>
+        <h2>Our Services</h2>
         <h3 className="mb-10">Complete Solutions for All Your Car Needs</h3>
 
         <ul className="flex flex-col items-center md:grid md:grid-cols-3 gap-10 md:items-start">
@@ -220,7 +221,6 @@ export default function Home() {
                 <Image
                   className="w-full h-[350px] object-cover md:w-[400px] md:h-[500px]"
                   aria-hidden="true"
-                  objectFit="cover"
                   src={imageSrc}
                   alt=""
                   width={400}
@@ -246,7 +246,8 @@ export default function Home() {
       <TestimonialsSection />
 
       <ContactSection />
+
+      <MapLocationSection />
     </main>
   )
 }
-
