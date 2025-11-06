@@ -5,9 +5,9 @@ import { SocialMediaLinks } from "@/components/SocialMediaLinks/SocialMediaLinks
 import { AddressFields } from "@/components/AddressFields/AddressFields"
 
 import { FooterSectionWithLinks } from "./FooterSectionWithLinks"
+import { FooterBottomLinks } from "./FooterBottomLinks"
 
-import { policiesLinks, quickLinks, services } from "./Footer.const"
-import { Fragment } from "react"
+import { quickLinks, services } from "./Footer.const"
 
 export const Footer = () => {
   return (
@@ -63,28 +63,7 @@ export const Footer = () => {
       <div className="flex flex-col-reverse items-center md:flex-row gap-5 px-5 md:px-0 justify-between text-sm pb-5">
         <p>Cool-Cars, 2025 © All Rights Reserved</p>
 
-        <ul className="flex items-center gap-5">
-          {policiesLinks.map(({ href, text }, index) => {
-            const renderSeparator = index < policiesLinks.length - 1
-
-            return (
-              <Fragment key={index}>
-                <li>
-                  <Link href={href}>{text}</Link>
-                </li>
-
-                {renderSeparator && (
-                  <div
-                    aria-hidden="true"
-                    className="text-primary font-bold"
-                  >
-                    |
-                  </div>
-                )}
-              </Fragment>
-            )
-          })}
-        </ul>
+        <FooterBottomLinks />
       </div>
     </footer>
   )

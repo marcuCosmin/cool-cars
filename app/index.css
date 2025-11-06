@@ -75,6 +75,10 @@
   hr {
     @apply text-border;
   }
+
+  b {
+    @apply text-white;
+  }
 }
 
 @layer components {
@@ -121,7 +125,6 @@
   @apply [&_section:first-child]:max-w-full;
   @apply [&_h2]:text-2xl [&_h2]:text-center [&_h2]:text-white [&_h2]:font-bold;
   @apply [&_h3]:text-xl [&_h3]:text-start;
-  @apply [&_b]:text-white;
   @apply [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-5 [&_ul]:pl-10 [&_ul]:list-disc [&_ul]:text-paragraph [&_ul]:w-full;
   @apply [&_hr]:max-w-2xl [&_hr]:w-full [&_hr]:mx-auto;
 }

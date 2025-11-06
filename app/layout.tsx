@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
-import { GoogleAnalytics } from "@next/third-parties/google"
 
 import "./index.css"
 
 import { Header } from "@/components/Header/Header"
 import { Footer } from "@/components/Footer/Footer"
+import { GoogleAnalytics } from "@/components/GoogleAnalytics"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -77,7 +77,7 @@ const RooutLayout = async ({ children }: RootLayoutProps) => (
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         key="jsonld"
       />
-      <GoogleAnalytics gaId="AW-17129798926" />
+      <GoogleAnalytics />
     </head>
     <body className={inter.className}>
       <Header />

@@ -22,6 +22,7 @@ export const routes = {
   privacyPolicy: "/privacy-policy",
   termsAndConditions: "/terms-and-conditions",
   blog: "/blog",
+  cookiesPolicy: "/cookies-policy",
 } as const
 
 export type Routes = typeof routes

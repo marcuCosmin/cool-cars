@@ -25,9 +25,3 @@ export const quickLinks = [
   { href: routes.faq, text: "FAQ" },
   { href: routes.contact, text: "Contact" },
 ]
-
-export const policiesLinks = [
-  { href: routes.termsAndConditions, text: "Terms & Conditions" },
-  { href: routes.privacyPolicy, text: "Privacy Policy" },
-  { href: routes.faq, text: "FAQ" },
-]
