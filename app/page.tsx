@@ -131,7 +131,7 @@ export default function Home() {
             {section1InfoCardsContent.map(
               ({ title, description, imageSrc }, index) => (
                 <li key={index}>
-                  <article className="p-8 flex flex-col md:flex-row items-center gap-4 bg-white/10">
+                  <article className="p-8 flex flex-col md:flex-row items-center gap-4 bg-white/10 h-full">
                     <Image
                       className="drop-shadow-md drop-shadow-black"
                       src={imageSrc}
