@@ -1,6 +1,6 @@
 "use client"
 
-import { Send } from "react-bootstrap-icons"
+import { Send, Whatsapp } from "react-bootstrap-icons"
 import { useForm, type SubmitHandler } from "react-hook-form"
 
 import { validate as isValidEmail } from "email-validator"
@@ -13,6 +13,8 @@ import { sendEmail } from "./ContactForm.utils"
 
 import type { Inputs } from "./ContactForm.models"
 import { mergeClassNames } from "@/utils/mergeClassNames"
+import Link from "next/link"
+import { phoneNumberValue } from "@/globals/globals.const"
 
 const rootErrorId = "contact-form-error"
 
@@ -129,11 +131,24 @@ export const ContactForm = ({
         </span>
       )}
 
-      {!isSubmitting && (
-        <button className="bg-primary uppercase flex items-center justify-center gap-2.5 w-fit hover:text-black hover:bg-white px-10">
+      <div className="flex items-center gap-5">
+        <button
+          className="bg-primary uppercase flex items-center justify-center gap-2.5 w-fit hover:text-black hover:bg-white px-10 disabled:hover:bg-primary disabled:hover:text-white"
+          disabled={isSubmitting}
+        >
           <Send /> Get in Touch
         </button>
-      )}
+
+        <p>OR</p>
+
+        <Link
+          href={`https://wa.me/${phoneNumberValue.replace("+", "")}`}
+          className="flex items-center gap-2 p-3 border border-white hover:text-primary hover:border-primary"
+        >
+          <Whatsapp />
+          WhatsApp
+        </Link>
+      </div>
     </form>
   )
 }

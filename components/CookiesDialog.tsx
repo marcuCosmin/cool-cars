@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 import { useEffect } from "react"
-import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react"
+import { Dialog, DialogPanel } from "@headlessui/react"
 
 import { routes } from "@/globals/globals.const"
 
@@ -51,12 +51,11 @@ export const CookiesDialog = ({ isOpen, setIsOpen }: CookiesDialogProps) => {
 
   return (
     <Dialog
-      className="fixed inset-0 z-9999 w-full h-full bg-secondary/50 flex items-center justify-center"
+      className="fixed inset-0 z-9999 w-full h-full bg-secondary/50 flex items-end justify-end"
       open={isOpen}
       onClose={() => {}}
     >
-      <DialogPanel className="flex flex-col gap-10 max-w-2xl bg-background p-5 rounded-sm">
-        <DialogTitle className="text-4xl font-bold">Cookies</DialogTitle>
+      <DialogPanel className="flex flex-col gap-5 bg-background p-5 rounded-sm">
         <p>
           <b>We use cookies</b> to improve your experience, personalise content,
           and analyse website traffic. By continuing to use our site, you agree

@@ -66,6 +66,7 @@
 
   button {
     @apply cursor-pointer p-3 font-semibold duration-300 transition-colors;
+    @apply disabled:cursor-default disabled:opacity-75;
   }
 
   a {
