@@ -16,7 +16,7 @@ export default function Contact() {
   return (
     <main className="gap-20">
       <section className="bg-[url('/_next/image?url=%2Fcontact-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fcontact-banner.jpg&w=828&q=75')]">
-        <h3>Contact</h3>
+        <h1>Contact</h1>
       </section>
 
       <ContactSection />

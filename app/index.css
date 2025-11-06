@@ -44,6 +44,10 @@
     @apply text-center text-white text-5xl font-bold;
   }
 
+  h4 {
+    @apply text-3xl font-bold text-center text-white;
+  }
+
   h5 {
     @apply text-xl font-semibold;
   }

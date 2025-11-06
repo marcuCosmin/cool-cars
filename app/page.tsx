@@ -109,10 +109,10 @@ export default function Home() {
       <section className="bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=828&q=75')]">
         <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 mb-10 pt-10">
+            <h1>Expert Car Body Repairs</h1>
             <h2 className="text-shadow-black text-shadow-md">
-              Expert Car Body Repairs
+              Flawless Care for Every Vehicle
             </h2>
-            <h1>Flawless Care for Every Vehicle</h1>
             <p className="text-base">
               From small dents and scratches to full resprays and accident
               repairs, our technicians deliver flawless results that make your
@@ -130,24 +130,23 @@ export default function Home() {
           <ul className="flex flex-col gap-1 md:flex-row">
             {section1InfoCardsContent.map(
               ({ title, description, imageSrc }, index) => (
-                <li
-                  key={index}
-                  className="p-8 flex flex-col md:flex-row items-center gap-4 bg-white/10"
-                >
-                  <Image
-                    className="drop-shadow-md drop-shadow-black"
-                    src={imageSrc}
-                    aria-hidden="true"
-                    alt=""
-                    width={80}
-                    height={80}
-                  />
-                  <div>
-                    <h3 className="font-semibold mb-2.5 text-white text-2xl">
-                      {title}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
+                <li key={index}>
+                  <article className="p-8 flex flex-col md:flex-row items-center gap-4 bg-white/10">
+                    <Image
+                      className="drop-shadow-md drop-shadow-black"
+                      src={imageSrc}
+                      aria-hidden="true"
+                      alt=""
+                      width={80}
+                      height={80}
+                    />
+                    <div>
+                      <h3 className="font-semibold mb-2.5 text-white text-2xl">
+                        {title}
+                      </h3>
+                      <p>{description}</p>
+                    </div>
+                  </article>
                 </li>
               )
             )}
@@ -173,24 +172,23 @@ export default function Home() {
             <ul className="flex flex-col gap-1 md:gap-10">
               {section2InfoCardsContent.map(
                 ({ title, description, imageSrc }, index) => (
-                  <li
-                    key={index}
-                    className="p-8 md:p-0 flex flex-col md:flex-row items-center gap-4 bg-white/20 md:bg-transparent"
-                  >
-                    <Image
-                      className="drop-shadow-md drop-shadow-black"
-                      src={imageSrc}
-                      aria-hidden="true"
-                      alt=""
-                      width={60}
-                      height={60}
-                    />
-                    <div className="text-center md:text-left">
-                      <h3 className="font-semibold mb-2.5 text-white text-2xl">
-                        {title}
-                      </h3>
-                      <p>{description}</p>
-                    </div>
+                  <li key={index}>
+                    <article className="p-8 md:p-0 flex flex-col md:flex-row items-center gap-4 bg-white/20 md:bg-transparent">
+                      <Image
+                        className="drop-shadow-md drop-shadow-black"
+                        src={imageSrc}
+                        aria-hidden="true"
+                        alt=""
+                        width={60}
+                        height={60}
+                      />
+                      <div className="w-full text-center md:text-left">
+                        <h3 className="font-semibold mb-2.5 text-white text-2xl">
+                          {title}
+                        </h3>
+                        <p>{description}</p>
+                      </div>
+                    </article>
                   </li>
                 )
               )}
@@ -207,36 +205,35 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto p-5 md:p-0">
+      <section className="flex flex-col gap-5 p-5 md:p-0">
         <h2>Our Services</h2>
         <h3 className="mb-10">Complete Solutions for All Your Car Needs</h3>
 
         <ul className="flex flex-col items-center md:grid md:grid-cols-3 gap-10 md:items-start">
           {section3InfoCardsContent.map(
             ({ title, description, imageSrc, href }, index) => (
-              <li
-                key={index}
-                className="flex flex-col gap-5 max-w-2xl w-full"
-              >
-                <Image
-                  className="w-full h-[350px] object-cover md:w-[400px] md:h-[500px]"
-                  aria-hidden="true"
-                  src={imageSrc}
-                  alt=""
-                  width={400}
-                  height={500}
-                />
-                <hr />
-                <h3 className="text-white text-3xl">{title}</h3>
-                <p>{description}</p>
+              <li key={index}>
+                <article className="flex flex-col gap-5 max-w-2xl w-full">
+                  <Image
+                    className="w-full h-[350px] object-cover md:w-[400px] md:h-[500px]"
+                    aria-hidden="true"
+                    src={imageSrc}
+                    alt=""
+                    width={400}
+                    height={500}
+                  />
+                  <hr />
+                  <h4 className="text-white text-3xl">{title}</h4>
+                  <p>{description}</p>
 
-                <Link
-                  href={href}
-                  className="flex items-center gap-1 uppercase text-primary font-semibold hover:text-white transition-colors duration-300"
-                >
-                  Read more
-                  <Plus className="w-5 h-5" />
-                </Link>
+                  <Link
+                    href={href}
+                    className="flex items-center gap-1 uppercase text-primary font-semibold hover:text-white transition-colors duration-300"
+                  >
+                    Read more
+                    <Plus className="w-5 h-5" />
+                  </Link>
+                </article>
               </li>
             )
           )}
