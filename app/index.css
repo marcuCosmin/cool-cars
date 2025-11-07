@@ -86,28 +86,6 @@
   }
 }
 
-@layer components {
-  .Toastify__toast-container {
-    @apply max-[480px]:!w-[95%] max-[480px]:!m-2.5 ;
-  }
-
-  .Toastify__toast {
-    @apply !bg-background ;
-  }
-
-  .Toastify__toast--error {
-    @apply drop-shadow-[0px_0px_7px_var(--color-error)]
-  }
-
-  .Toastify__toast--success {
-    @apply drop-shadow-[0px_0px_7px_var(--color-primary)]
-  }
-
-  .react-tiny-popover-container {
-    @apply z-50;
-  }
-}
-
 @utility empty-content {
   content: '';
 }

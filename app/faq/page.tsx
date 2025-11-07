@@ -1,0 +1,111 @@
+"use client"
+
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react"
+import { DashLg, PlusLg } from "react-bootstrap-icons"
+
+const collapsibleItems = [
+  {
+    title: "Do you offer collection or delivery of vehicles?",
+    content:
+      "Yes. Trailer transport starts from £150 and must be within a 10-mile radius of our HQ. Trailer transport must be paid in advance.",
+  },
+  {
+    title: "Do you offer free estimates?",
+    content:
+      "Yes. We’ll assess your vehicle for free at our workshop, or you can refer to our pricing structure for non-assessed estimates.",
+  },
+  {
+    title: "How long does detailing take?",
+    content:
+      "It depends on the condition of your vehicle and the level of service required. You can find rough turnaround times on our pricing page, and we’ll confirm exact timescales once we’ve inspected your vehicle.",
+  },
+  {
+    title: "What’s included in my car detailing?",
+    content:
+      "Each package is clearly listed on our price list, so you’ll know exactly what’s included before you book.",
+  },
+  {
+    title: "How much does a repair cost?",
+    content:
+      "Please refer to our price list for typical pricing. We’ll always confirm costs before any work begins.",
+  },
+  {
+    title: "What payment methods do you accept?",
+    content: "We accept bank transfer, debit/credit cards, and SumUp payments.",
+  },
+  {
+    title: "Do you work on all types of vehicles?",
+    content:
+      "Yes. We work on everything from daily drivers to supercars, classics, and commercial vehicles — every car gets the same level of care and attention.",
+  },
+  {
+    title: "Do I need to book in advance?",
+    content:
+      "Yes. We work by appointment only to make sure every vehicle gets the time it deserves. Please contact us to check availability.",
+  },
+  {
+    title: "Do you use specific brands or products?",
+    content:
+      "Yes. We only use high-quality, professional-grade detailing products that are safe for your vehicle’s paintwork and finish.",
+  },
+]
+
+const renderCollapsibleItems = (odd: boolean) => (
+  <div>
+    {collapsibleItems.map(({ title, content }, index) => {
+      const shouldRender = odd ? index % 2 === 0 : index % 2 !== 0
+
+      if (!shouldRender) {
+        return null
+      }
+
+      return (
+        <Disclosure
+          key={index}
+          as="div"
+        >
+          {({ open }) => (
+            <>
+              <DisclosureButton className="w-full">
+                <h2
+                  className={`flex items-center justify-between transition-colors duration-300 hover:text-primary ${open ? "text-white" : "text-paragraph"}`}
+                >
+                  {title} {open ? <DashLg /> : <PlusLg />}
+                </h2>
+              </DisclosureButton>
+              <DisclosurePanel
+                static
+                unmount={false}
+                as="p"
+                className={`[transition-property:opacity,height] [transition-duration:0.3s,0s] [transition-delay:0s,0.3s] [transition-timing-function:ease-in-out,ease-in-out] overflow-hidden px-3 text-white ${open ? "opacity-100 h-full" : "opacity-0 h-0"}`}
+              >
+                {content}
+              </DisclosurePanel>
+
+              <hr className="mt-3" />
+            </>
+          )}
+        </Disclosure>
+      )
+    })}
+  </div>
+)
+
+export default function FAQPage() {
+  return (
+    <main>
+      <section className="bg-[url('/_next/image?url=%2Ffaq-banner.webp&w=640&q=75')] md:bg-[url('/_next/image?url=%2Ffaq-banner.webp&w=828&q=75')]">
+        <h1>Frequently Asked Questions</h1>
+      </section>
+
+      <section className="flex gap-5">
+        {renderCollapsibleItems(true)}
+        {renderCollapsibleItems(false)}
+      </section>
+    </main>
+  )
+}
