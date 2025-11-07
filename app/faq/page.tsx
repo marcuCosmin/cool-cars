@@ -54,10 +54,16 @@ const collapsibleItems = [
   },
 ]
 
-const renderCollapsibleItems = (odd: boolean) => (
-  <div>
+const renderCollapsibleItems = (odd?: boolean) => (
+  <div
+    className={typeof odd === "boolean" ? "hidden md:block" : "block md:hidden"}
+  >
     {collapsibleItems.map(({ title, content }, index) => {
-      const shouldRender = odd ? index % 2 === 0 : index % 2 !== 0
+      const isOddIndex = index % 2 !== 0
+      const isEvenIndex = index % 2 === 0
+      const renderCondition = odd ? isOddIndex : isEvenIndex
+
+      const shouldRender = typeof odd === "boolean" ? renderCondition : true
 
       if (!shouldRender) {
         return null
@@ -97,14 +103,15 @@ const renderCollapsibleItems = (odd: boolean) => (
 
 export default function FAQPage() {
   return (
-    <main>
+    <main className="gap-10">
       <section className="bg-[url('/_next/image?url=%2Ffaq-banner.webp&w=640&q=75')] md:bg-[url('/_next/image?url=%2Ffaq-banner.webp&w=828&q=75')]">
         <h1>Frequently Asked Questions</h1>
       </section>
 
       <section className="flex gap-5">
-        {renderCollapsibleItems(true)}
         {renderCollapsibleItems(false)}
+        {renderCollapsibleItems(true)}
+        {renderCollapsibleItems()}
       </section>
     </main>
   )
