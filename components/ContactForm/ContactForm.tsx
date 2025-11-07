@@ -133,7 +133,7 @@ export const ContactForm = ({
 
       <div className="flex items-center gap-5">
         <button
-          className="bg-primary uppercase flex items-center justify-center gap-2.5 w-fit hover:text-black hover:bg-white px-10 disabled:hover:bg-primary disabled:hover:text-white"
+          className="bg-primary uppercase flex items-center justify-center gap-2.5 w-fit hover:text-black hover:bg-white px-5 md:px-10 disabled:hover:bg-primary disabled:hover:text-white"
           disabled={isSubmitting}
         >
           <Send /> Get in Touch
@@ -143,7 +143,7 @@ export const ContactForm = ({
 
         <Link
           href={`https://wa.me/${phoneNumberValue.replace("+", "")}`}
-          className="flex items-center gap-2 py-3 px-10 bg-primary hover:text-black hover:bg-white"
+          className="flex items-center gap-2 py-3 px-5 md:px-10 bg-primary hover:text-black hover:bg-white"
         >
           <Whatsapp />
           WhatsApp
