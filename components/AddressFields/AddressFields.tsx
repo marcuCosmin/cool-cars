@@ -31,13 +31,18 @@ export const AddressFields = ({
           return null
         }
 
-        if (address.type === "text") {
-          const { text, Icon, label, id } = address
+        const { text, Icon, href, target, id } = address
 
-          return (
-            <p
+        return (
+          <p
+            key={id}
+            className="flex gap-2"
+          >
+            {showLabels && <span>{address.label}:</span>}
+            <Link
+              target={target}
               className={containerClassName}
-              key={id}
+              href={href}
             >
               {showIcons && (
                 <Icon
@@ -45,36 +50,10 @@ export const AddressFields = ({
                   aria-hidden="true"
                 />
               )}
-              {showLabels && `${label}: `}
               {text}
-            </p>
-          )
-        }
-
-        if (address.type === "link") {
-          const { text, Icon, href, id } = address
-
-          return (
-            <p
-              key={id}
-              className="flex gap-2"
-            >
-              {showLabels && <span>{address.label}:</span>}
-              <Link
-                className={containerClassName}
-                href={href}
-              >
-                {showIcons && (
-                  <Icon
-                    className={iconClassName}
-                    aria-hidden="true"
-                  />
-                )}
-                {text}
-              </Link>
-            </p>
-          )
-        }
+            </Link>
+          </p>
+        )
       })}
     </address>
   )

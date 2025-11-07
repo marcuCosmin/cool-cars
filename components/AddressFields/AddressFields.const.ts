@@ -16,35 +16,26 @@ import {
 
 import type { AddressFieldsIds } from "./AddressFields.models"
 
-type AddressItemCommonProps = {
+type AddressItem = {
   id: AddressFieldsIds
   Icon: Icon
   label: string
   text: string
-}
-
-type AddressItemTextProps = AddressItemCommonProps & {
-  type: "text"
-}
-
-type AddressItemLinkProps = AddressItemCommonProps & {
-  type: "link"
   href: string
+  target?: HTMLAnchorElement["target"]
 }
-
-type AddressItem = AddressItemTextProps | AddressItemLinkProps
 
 export const addresses: AddressItem[] = [
   {
     id: "address",
-    type: "text",
+    href: "https://maps.app.goo.gl/o371gkfg4AGhNAqY7",
     Icon: GeoAltFill,
     text: address,
     label: "Address",
+    target: "_blank",
   },
   {
     id: "email",
-    type: "link",
     href: `mailto:${email}`,
     Icon: EnvelopeFill,
     text: email,
@@ -52,7 +43,6 @@ export const addresses: AddressItem[] = [
   },
   {
     id: "phone",
-    type: "link",
     href: `tel:${phoneNumberValue}`,
     Icon: TelephoneFill,
     text: phoneNumberText,
@@ -60,7 +50,6 @@ export const addresses: AddressItem[] = [
   },
   {
     id: "website",
-    type: "link",
     href: website,
     Icon: Globe2,
     text: "www.cool-cars.co.uk",
