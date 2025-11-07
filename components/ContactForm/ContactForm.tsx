@@ -143,7 +143,7 @@ export const ContactForm = ({
 
         <Link
           href={`https://wa.me/${phoneNumberValue.replace("+", "")}`}
-          className="flex items-center gap-2 p-3 border border-white hover:text-primary hover:border-primary"
+          className="flex items-center gap-2 py-3 px-10 bg-primary hover:text-black hover:bg-white"
         >
           <Whatsapp />
           WhatsApp
