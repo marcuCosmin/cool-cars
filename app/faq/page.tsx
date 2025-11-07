@@ -104,7 +104,7 @@ const renderCollapsibleItems = (odd?: boolean) => (
 export default function FAQPage() {
   return (
     <main className="gap-10">
-      <section className="bg-[url('/_next/image?url=%2Ffaq-banner.webp&w=640&q=75')] md:bg-[url('/_next/image?url=%2Ffaq-banner.webp&w=828&q=75')]">
+      <section className="bg-[url('/_next/image?url=%2Ffaq-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Ffaq-banner.jpg&w=828&q=75')]">
         <h1>Frequently Asked Questions</h1>
       </section>
 
