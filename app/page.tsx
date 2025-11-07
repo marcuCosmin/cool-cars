@@ -213,7 +213,10 @@ export default function Home() {
           {section3InfoCardsContent.map(
             ({ title, description, imageSrc, href }, index) => (
               <li key={index}>
-                <article className="flex flex-col gap-5 max-w-2xl w-full">
+                <Link
+                  href={href}
+                  className="flex flex-col gap-5 max-w-2xl w-full"
+                >
                   <Image
                     className="w-full h-[350px] object-cover md:w-[400px] md:h-[500px]"
                     aria-hidden="true"
@@ -226,14 +229,11 @@ export default function Home() {
                   <h4 className="text-white text-3xl">{title}</h4>
                   <p>{description}</p>
 
-                  <Link
-                    href={href}
-                    className="flex items-center gap-1 uppercase text-primary font-semibold hover:text-white transition-colors duration-300"
-                  >
+                  <p className="flex items-center gap-1 uppercase text-primary font-semibold hover:text-white transition-colors duration-300">
                     Read more
                     <Plus className="w-5 h-5" />
-                  </Link>
-                </article>
+                  </p>
+                </Link>
               </li>
             )
           )}
