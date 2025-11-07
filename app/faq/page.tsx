@@ -108,10 +108,13 @@ export default function FAQPage() {
         <h1>Frequently Asked Questions</h1>
       </section>
 
-      <section className="flex gap-5">
-        {renderCollapsibleItems(false)}
-        {renderCollapsibleItems(true)}
-        {renderCollapsibleItems()}
+      <section className="flex flex-col gap-10">
+        <h2>More info before you hit the road.</h2>
+        <div className="flex gap-5">
+          {renderCollapsibleItems(false)}
+          {renderCollapsibleItems(true)}
+          {renderCollapsibleItems()}
+        </div>
       </section>
     </main>
   )
