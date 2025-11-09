@@ -1,6 +1,8 @@
 import { type Metadata } from "next"
 import Image from "next/image"
+
 import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection"
+import { Animated } from "@/components/Animated/Animated"
 
 export const metadata: Metadata = {
   title: "About Us | Cool Cars",
@@ -28,11 +30,13 @@ export default function About() {
   return (
     <main className="gap-20">
       <section className="bg-[url('/_next/image?url=%2Fabout-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fabout-banner.jpg&w=828&q=75')]">
-        <h1>About Us</h1>
+        <Animated as="h1">About Us</Animated>
       </section>
 
       <section className="flex gap-10 p-5 bg-[url('/_next/image?url=%2Fabout-first-section.jpg&w=640&q=75')] bg-cover bg-left bg-overlay bg-no-repeat text-center md:text-start md:bg-none">
-        <Image
+        <Animated
+          as="img"
+          direction="right"
           className="hidden md:block"
           src="/about-first-section.jpg"
           alt=""
@@ -42,7 +46,12 @@ export default function About() {
         />
 
         <div className="flex flex-col gap-10">
-          <h3 className="md:text-start">Trusted Body Repair & Paintwork</h3>
+          <Animated
+            as="h3"
+            className="md:text-start"
+          >
+            Trusted Body Repair & Paintwork
+          </Animated>
 
           <p>
             At Cool Cars South Coast, we don’t just fix cars, we make them look
@@ -75,9 +84,12 @@ export default function About() {
       <section className="flex flex-col md:flex-row gap-10 p-5">
         <div className="flex flex-col gap-5 max-w-2xl mx-auto">
           <h2 className="md:text-start">Our Value</h2>
-          <h3 className="md:text-start md:max-w-lg">
+          <Animated
+            as="h3"
+            className="md:text-start md:max-w-lg"
+          >
             Your Satisfaction, Our Priority.
-          </h3>
+          </Animated>
           <p>
             At Cool Cars, we take pride in doing things properly. Quality
             repairs, honest pricing, and real attention to detail. From minor
@@ -89,7 +101,9 @@ export default function About() {
 
         <ul className="flex gap-5">
           {thirdSectionItems.map((item, index) => (
-            <li
+            <Animated
+              as="li"
+              direction="left"
               key={index}
               className="flex flex-col gap-5 p-12 bg-gray-950 w-1/2 md:w-72"
             >
@@ -103,7 +117,7 @@ export default function About() {
               />
               <h4 className="font-semibold text-xl">{item.title}</h4>
               <p>{item.text}</p>
-            </li>
+            </Animated>
           ))}
         </ul>
       </section>
@@ -112,3 +126,4 @@ export default function About() {
     </main>
   )
 }
+

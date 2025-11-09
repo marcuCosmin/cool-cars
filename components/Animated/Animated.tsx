@@ -1,6 +1,6 @@
 "use client"
 
-import { type ImageProps } from "next/image"
+import Image, { type ImageProps } from "next/image"
 
 import {
   useEffect,
@@ -10,6 +10,7 @@ import {
   createElement,
   type HTMLElementType,
   type ComponentPropsWithoutRef,
+  type RefObject,
 } from "react"
 
 import { mergeClassNames } from "@/utils/mergeClassNames"
@@ -18,15 +19,19 @@ import { AnimationsObserver } from "./Animated.utils"
 
 import { animatedTranslateClassNames } from "./Animated.const"
 
+type ImageElementProps = ImageProps & {
+  as: "img"
+  direction?: "up" | "down" | "left" | "right"
+}
+
+type ElementProps<T extends HTMLElementType> = {
+  as: T
+  direction?: "up" | "down" | "left" | "right"
+} & ComponentPropsWithoutRef<T>
+
 type AnimatedProps<T extends HTMLElementType> = T extends "img"
-  ? {
-      as: "img"
-      direction?: "up" | "down" | "left" | "right"
-    } & ImageProps
-  : {
-      as: T
-      direction?: "up" | "down" | "left" | "right"
-    } & ComponentPropsWithoutRef<T>
+  ? ImageElementProps
+  : ElementProps<T>
 
 export const Animated = <T extends HTMLElementType>({
   as,
@@ -62,6 +67,22 @@ export const Animated = <T extends HTMLElementType>({
 
     return () => AnimationsObserver.unregister(element)
   }, [])
+
+  if (as === "img") {
+    const castedImageProps = props as Omit<
+      ImageElementProps,
+      "as" | "direction"
+    >
+    return (
+      <Image
+        {...castedImageProps}
+        className={fullClassName}
+        ref={elementRef as RefObject<HTMLImageElement>}
+        id={elementId}
+        alt={castedImageProps.alt || ""}
+      />
+    )
+  }
 
   return createElement(as, {
     ...props,

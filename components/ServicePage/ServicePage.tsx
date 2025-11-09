@@ -1,7 +1,6 @@
-import Image from "next/image"
-
 import { ContactForm } from "@/components/ContactForm/ContactForm"
 import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection"
+import { Animated } from "@/components/Animated/Animated"
 
 import { type Routes } from "@/globals/globals.const"
 
@@ -39,14 +38,16 @@ export const ServicePage = async ({
   return (
     <main className="gap-20">
       <section className={mainSectionBgClassName}>
-        <h1>{title}</h1>
+        <Animated as="h1">{title}</Animated>
       </section>
 
       <section className="flex flex-col items-center text-center gap-8 md:items-start md:text-start md:px-0 md:flex-row">
         <div
           className={`flex flex-col justify-center w-full gap-5 p-5 h-100 bg-cover bg-left bg-overlay bg-no-repeat md:p-0 md:justify-start md:!bg-none md:h-auto md:max-w-4xl ${secondSectionBgClassName}`}
         >
-          <Image
+          <Animated
+            as="img"
+            direction="right"
             className="hidden md:block w-full"
             src={imageSrc}
             alt=""
@@ -55,7 +56,12 @@ export const ServicePage = async ({
             height={350}
           />
 
-          <h3 className="text-center md:text-start">{title}</h3>
+          <Animated
+            as="h3"
+            className="text-center md:text-start"
+          >
+            {title}
+          </Animated>
 
           <p className="mx-auto max-w-2xl md:max-w-full md:m-0">
             {description}
@@ -73,3 +79,4 @@ export const ServicePage = async ({
     </main>
   )
 }
+
