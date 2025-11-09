@@ -1,3 +1,5 @@
+import { Animated } from "@/components/Animated/Animated"
+
 const pricingOptions = [
   {
     title: "Minor Surface Damage",
@@ -68,7 +70,7 @@ export default function PricingPage() {
     <main className="gap-20">
       <section className="bg-[url('/_next/image?url=%2Fpricing-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fpricing-banner.jpg&w=828&q=75')]">
         <div className="first-section-main-content">
-          <h1>Pricing</h1>
+          <Animated as="h1">Pricing</Animated>
           <p>
             Every job is different, so we provide clear starting prices to help
             you plan.
@@ -92,7 +94,8 @@ export default function PricingPage() {
               const hasFooter = eta || note
 
               return (
-                <li
+                <Animated
+                  as="li"
                   key={index}
                   className="flex"
                 >
@@ -135,7 +138,7 @@ export default function PricingPage() {
                       </div>
                     )}
                   </article>
-                </li>
+                </Animated>
               )
             }
           )}
@@ -144,3 +147,4 @@ export default function PricingPage() {
     </main>
   )
 }
+

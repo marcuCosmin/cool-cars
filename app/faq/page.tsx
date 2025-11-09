@@ -7,6 +7,8 @@ import {
 } from "@headlessui/react"
 import { DashLg, PlusLg } from "react-bootstrap-icons"
 
+import { Animated } from "@/components/Animated/Animated"
+
 const collapsibleItems = [
   {
     title: "Do you offer collection or delivery of vehicles?",
@@ -55,7 +57,7 @@ const collapsibleItems = [
 ]
 
 const renderCollapsibleItems = (odd?: boolean) => (
-  <div
+  <ul
     className={typeof odd === "boolean" ? "hidden md:block" : "block md:hidden"}
   >
     {collapsibleItems.map(({ title, content }, index) => {
@@ -70,42 +72,44 @@ const renderCollapsibleItems = (odd?: boolean) => (
       }
 
       return (
-        <Disclosure
+        <Animated
+          as="li"
           key={index}
-          as="div"
         >
-          {({ open }) => (
-            <>
-              <DisclosureButton className="w-full">
-                <h2
-                  className={`flex items-center justify-between transition-colors duration-300 hover:text-primary ${open ? "text-white" : "text-paragraph"}`}
+          <Disclosure as="div">
+            {({ open }) => (
+              <>
+                <DisclosureButton className="w-full">
+                  <h2
+                    className={`flex items-center justify-between transition-colors duration-300 hover:text-primary ${open ? "text-white" : "text-paragraph"}`}
+                  >
+                    {title} {open ? <DashLg /> : <PlusLg />}
+                  </h2>
+                </DisclosureButton>
+                <DisclosurePanel
+                  static
+                  unmount={false}
+                  as="p"
+                  className={`[transition-property:opacity,height] [transition-duration:0.3s,0s] [transition-delay:0s,0.3s] [transition-timing-function:ease-in-out,ease-in-out] overflow-hidden px-3 text-white ${open ? "opacity-100 h-full" : "opacity-0 h-0"}`}
                 >
-                  {title} {open ? <DashLg /> : <PlusLg />}
-                </h2>
-              </DisclosureButton>
-              <DisclosurePanel
-                static
-                unmount={false}
-                as="p"
-                className={`[transition-property:opacity,height] [transition-duration:0.3s,0s] [transition-delay:0s,0.3s] [transition-timing-function:ease-in-out,ease-in-out] overflow-hidden px-3 text-white ${open ? "opacity-100 h-full" : "opacity-0 h-0"}`}
-              >
-                {content}
-              </DisclosurePanel>
+                  {content}
+                </DisclosurePanel>
 
-              <hr className="mt-3" />
-            </>
-          )}
-        </Disclosure>
+                <hr className="mt-3" />
+              </>
+            )}
+          </Disclosure>
+        </Animated>
       )
     })}
-  </div>
+  </ul>
 )
 
 export default function FAQPage() {
   return (
     <main className="gap-10">
       <section className="bg-[url('/_next/image?url=%2Ffaq-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Ffaq-banner.jpg&w=828&q=75')]">
-        <h1>Frequently Asked Questions</h1>
+        <Animated as="h1">Frequently Asked Questions</Animated>
       </section>
 
       <section className="flex flex-col gap-10">
@@ -119,3 +123,4 @@ export default function FAQPage() {
     </main>
   )
 }
+
