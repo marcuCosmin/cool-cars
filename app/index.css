@@ -17,12 +17,8 @@
 }
 
 @layer base {
-  html {
-    @apply h-full;
-  }
-
   body {
-    @apply text-base text-white bg-background h-full flex flex-col;
+    @apply text-base text-white bg-background flex flex-col;
   }
   
   main {
