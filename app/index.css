@@ -28,7 +28,7 @@
   main {
     @apply flex flex-col flex-grow bg-background;
     @apply [&_section]:max-w-7xl [&_section]:mx-auto [&_section]:w-full;
-    @apply [&_section:first-child]:max-w-full [&_section:first-child]:mx-0 [&_section:first-child]:text-white [&_section:first-child]:h-full [&_section:first-child]:md:max-h-[70vh] [&_section:first-child]:min-h-[750px] [&_section:first-child]:flex [&_section:first-child]:flex-col [&_section:first-child]:items-center [&_section:first-child]:justify-center [&_section:first-child]:bg-cover [&_section:first-child]:bg-no-repeat [&_section:first-child]:bg-left [&_section:first-child]:bg-overlay;
+    @apply [&_section:first-child]:max-w-full [&_section:first-child]:mx-0 [&_section:first-child]:text-white [&_section:first-child]:h-full [&_section:first-child]:md:max-h-[70vh] [&_section:first-child]:min-h-[600px] [&_section:first-child]:overflow-hidden [&_section:first-child]:flex [&_section:first-child]:flex-col [&_section:first-child]:items-center [&_section:first-child]:justify-center [&_section:first-child]:bg-cover [&_section:first-child]:bg-no-repeat [&_section:first-child]:bg-left [&_section:first-child]:bg-overlay;
     @apply [&_section:first-child>div]:max-w-2xl [&_section:first-child>div]:flex [&_section:first-child>div]:flex-col [&_section:first-child>div]:items-center [&_section:first-child>div]:justify-center [&_section:first-child>div]:gap-5 [&_section:first-child>div]:text-center;
   }
 

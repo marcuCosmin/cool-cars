@@ -7,6 +7,7 @@ import { Plus } from "react-bootstrap-icons"
 import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection"
 import { ContactSection } from "@/components/ContactSection"
 import { MapLocationSection } from "@/components/MapLocationSection"
+import { Animated } from "@/components/Animated/Animated"
 
 import { routes } from "@/globals/globals.const"
 
@@ -109,7 +110,7 @@ export default function Home() {
       <section className="bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=828&q=75')]">
         <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 mb-10 pt-10">
-            <h1>Expert Car Body Repairs</h1>
+            <Animated as="h1">Expert Car Body Repairs</Animated>
             <h2 className="text-shadow-black text-shadow-md">
               Flawless Care for Every Vehicle
             </h2>
@@ -131,7 +132,10 @@ export default function Home() {
             {section1InfoCardsContent.map(
               ({ title, description, imageSrc }, index) => (
                 <li key={index}>
-                  <article className="p-8 flex flex-col md:flex-row items-center gap-4 bg-white/10 h-full">
+                  <Animated
+                    as="article"
+                    className="p-8 flex flex-col md:flex-row items-center gap-4 bg-white/10 h-full"
+                  >
                     <Image
                       className="drop-shadow-md drop-shadow-black"
                       src={imageSrc}
@@ -146,7 +150,7 @@ export default function Home() {
                       </h3>
                       <p>{description}</p>
                     </div>
-                  </article>
+                  </Animated>
                 </li>
               )
             )}
@@ -156,7 +160,9 @@ export default function Home() {
 
       <section className="bg-[url('/_next/image?url=%2Fhome-second-section-banner.jpg&w=640&q=75')] md:bg-none bg-no-repeat bg-cover bg-left bg-overlay">
         <div className="flex flex-col md:flex-row md:justify-between relative z-[50] max-w-7xl mx-auto">
-          <Image
+          <Animated
+            direction="right"
+            as="img"
             src="/home-second-section-banner.jpg"
             alt=""
             className="hidden md:block h-full"
@@ -172,7 +178,10 @@ export default function Home() {
             <ul className="flex flex-col gap-1 md:gap-10">
               {section2InfoCardsContent.map(
                 ({ title, description, imageSrc }, index) => (
-                  <li key={index}>
+                  <Animated
+                    as="li"
+                    key={index}
+                  >
                     <article className="p-8 md:p-0 flex flex-col md:flex-row items-center gap-4 bg-white/20 md:bg-transparent">
                       <Image
                         className="drop-shadow-md drop-shadow-black"
@@ -189,13 +198,15 @@ export default function Home() {
                         <p>{description}</p>
                       </div>
                     </article>
-                  </li>
+                  </Animated>
                 )
               )}
             </ul>
           </div>
 
-          <Image
+          <Animated
+            as="img"
+            direction="left"
             src="/home-second-section-banner-secondary.jpeg"
             alt=""
             className="hidden md:block h-full"
@@ -212,7 +223,10 @@ export default function Home() {
         <ul className="flex flex-col items-center md:grid md:grid-cols-3 gap-10 md:items-start">
           {section3InfoCardsContent.map(
             ({ title, description, imageSrc, href }, index) => (
-              <li key={index}>
+              <Animated
+                as="li"
+                key={index}
+              >
                 <Link
                   href={href}
                   className="flex flex-col gap-5 max-w-2xl w-full"
@@ -234,7 +248,7 @@ export default function Home() {
                     <Plus className="w-5 h-5" />
                   </p>
                 </Link>
-              </li>
+              </Animated>
             )
           )}
         </ul>
@@ -248,3 +262,4 @@ export default function Home() {
     </main>
   )
 }
+

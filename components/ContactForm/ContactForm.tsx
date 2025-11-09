@@ -1,20 +1,24 @@
 "use client"
 
+import Link from "next/link"
+
 import { Send, Whatsapp } from "react-bootstrap-icons"
 import { useForm, type SubmitHandler } from "react-hook-form"
 
 import { validate as isValidEmail } from "email-validator"
 
 import { Loader } from "@/components/Loader"
+import { Animated } from "@/components/Animated/Animated"
+
+import { mergeClassNames } from "@/utils/mergeClassNames"
+
+import { phoneNumberValue } from "@/globals/globals.const"
 
 import { ContactFormField } from "./ContactFormField"
 
 import { sendEmail } from "./ContactForm.utils"
 
 import type { Inputs } from "./ContactForm.models"
-import { mergeClassNames } from "@/utils/mergeClassNames"
-import Link from "next/link"
-import { phoneNumberValue } from "@/globals/globals.const"
 
 const rootErrorId = "contact-form-error"
 
@@ -66,7 +70,8 @@ export const ContactForm = ({
   }
 
   return (
-    <form
+    <Animated
+      as="form"
       aria-labelledby=""
       aria-describedby={rootErrorId}
       className={formClassName}
@@ -149,6 +154,7 @@ export const ContactForm = ({
           WhatsApp
         </Link>
       </div>
-    </form>
+    </Animated>
   )
 }
+
