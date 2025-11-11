@@ -62,7 +62,7 @@ export const CookiesDialog = ({ isOpen, setIsOpen }: CookiesDialogProps) => {
           to our use of cookies.
         </p>
 
-        <div className="flex items-center gap-5">
+        <div className="flex flex-wrap items-center gap-5">
           <button
             className="p-2 bg-transparent text-primary border border-primary rounded-sm hover:bg-primary hover:text-white"
             onClick={onAccept}
@@ -86,3 +86,4 @@ export const CookiesDialog = ({ isOpen, setIsOpen }: CookiesDialogProps) => {
     </Dialog>
   )
 }
+
