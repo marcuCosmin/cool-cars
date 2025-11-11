@@ -44,6 +44,8 @@ export const ContactForm = ({
   const formClassName = mergeClassNames(
     `relative flex flex-col gap-5 w-full max-w-md md:max-w-xl ${containerClassName}`
   )
+  const footerButtonsClassName =
+    "flex items-center justify-center text-sm md:text-base bg-primary gap-2.5 px-2.5 md:px-5 hover:text-black hover:bg-white"
 
   const onSubmit: SubmitHandler<Inputs> = async values => {
     try {
@@ -136,9 +138,9 @@ export const ContactForm = ({
         </span>
       )}
 
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-2.5 md:gap-5">
         <button
-          className="bg-primary uppercase flex items-center justify-center gap-2.5 w-fit hover:text-black hover:bg-white px-5 disabled:hover:bg-primary disabled:hover:text-white"
+          className={`${footerButtonsClassName} uppercase w-fit disabled:hover:bg-primary disabled:hover:text-white`}
           disabled={isSubmitting}
         >
           <Send /> Get in Touch
@@ -148,7 +150,7 @@ export const ContactForm = ({
 
         <Link
           href={`https://wa.me/${phoneNumberValue.replace("+", "")}`}
-          className="flex items-center gap-2 py-3 px-5 bg-primary hover:text-black hover:bg-white"
+          className={`${footerButtonsClassName} py-3 `}
         >
           <Whatsapp />
           WhatsApp
