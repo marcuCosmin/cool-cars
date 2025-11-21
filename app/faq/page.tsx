@@ -1,15 +1,7 @@
-"use client"
-
 import { type Metadata } from "next"
 
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from "@headlessui/react"
-import { DashLg, PlusLg } from "react-bootstrap-icons"
-
 import { Animated } from "@/components/Animated/Animated"
+import { Collapsible } from "@/components/Collapsible"
 
 export const metadata: Metadata = {
   title: "FAQ – Cool Cars",
@@ -87,29 +79,7 @@ const renderCollapsibleItems = (odd?: boolean) => (
           as="li"
           key={index}
         >
-          <Disclosure as="div">
-            {({ open }) => (
-              <>
-                <DisclosureButton className="w-full">
-                  <h2
-                    className={`flex items-center justify-between transition-colors duration-300 hover:text-primary ${open ? "text-white" : "text-paragraph"}`}
-                  >
-                    {title} {open ? <DashLg /> : <PlusLg />}
-                  </h2>
-                </DisclosureButton>
-                <DisclosurePanel
-                  static
-                  unmount={false}
-                  as="p"
-                  className={`[transition-property:opacity,height] [transition-duration:0.3s,0s] [transition-delay:0s,0.3s] [transition-timing-function:ease-in-out,ease-in-out] overflow-hidden px-3 text-white ${open ? "opacity-100 h-full" : "opacity-0 h-0"}`}
-                >
-                  {content}
-                </DisclosurePanel>
-
-                <hr className="mt-3" />
-              </>
-            )}
-          </Disclosure>
+          <Collapsible title={title}>{content}</Collapsible>
         </Animated>
       )
     })}
