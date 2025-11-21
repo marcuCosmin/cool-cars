@@ -5,9 +5,9 @@ import { MapLocationSection } from "@/components/MapLocationSection"
 import { Animated } from "@/components/Animated/Animated"
 
 export const metadata: Metadata = {
-  title: "Contact Us | Cool Cars",
+  title: "Contact Cool Cars – Swanmore",
   description:
-    "Get in touch with Cool Cars in Swanmore for quotes, appointments, or questions.",
+    "Get in touch with Cool Cars for quotes and enquiries. Visit our Swanmore workshop or call to discuss your repair or paintwork needs.",
   alternates: {
     canonical: "https://cool-cars.co.uk/contact",
   },
@@ -26,4 +26,3 @@ export default function Contact() {
     </main>
   )
 }
-

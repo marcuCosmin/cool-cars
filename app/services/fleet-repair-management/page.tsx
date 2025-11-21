@@ -1,6 +1,17 @@
+import { type Metadata } from "next"
+
 import { ServicePage } from "@/components/ServicePage/ServicePage"
 
 import { routes } from "@/globals/globals.const"
+
+export const metadata: Metadata = {
+  title: "Fleet Repair Management – Cool Cars",
+  description:
+    "Cost-effective, reliable fleet body repair management from Cool Cars. Keep your business vehicles looking professional and on the road.",
+  alternates: {
+    canonical: "https://cool-cars.co.uk/fleet-repair-management",
+  },
+}
 
 export default function FleetRepairManagementServicePage() {
   return (

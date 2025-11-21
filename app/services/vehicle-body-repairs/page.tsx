@@ -1,6 +1,17 @@
+import { type Metadata } from "next"
+
 import { ServicePage } from "@/components/ServicePage/ServicePage"
 
 import { routes } from "@/globals/globals.const"
+
+export const metadata: Metadata = {
+  title: "Vehicle Body Repairs – Cool Cars",
+  description:
+    "From small dents to major collision damage, Cool Cars restores your vehicle with high-quality repairs and a finish that looks like new.",
+  alternates: {
+    canonical: "https://cool-cars.co.uk/vehicle-body-repairs",
+  },
+}
 
 export default async function VehicleBodyRepairsServicePage() {
   return (

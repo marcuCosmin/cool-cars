@@ -1,8 +1,18 @@
+import { type Metadata } from "next"
 import Link from "next/link"
 
 import { AddressFields } from "@/components/AddressFields/AddressFields"
 
 import { email } from "@/globals/globals.const"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy – Cool Cars",
+  description:
+    "Learn how Cool Cars collects, uses and protects your personal information in accordance with GDPR and UK data protection laws.",
+  alternates: {
+    canonical: "https://cool-cars.co.uk/privacy-policy",
+  },
+}
 
 const section2FirstItems = [
   "Name",

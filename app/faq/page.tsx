@@ -1,5 +1,7 @@
 "use client"
 
+import { type Metadata } from "next"
+
 import {
   Disclosure,
   DisclosureButton,
@@ -8,6 +10,15 @@ import {
 import { DashLg, PlusLg } from "react-bootstrap-icons"
 
 import { Animated } from "@/components/Animated/Animated"
+
+export const metadata: Metadata = {
+  title: "FAQ – Cool Cars",
+  description:
+    "Explore answers to common questions about car body repairs, paintwork, timelines, insurance processes and more.",
+  alternates: {
+    canonical: "https://cool-cars.co.uk/faq",
+  },
+}
 
 const collapsibleItems = [
   {
@@ -123,4 +134,3 @@ export default function FAQPage() {
     </main>
   )
 }
-

@@ -1,4 +1,15 @@
+import { type Metadata } from "next"
+
 import { Animated } from "@/components/Animated/Animated"
+
+export const metadata: Metadata = {
+  title: "Pricing – Cool Cars",
+  description:
+    "Clear, transparent pricing for all body repairs, paintwork and modification services. Great value with exceptional results",
+  alternates: {
+    canonical: "https://cool-cars.co.uk/pricing",
+  },
+}
 
 const pricingOptions = [
   {
@@ -147,4 +158,3 @@ export default function PricingPage() {
     </main>
   )
 }
-

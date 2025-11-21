@@ -12,10 +12,9 @@ import { Animated } from "@/components/Animated/Animated"
 import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title:
-    "Cool Cars | Expert Car Body Repairs, Spray Shop & Paintwork Specialists",
+  title: "Cool Cars – Expert Car Body Repairs, Swanmore",
   description:
-    "Professional car body repairs, paintwork, and dent removal. Quality service across Hampshire for cars, vans, and fleets — with honest pricing and results that last.",
+    "From dents and scratches to full resprays and accident repairs, Cool Cars provides flawless bodywork across the South Coast. High-quality repairs, fast turnaround, and fair pricing.",
   alternates: {
     canonical: "https://cool-cars.co.uk",
   },
@@ -262,4 +261,3 @@ export default function Home() {
     </main>
   )
 }
-

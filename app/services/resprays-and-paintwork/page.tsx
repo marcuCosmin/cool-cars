@@ -1,6 +1,17 @@
+import { type Metadata } from "next"
+
 import { ServicePage } from "@/components/ServicePage/ServicePage"
 
 import { routes } from "@/globals/globals.const"
+
+export const metadata: Metadata = {
+  title: "Car Resprays & Paintwork – Cool Cars",
+  description:
+    "Full resprays, colour changes and paintwork perfection from Cool Cars. Achieve a flawless, long-lasting finish with expert craftsmanship",
+  alternates: {
+    canonical: "https://cool-cars.co.uk/resprays-and-paintwork",
+  },
+}
 
 export default function RespraysAndPaintworkServicePage() {
   return (

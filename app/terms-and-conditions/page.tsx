@@ -1,7 +1,17 @@
+import { type Metadata } from "next"
 import Link from "next/link"
 
 import { AddressFields } from "@/components/AddressFields/AddressFields"
 import { Fragment } from "react/jsx-runtime"
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions – Cool Cars",
+  description:
+    "Review the terms and conditions for using the Cool Cars website and services, including legal information, service guidelines and customer responsibilities.",
+  alternates: {
+    canonical: "https://cool-cars.co.uk/terms-and-conditions",
+  },
+}
 
 const sectionsWithLists = [
   {

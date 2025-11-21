@@ -5,9 +5,9 @@ import { TestimonialsSection } from "@/components/TestimonialsSection/Testimonia
 import { Animated } from "@/components/Animated/Animated"
 
 export const metadata: Metadata = {
-  title: "About Us | Cool Cars",
+  title: "About Cool Cars – Expert Car Body Repairs in Swanmore",
   description:
-    "Family-run car body repair shop delivering expert craftsmanship and customisation with a focus on quality, detail, and customer satisfaction.",
+    "Learn about Cool Cars: a trusted Swanmore-based specialist delivering precise car body repairs, premium paintwork, and reliable service for all vehicle types.",
   alternates: {
     canonical: "https://cool-cars.co.uk/about",
   },
@@ -126,4 +126,3 @@ export default function About() {
     </main>
   )
 }
-

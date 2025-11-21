@@ -1,6 +1,17 @@
+import { type Metadata } from "next"
+
 import { ServicePage } from "@/components/ServicePage/ServicePage"
 
 import { routes } from "@/globals/globals.const"
+
+export const metadata: Metadata = {
+  title: "Custom Bodywork & Modifications – Cool Cars",
+  description:
+    "Upgrade your vehicle’s style with bespoke bodywork modifications, enhancements and tailored exterior styling from Cool Cars.",
+  alternates: {
+    canonical: "https://cool-cars.co.uk/bodywork-and-modifications",
+  },
+}
 
 export default function BodyWorkAndModificationsServicePage() {
   return (

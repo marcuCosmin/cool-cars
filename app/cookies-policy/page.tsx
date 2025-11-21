@@ -1,6 +1,16 @@
+import { type Metadata } from "next"
 import Link from "next/link"
 
 import { AddressFields } from "@/components/AddressFields/AddressFields"
+
+export const metadata: Metadata = {
+  title: "Cookies Policy – Cool Cars",
+  description:
+    "Find out how Cool Cars uses cookies to improve site performance, analytics and user experience, and learn how to manage your cookie preferences.",
+  alternates: {
+    canonical: "https://cool-cars.co.uk/cookies-policy",
+  },
+}
 
 const thirdSectionListItems = [
   "Ensure our website functions correctly",

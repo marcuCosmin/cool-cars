@@ -1,6 +1,17 @@
+import { type Metadata } from "next"
+
 import { ServicePage } from "@/components/ServicePage/ServicePage"
 
 import { routes } from "@/globals/globals.const"
+
+export const metadata: Metadata = {
+  title: "Paint Correction & Polishing – Cool Cars",
+  description:
+    "Bring back your car’s gloss and clarity with professional paint correction and polishing. Remove swirl marks and enhance your vehicle’s shine.",
+  alternates: {
+    canonical: "https://cool-cars.co.uk/paint-correction-and-polishing",
+  },
+}
 
 export default function PaintCorrectionAndPolishingServicePage() {
   return (
