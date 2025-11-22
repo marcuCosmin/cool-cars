@@ -33,7 +33,7 @@ export const ServicePage = async ({
 }: ServicePageProps) => {
   const mainSectionBgClassName = mainSectionBgClassNames[servicePathname]
   const secondSectionBgClassName = secondSectionBgClassNames[servicePathname]
-  const imageSrc = secondSectionImageSrcs[servicePathname]
+  const { src, alt } = secondSectionImageSrcs[servicePathname]
 
   return (
     <main className="gap-20">
@@ -49,9 +49,8 @@ export const ServicePage = async ({
             as="img"
             direction="right"
             className="hidden md:block w-full"
-            src={imageSrc}
-            alt=""
-            aria-hidden="true"
+            src={src}
+            alt={alt}
             width={700}
             height={350}
           />
@@ -79,4 +78,3 @@ export const ServicePage = async ({
     </main>
   )
 }
-

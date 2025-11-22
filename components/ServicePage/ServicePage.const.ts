@@ -30,15 +30,28 @@ export const secondSectionBgClassNames = {
     "bg-[url('/_next/image?url=%2Fpaint-correction-and-polishing-first-section.jpg&w=640&q=75')]",
 }
 export const secondSectionImageSrcs = {
-  [routes.servicesVehicleBodyRepairs]:
-    "/vehicle-body-repairs-first-section.jpg",
-  [routes.servicesRespraysAndPaintwork]:
-    "/resprays-and-paintwork-first-section.jpg",
-  [routes.servicesAccidentRepairs]: "/accident-repairs-first-section.jpg",
-  [routes.servicesBodyworkAndModifications]:
-    "/bodywork-and-modifications-first-section.jpg",
-  [routes.servicesFleetRepairManagement]:
-    "/fleet-repair-management-first-section.jpg",
-  [routes.servicesPaintCorrectionAndPolishing]:
-    "/paint-correction-and-polishing-first-section.jpg",
+  [routes.servicesVehicleBodyRepairs]: {
+    src: "/vehicle-body-repairs-first-section.jpg",
+    alt: "",
+  },
+  [routes.servicesRespraysAndPaintwork]: {
+    src: "/resprays-and-paintwork-first-section.jpg",
+    alt: "Professional car respray being applied with a spray gun for flawless paintwork",
+  },
+  [routes.servicesAccidentRepairs]: {
+    src: "/accident-repairs-first-section.jpg",
+    alt: "Automotive repair in progress on the front section of a car, including the headlight area",
+  },
+  [routes.servicesBodyworkAndModifications]: {
+    src: "/bodywork-and-modifications-first-section.jpg",
+    alt: "Car paint being corrected and polished to restore gloss and smooth finish",
+  },
+  [routes.servicesFleetRepairManagement]: {
+    src: "/fleet-repair-management-first-section.jpg",
+    alt: "Worker carefully wrapping a car door as part of custom bodywork modifications",
+  },
+  [routes.servicesPaintCorrectionAndPolishing]: {
+    src: "/paint-correction-and-polishing-first-section.jpg",
+    alt: "Fleet of company vehicles lined up",
+  },
 }

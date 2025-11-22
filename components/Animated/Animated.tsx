@@ -69,17 +69,14 @@ export const Animated = <T extends HTMLElementType>({
   }, [])
 
   if (as === "img") {
-    const castedImageProps = props as Omit<
-      ImageElementProps,
-      "as" | "direction"
-    >
+    const castImageProps = props as Omit<ImageElementProps, "as" | "direction">
     return (
       <Image
-        {...castedImageProps}
+        {...castImageProps}
         className={fullClassName}
         ref={elementRef as RefObject<HTMLImageElement>}
         id={elementId}
-        alt={castedImageProps.alt || ""}
+        alt={castImageProps.alt || ""}
       />
     )
   }
@@ -91,4 +88,3 @@ export const Animated = <T extends HTMLElementType>({
     className: fullClassName,
   })
 }
-

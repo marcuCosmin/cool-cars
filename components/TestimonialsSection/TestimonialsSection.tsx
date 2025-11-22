@@ -26,9 +26,9 @@ export const TestimonialsSection = () => (
           <Image
             src="/quote.png"
             alt=""
+            aria-hidden="true"
             width={40}
             height={40}
-            aria-hidden="true"
           />
 
           <blockquote className="text-2xl italic font-bold my-7.5">
@@ -44,4 +44,3 @@ export const TestimonialsSection = () => (
     </Carousel>
   </section>
 )
-

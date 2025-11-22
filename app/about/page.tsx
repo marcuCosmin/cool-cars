@@ -18,11 +18,13 @@ const thirdSectionItems = [
     imageSrc: "/paper-airplane.png",
     title: "Mission",
     text: "Our mission is to deliver high-quality repairs and honest service, keeping every vehicle looking its best and every customer completely satisfied.",
+    alt: "Paper airplane",
   },
   {
     imageSrc: "/light-bulb.png",
     title: "Vision",
     text: "To be the South Coast’s most trusted name for quality repairs, exceptional service, and lasting customer relationships.",
+    alt: "Light bulb",
   },
 ]
 
@@ -39,8 +41,7 @@ export default function About() {
           direction="right"
           className="hidden md:block"
           src="/about-first-section.jpg"
-          alt=""
-          aria-hidden="true"
+          alt="Technician preparing a car body for paintwork."
           width={500}
           height={750}
         />
@@ -110,8 +111,7 @@ export default function About() {
               <Image
                 className="drop-shadow-md drop-shadow-black"
                 src={item.imageSrc}
-                alt=""
-                aria-hidden="true"
+                alt={item.alt}
                 width={50}
                 height={50}
               />
