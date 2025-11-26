@@ -12,7 +12,7 @@ import { Animated } from "@/components/Animated/Animated"
 
 import { mergeClassNames } from "@/utils/mergeClassNames"
 
-import { phoneNumberValue } from "@/globals/globals.const"
+import { whatsAppNumberValue } from "@/globals/globals.const"
 
 import { ContactFormField } from "./ContactFormField"
 
@@ -149,7 +149,7 @@ export const ContactForm = ({
         <p>OR</p>
 
         <Link
-          href={`https://wa.me/${phoneNumberValue.replace("+", "")}`}
+          href={`https://wa.me/${whatsAppNumberValue.replace("+", "")}`}
           className={`${footerButtonsClassName} py-3 `}
         >
           <Whatsapp />
@@ -159,4 +159,3 @@ export const ContactForm = ({
     </Animated>
   )
 }
-
