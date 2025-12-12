@@ -23,16 +23,19 @@ export const Header = () => {
   return (
     <header
       role="banner"
-      className="z-50 flex flex-col justify-between sm:justify-normal items-center py-3 px-8 sticky top-0 left-0 bg-background"
+      className="z-50 flex flex-col justify-between sm:justify-normal items-center py-3 px-3 md:px-8 sticky top-0 left-0 bg-background"
     >
-      <div className="flex md:flex-col w-full max-w-7xl">
-        <div className="justify-between w-full hidden md:flex">
-          <SocialMediaLinks size="sm" />
+      <div className="flex flex-col w-full max-w-7xl">
+        <div className="flex justify-between w-full">
+          <SocialMediaLinks
+            className="hidden md:flex"
+            size="sm"
+          />
 
-          <AddressFields className="flex-row items-center gap-12" />
+          <AddressFields className="max-w-6xl w-full flex-row flex-wrap items-center justify-around gap-1 text-sm md:text-base" />
         </div>
 
-        <hr className="text-secondary w-full my-2 hidden md:block" />
+        <hr className="text-secondary w-full my-2" />
 
         <nav className="flex justify-between md:justify-center items-center gap-10 w-full">
           <ul className={navListClassName}>

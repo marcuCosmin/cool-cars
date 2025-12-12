@@ -11,6 +11,7 @@ import {
   email,
   phoneNumberText,
   phoneNumberValue,
+  shortAddress,
   website,
 } from "@/globals/globals.const"
 
@@ -21,6 +22,7 @@ type AddressItem = {
   Icon: Icon
   label: string
   text: string
+  shortText?: string
   href: string
   target?: HTMLAnchorElement["target"]
 }
@@ -31,6 +33,7 @@ export const addresses: AddressItem[] = [
     href: "https://maps.app.goo.gl/o371gkfg4AGhNAqY7",
     Icon: GeoAltFill,
     text: address,
+    shortText: shortAddress,
     label: "Address",
     target: "_blank",
   },

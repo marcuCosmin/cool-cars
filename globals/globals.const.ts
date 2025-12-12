@@ -3,6 +3,7 @@ export const phoneNumberValue = phoneNumberText.replaceAll(" ", "")
 export const whatsAppNumberValue = "+447421535039"
 export const address =
   "Unit 16, Swanmore Business Park, Lower Chase Road, Swanmore, SO32 2PB"
+export const shortAddress = "Unit 16, Swanmore Business Park, SO32 2PB"
 export const email = "contact@cool-cars.co.uk"
 export const website = "https://cool-cars.co.uk"
 

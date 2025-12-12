@@ -31,7 +31,7 @@ export const AddressFields = ({
           return null
         }
 
-        const { text, Icon, href, target, id } = address
+        const { text, Icon, href, target, id, shortText } = address
 
         return (
           <p
@@ -50,7 +50,10 @@ export const AddressFields = ({
                   aria-hidden="true"
                 />
               )}
-              {text}
+              <span className={shortText ? "hidden md:inline" : undefined}>
+                {text}
+              </span>
+              {shortText && <span className="md:hidden">{shortText}</span>}
             </Link>
           </p>
         )

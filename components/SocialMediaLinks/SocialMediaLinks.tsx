@@ -1,5 +1,7 @@
 import Link from "next/link"
 
+import { mergeClassNames } from "@/utils/mergeClassNames"
+
 import {
   socialMediaLinks,
   socialMediaIconSizesClassNames,
@@ -8,14 +10,18 @@ import {
 import type { SocialMediaLinksSizes } from "./SocialMediaLinks.model"
 
 type SocialMediaLinksProps = {
+  className?: string
   size?: SocialMediaLinksSizes
 }
 
-export const SocialMediaLinks = ({ size = "md" }: SocialMediaLinksProps) => {
+export const SocialMediaLinks = ({
+  className,
+  size = "md",
+}: SocialMediaLinksProps) => {
   const iconSizeClassName = socialMediaIconSizesClassNames[size]
 
   return (
-    <ul className="flex items-center gap-2">
+    <ul className={mergeClassNames("flex items-center gap-2", className)}>
       {socialMediaLinks.map(({ Icon, href, ariaLabel }, index) => (
         <li key={index}>
           <Link
