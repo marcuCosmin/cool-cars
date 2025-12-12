@@ -44,7 +44,7 @@ export const Header = () => {
             ))}
           </ul>
 
-          <Logo />
+          <Logo className="h-[85px] md:h-24" />
 
           <ul className={navListClassName}>
             {rightSideNavLinks.map((props, index) => (
@@ -116,4 +116,3 @@ export const Header = () => {
     </header>
   )
 }
-
