@@ -22,10 +22,16 @@ jobs:
           NEXT_PUBLIC_API_URL: https://api.cool-cars-garage.co.uk/mail
           NEXT_PUBLIC_EMAIL: contact@cool-cars.co.uk
 
-      - name: Upload to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: .next/standalone/
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+      - name: Add server to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Sync Files
+        run: rsync -avz --progress --delete -e "ssh -i ~/.ssh/id_ed25519 -T" ./.next/standalone/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/html/cool-cars/
