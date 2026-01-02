@@ -34,4 +34,4 @@ jobs:
           ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
 
       - name: Sync Files
-        run: rsync -avz --progress --delete -e "ssh -i ~/.ssh/id_ed25519 -T" ./.next/standalone/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/html/cool-cars/
+        run: rsync -avz --progress --delete -e "ssh -i ~/.ssh/id_ed25519" ./.next/standalone/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/cool-cars/
