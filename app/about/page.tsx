@@ -51,33 +51,37 @@ export default function About() {
             as="h3"
             className="md:text-start"
           >
-            Trusted Body Repair & Paintwork
+            About us
           </Animated>
 
           <p>
-            At Cool Cars South Coast, we don’t just fix cars, we make them look
-            and feel like new again.
+            At Cool Cars South Coast, we don’t just fix cars – we restore
+            confidence every time you drive away.
           </p>
           <p>
-            As a proud family-run business, we bring years of experience and
-            real attention to detail for every job, big or small.
+            As a proud family-run business, we offer years of hands-on
+            experience and genuine attention to detail across both mechanical
+            repairs and bodywork. Whether it’s what’s under the bonnet or what
+            you see on the outside, your car is in safe hands.
           </p>
           <p>
-            From minor scratches and dents to full accident repairs, our skilled
-            team delivers top-quality results at prices that make sense.
+            From routine mechanical repairs and diagnostics to minor scratches,
+            dents and full accident repairs, our skilled team delivers
+            high-quality workmanship at fair, honest prices.
           </p>
           <p>
-            We use trusted materials, proven techniques, and plenty of pride in
-            our work to get you back on the road with confidence.
+            We use trusted parts, proven techniques and take real pride in doing
+            things properly – so you can get back on the road feeling safe,
+            confident and looked after.
           </p>
           <p>
-            Based in Swanmore, Hampshire, Cool Cars South Coast is your local
-            body repair specialist. Friendly, reliable, and focused on getting
-            it right the first time.
+            Based in Swanmore, Hampshire, Cool Cars South Coast is your local,
+            reliable vehicle repair specialist. Friendly, transparent and
+            focused on getting it right first time.
           </p>
           <p>
-            Because your car deserves proper care, without the high-end price
-            tag.
+            Because your car deserves proper care – without the main-dealer
+            price tag.
           </p>
         </div>
       </section>
