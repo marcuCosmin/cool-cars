@@ -1,6 +1,12 @@
 import type { Inputs } from "./ContactForm.models"
 
-export const sendEmail = async ({ email, name, phone, message }: Inputs) => {
+export const sendEmail = async ({
+  email,
+  name,
+  phone,
+  message,
+  carRegNumber,
+}: Inputs) => {
   const parsedMessage = `
         <p>Hi,</p>
         <p>You have received a new contact message from <a href="https://cool-cars.co.uk/">cool-cars.co.uk</a></p>
@@ -9,6 +15,7 @@ export const sendEmail = async ({ email, name, phone, message }: Inputs) => {
             <li><strong>Name:</strong> ${name}</li>
             <li><strong>Email:</strong> ${email}</li>
             <li><strong>Phone:</strong> ${phone}</li>
+            <li><strong>Car Registration Number:</strong> ${carRegNumber}</li>
             <li><strong>Message:</strong> ${message}</li>
         </ul>
         <p>Thanks</p>

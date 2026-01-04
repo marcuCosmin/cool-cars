@@ -110,6 +110,18 @@ export const ContactForm = ({
         error={errors.phone ? "Invalid phone number" : undefined}
       />
       <ContactFormField
+        {...register("carRegNumber", {
+          required: true,
+          pattern: /^[A-Za-z]{2}\d{2}\s?[A-Za-z]{3}$/,
+        })}
+        className="uppercase"
+        type="text"
+        label="Car Registration Number"
+        error={
+          errors.carRegNumber ? "Invalid car registration number" : undefined
+        }
+      />
+      <ContactFormField
         {...register("message", { required: true, minLength: 20 })}
         rows={6}
         type="textarea"

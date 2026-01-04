@@ -4,4 +4,5 @@ export type Inputs = {
   phone: string
   message: string
   agreement: boolean
+  carRegNumber: string
 }
