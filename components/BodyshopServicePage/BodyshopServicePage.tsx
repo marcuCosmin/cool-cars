@@ -8,29 +8,29 @@ import {
   mainSectionBgClassNames,
   secondSectionBgClassNames,
   secondSectionImageSrcs,
-} from "./ServicePage.const"
+} from "./BodyshopServicePage.const"
 
 type ServicesRoutes = Pick<
   Routes,
-  | "servicesVehicleBodyRepairs"
-  | "servicesRespraysAndPaintwork"
-  | "servicesAccidentRepairs"
-  | "servicesBodyworkAndModifications"
-  | "servicesFleetRepairManagement"
-  | "servicesPaintCorrectionAndPolishing"
+  | "bodyshopServicesVehicleBodyRepairs"
+  | "bodyshopServicesRespraysAndPaintwork"
+  | "bodyshopServicesAccidentRepairs"
+  | "bodyshopServicesBodyworkAndModifications"
+  | "bodyshopServicesFleetRepairManagement"
+  | "bodyshopServicesPaintCorrectionAndPolishing"
 >
 
-type ServicePageProps = {
+type BodyshopServicePageProps = {
   title: string
   description: string
   servicePathname: ServicesRoutes[keyof ServicesRoutes]
 }
 
-export const ServicePage = async ({
+export const BodyshopServicePage = async ({
   title,
   description,
   servicePathname,
-}: ServicePageProps) => {
+}: BodyshopServicePageProps) => {
   const mainSectionBgClassName = mainSectionBgClassNames[servicePathname]
   const secondSectionBgClassName = secondSectionBgClassNames[servicePathname]
   const { src, alt } = secondSectionImageSrcs[servicePathname]

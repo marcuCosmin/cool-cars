@@ -9,15 +9,30 @@ export const website = "https://cool-cars.co.uk"
 
 export const routes = {
   home: "/",
+  bodyshop: "/bodyshop",
+  workshop: "/workshop",
   about: "/about",
   contact: "/contact",
-  servicesVehicleBodyRepairs: "/services/vehicle-body-repairs",
-  servicesRespraysAndPaintwork: "/services/resprays-and-paintwork",
-  servicesAccidentRepairs: "/services/accident-repairs",
-  servicesPaintCorrectionAndPolishing:
-    "/services/paint-correction-and-polishing",
-  servicesBodyworkAndModifications: "/services/bodywork-and-modifications",
-  servicesFleetRepairManagement: "/services/fleet-repair-management",
+  bodyshopServicesVehicleBodyRepairs: "/bodyshop/services/vehicle-body-repairs",
+  bodyshopServicesRespraysAndPaintwork:
+    "/bodyshop/services/resprays-and-paintwork",
+  bodyshopServicesAccidentRepairs: "/bodyshop/services/accident-repairs",
+  bodyshopServicesPaintCorrectionAndPolishing:
+    "/bodyshop/services/paint-correction-and-polishing",
+  bodyshopServicesBodyworkAndModifications:
+    "/bodyshop/services/bodywork-and-modifications",
+  bodyshopServicesFleetRepairManagement:
+    "/bodyshop/services/fleet-repair-management",
+  workshopServicesServicing: "/workshop/services/servicing",
+  workshopServicesBrakePadsAndDiscs: "/workshop/services/brake-pads-and-discs",
+  workshopServicesClutchRepairsOrReplacements:
+    "/workshop/services/clutch-repairs-or-replacements",
+  workshopServicesCambeltsAndTimingBelts:
+    "/workshop/services/cambelts-and-timing-belts",
+  workshopServicesTyresAndPunctureRepairs:
+    "/workshop/services/tyres-and-puncture-repairs",
+  workshopServicesGearBoxRepairsOrReplacements:
+    "/workshop/services/gearbox-repairs-or-replacements",
   pricing: "/pricing",
   faq: "/faq",
   testimonials: "/testimonials",

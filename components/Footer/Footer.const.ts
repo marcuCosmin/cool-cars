@@ -1,19 +1,25 @@
 import { routes } from "@/globals/globals.const"
 
 export const services = [
-  { href: routes.servicesVehicleBodyRepairs, text: "Vehicle Body Repairs" },
-  { href: routes.servicesRespraysAndPaintwork, text: "Resprays & Paintwork" },
-  { href: routes.servicesAccidentRepairs, text: "Accident Repairs" },
   {
-    href: routes.servicesPaintCorrectionAndPolishing,
+    href: routes.bodyshopServicesVehicleBodyRepairs,
+    text: "Vehicle Body Repairs",
+  },
+  {
+    href: routes.bodyshopServicesRespraysAndPaintwork,
+    text: "Resprays & Paintwork",
+  },
+  { href: routes.bodyshopServicesAccidentRepairs, text: "Accident Repairs" },
+  {
+    href: routes.bodyshopServicesPaintCorrectionAndPolishing,
     text: "Paint Correction & Polishing",
   },
   {
-    href: routes.servicesBodyworkAndModifications,
+    href: routes.bodyshopServicesBodyworkAndModifications,
     text: "Bodywork & Modifications",
   },
   {
-    href: routes.servicesFleetRepairManagement,
+    href: routes.bodyshopServicesFleetRepairManagement,
     text: "Fleet Repair Management",
   },
 ]

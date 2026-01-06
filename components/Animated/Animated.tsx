@@ -18,6 +18,7 @@ import { mergeClassNames } from "@/utils/mergeClassNames"
 import { AnimationsObserver } from "./Animated.utils"
 
 import { animatedTranslateClassNames } from "./Animated.const"
+import Link, { LinkProps } from "next/link"
 
 type ImageElementProps = ImageProps & {
   as: "img"
@@ -67,6 +68,21 @@ export const Animated = <T extends HTMLElementType>({
 
     return () => AnimationsObserver.unregister(element)
   }, [])
+
+  if (as === "a") {
+    const castLinkProps = props as Omit<LinkProps, "className">
+
+    return (
+      <Link
+        {...castLinkProps}
+        id={elementId}
+        ref={elementRef as RefObject<HTMLAnchorElement>}
+        className={fullClassName}
+      >
+        {props.children}
+      </Link>
+    )
+  }
 
   if (as === "img") {
     const castImageProps = props as Omit<ImageElementProps, "as" | "direction">

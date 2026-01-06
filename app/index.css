@@ -107,3 +107,7 @@
   @apply [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-5 [&_ul]:pl-10 [&_ul]:list-disc [&_ul]:text-paragraph [&_ul]:w-full;
   @apply [&_hr]:max-w-2xl [&_hr]:w-full [&_hr]:mx-auto;
 }
+  
+@utility glass-button {
+  @apply p-8 flex flex-col md:flex-row items-center gap-4 bg-white/10 h-full font-semibold mb-2.5 text-white transition-all duration-300 hover:bg-white/25 hover:scale-105;
+}

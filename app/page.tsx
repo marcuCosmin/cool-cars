@@ -2,19 +2,15 @@ import { type Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
-import { Plus } from "react-bootstrap-icons"
-
 import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection"
 import { ContactSection } from "@/components/ContactSection"
 import { MapLocationSection } from "@/components/MapLocationSection"
 import { Animated } from "@/components/Animated/Animated"
 
-import { routes } from "@/globals/globals.const"
-
 export const metadata: Metadata = {
   title: "Cool Cars – Expert Car Body Repairs, Swanmore",
   description:
-    "From dents and scratches to full resprays and accident repairs, Cool Cars provides flawless bodywork across the South Coast. High-quality repairs, fast turnaround, and fair pricing.",
+    "Cool Cars offers expert car bodywork, mechanical repairs and servicing. Trusted local specialists keeping your vehicle looking great and running perfectly.",
   alternates: {
     canonical: "https://cool-cars.co.uk",
   },
@@ -22,90 +18,19 @@ export const metadata: Metadata = {
 
 const section1InfoCardsContent = [
   {
-    title: "Masters of Aesthetic Repairs",
-    description: "Driven by detail, defined by expert craftsmanship",
+    title: "Industry Approved Methods",
+    description: "Using Thatcham approved processes and repair times.",
     imageSrc: "/driving-cert.webp",
   },
   {
     title: "We have all the right tools",
-    description: "And use only the very best materials",
+    description: "Periodically calibrated and safety certified.",
     imageSrc: "/toolbox.png",
   },
   {
     title: "Get back on the road",
-    description: "Proper care, without the high-end price tag",
+    description: "Every mechanical and aesthetic requirement taken care of.",
     imageSrc: "/wheel-key.webp",
-  },
-]
-
-const section2InfoCardsContent = [
-  {
-    title: "Dent & Scratch Treatment",
-    description: "However big or small, trust Cool Cars to smooth things out.",
-    imageSrc: "/car-door.webp",
-  },
-  {
-    title: "Trusted by Insurers",
-    description:
-      "When accidents happen, we’re who the insurers contact to get you back on the road.",
-    imageSrc: "/car-tick.webp",
-  },
-  {
-    title: "Really a write off?",
-    description:
-      "Speak to Cool Cars before you scrap your car. We’ll give you the true expert opinion.",
-    imageSrc: "/wheel.webp",
-  },
-]
-
-const section3InfoCardsContent = [
-  {
-    title: "Vehicle Body Repairs",
-    description:
-      "From small dents to major accident damage, Cool Cars provides quality car body repairs at fair prices.",
-    imageSrc: "/home-third-section-item-1.jpg",
-    href: routes.servicesVehicleBodyRepairs,
-    alt: "Auto technician polishing a car hood inside a workshop",
-  },
-  {
-    title: "Car Resprays & Paintwork",
-    description:
-      "From quick touch-ups to full paint jobs, we deliver high-quality finishes at fair prices.",
-    imageSrc: "/home-third-section-item-2.jpg",
-    href: routes.servicesRespraysAndPaintwork,
-    alt: "Workshop technician refinishing a car with a spray gun",
-  },
-  {
-    title: "Accident Repairs",
-    description:
-      "Cool Cars delivers reliable, high-quality accident repairs that get you back on the road fast",
-    imageSrc: "/home-third-section-item-3.jpg",
-    href: routes.servicesAccidentRepairs,
-    alt: "Two cars involved in a crash",
-  },
-  {
-    title: "Paint Correction & Car Polishing",
-    description:
-      "Bring back your car’s shine with professional paint correction and polishing from Cool Cars.",
-    imageSrc: "/home-third-section-item-4.jpg",
-    href: routes.servicesPaintCorrectionAndPolishing,
-    alt: "Paint correction in progress with a polisher applied to a car door",
-  },
-  {
-    title: "Custom Bodywork & Modifications",
-    description:
-      "From subtle upgrades to bold styling changes, we deliver great-looking results at prices that make sense.",
-    imageSrc: "/home-third-section-item-5.jpg",
-    href: routes.servicesBodyworkAndModifications,
-    alt: "Custom bodywork in progress with a technician trimming material on a car panel",
-  },
-  {
-    title: "Fleet Repair Management",
-    description:
-      "Cool Cars keeps your business on the road with expert fleet repair management.",
-    imageSrc: "/home-third-section-item-6.jpg",
-    href: routes.servicesFleetRepairManagement,
-    alt: "Fleet of cars in motion",
   },
 ]
 
@@ -115,14 +40,13 @@ export default function Home() {
       <section className="bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=828&q=75')]">
         <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 mb-10 pt-10">
-            <Animated as="h1">Expert Car Body Repairs</Animated>
+            <Animated as="h1">Complete Car Care You Can Trust</Animated>
             <h2 className="text-shadow-black text-shadow-md">
-              Flawless Care for Every Vehicle
+              Bodywork, Mechanical Repairs & Servicing
             </h2>
             <p className="text-base">
-              From small dents and scratches to full resprays and accident
-              repairs, our technicians deliver flawless results that make your
-              vehicle shine.
+              From cosmetic fixes and accident repairs to essential mechanical
+              servicing and ongoing vehicle care.
             </p>
 
             <Link
@@ -163,99 +87,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[url('/_next/image?url=%2Fhome-second-section-banner.jpg&w=640&q=75')] md:bg-none bg-no-repeat bg-cover bg-left bg-overlay">
-        <div className="flex flex-col md:flex-row md:justify-between relative z-[50] max-w-7xl mx-auto">
+      <section>
+        <h2 className="mb-10 text-center">Main Services</h2>
+
+        <div className="flex gap-10">
           <Animated
             direction="right"
-            as="img"
-            src="/home-second-section-banner.jpg"
-            alt="Black car in a paint booth"
-            className="hidden md:block h-full"
-            height={500}
-            width={300}
-          />
-
-          <div className="p-5 flex-1">
-            <h2 className="mb-10 text-center">
-              Trusted Vehicle Bodywork Care.
-            </h2>
-
-            <ul className="flex flex-col gap-1 md:gap-10">
-              {section2InfoCardsContent.map(
-                ({ title, description, imageSrc }, index) => (
-                  <Animated
-                    as="li"
-                    key={index}
-                  >
-                    <article className="p-8 md:p-0 flex flex-col md:flex-row items-center gap-4 bg-white/20 md:bg-transparent">
-                      <Image
-                        className="drop-shadow-md drop-shadow-black"
-                        src={imageSrc}
-                        aria-hidden="true"
-                        alt=""
-                        width={60}
-                        height={60}
-                      />
-                      <div className="w-full text-center md:text-left">
-                        <h3 className="font-semibold mb-2.5 text-white text-2xl">
-                          {title}
-                        </h3>
-                        <p>{description}</p>
-                      </div>
-                    </article>
-                  </Animated>
-                )
-              )}
-            </ul>
-          </div>
+            as="a"
+            href="/bodyshop"
+            className="flex items-center justify-center text-white text-2xl w-full bg-overlay glass-button h-96"
+          >
+            <span>Bodyshop</span>
+          </Animated>
 
           <Animated
-            as="img"
             direction="left"
-            src="/home-second-section-banner-secondary.jpeg"
-            alt="Dark-colored car in a painting booth with paint mist above it and overhead lights"
-            className="hidden md:block h-full"
-            height={500}
-            width={300}
-          />
+            as="a"
+            href="/workshop"
+            className="flex items-center justify-center text-white text-2xl w-full bg-overlay glass-button h-96"
+          >
+            <span> Workshop</span>
+          </Animated>
         </div>
-      </section>
-
-      <section className="flex flex-col gap-5 p-5 md:p-0">
-        <h2>Our Services</h2>
-        <h3 className="mb-10">Complete Solutions for All Your Car Needs</h3>
-
-        <ul className="flex flex-col items-center md:grid md:grid-cols-3 gap-10 md:items-start">
-          {section3InfoCardsContent.map(
-            ({ title, description, imageSrc, href, alt }, index) => (
-              <Animated
-                as="li"
-                key={index}
-              >
-                <Link
-                  href={href}
-                  className="flex flex-col gap-5 max-w-2xl w-full"
-                >
-                  <Image
-                    className="w-full h-[350px] object-cover md:w-[400px] md:h-[500px]"
-                    src={imageSrc}
-                    alt={alt}
-                    width={400}
-                    height={500}
-                  />
-                  <hr />
-                  <h4 className="text-white text-3xl">{title}</h4>
-                  <p>{description}</p>
-
-                  <p className="flex items-center gap-1 uppercase text-primary font-semibold hover:text-white transition-colors duration-300">
-                    Read more
-                    <Plus className="w-5 h-5" />
-                  </p>
-                </Link>
-              </Animated>
-            )
-          )}
-        </ul>
       </section>
 
       <TestimonialsSection />

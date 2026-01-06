@@ -1,7 +1,15 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { Fragment } from "react"
 
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react"
+import {
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  MenuHeading,
+  MenuSection,
+} from "@headlessui/react"
 import { Plus } from "react-bootstrap-icons"
 
 import type { HeaderNavItem as HeaderNavItemType } from "./Header.model"
@@ -19,7 +27,8 @@ export const HeaderNavItem = ({
   const pathname = usePathname()
 
   const isActive =
-    pathname === href || links?.some(link => link.href === pathname)
+    pathname === href ||
+    links?.some(({ items }) => items.some(item => item.href === pathname))
 
   const itemClassName = `cursor-pointer text-base font-semibold hover:text-primary transition-colors ${isActive ? "text-primary" : "text-white"}`
 
@@ -36,6 +45,7 @@ export const HeaderNavItem = ({
               aria-hidden="true"
             />
           </MenuButton>
+
           <MenuItems
             unmount={false}
             transition
@@ -43,31 +53,45 @@ export const HeaderNavItem = ({
             anchor="bottom"
             className="z-[9999] py-2.5 px-5 flex flex-col gap-2.5 rounded-xs text-white bg-background border-border border data-focus:text-primary transition duration-200 ease-out data-closed:scale-95 data-closed:opacity-0 focus:outline-none"
           >
-            {links?.map(({ href, text }, index) => (
-              <MenuItem
-                as="li"
-                key={index}
-                className="data-focus:text-primary transition-colors font-semibold text-base"
-              >
-                {({ close }) => {
-                  const onClick = () => {
-                    close()
-                    onNavClose?.()
-                  }
+            {links?.map(({ label, items }, index) => (
+              <Fragment key={index}>
+                <MenuSection>
+                  {label && (
+                    <MenuHeading className="text-sm font-semibold mb-2 text-paragraph">
+                      {label}
+                    </MenuHeading>
+                  )}
 
-                  const isActive = pathname === href
-
-                  return (
-                    <Link
-                      href={href}
-                      onClick={onClick}
-                      className={`${isActive ? "text-primary" : ""}`}
+                  {items?.map(({ href, text }, index) => (
+                    <MenuItem
+                      as="li"
+                      key={index}
+                      className="data-focus:text-primary transition-colors font-semibold text-base"
                     >
-                      {text}
-                    </Link>
-                  )
-                }}
-              </MenuItem>
+                      {({ close }) => {
+                        const onClick = () => {
+                          close()
+                          onNavClose?.()
+                        }
+
+                        const isActive = pathname === href
+
+                        return (
+                          <Link
+                            href={href}
+                            onClick={onClick}
+                            className={`${isActive ? "text-primary" : ""}`}
+                          >
+                            {text}
+                          </Link>
+                        )
+                      }}
+                    </MenuItem>
+                  ))}
+                </MenuSection>
+
+                {index < links.length - 1 && <hr className="border-border" />}
+              </Fragment>
             ))}
           </MenuItems>
         </Menu>

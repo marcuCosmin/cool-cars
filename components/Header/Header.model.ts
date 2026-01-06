@@ -3,8 +3,13 @@ type LinkConfig = {
   text: string
 }
 
+type Links = {
+  label?: string
+  items: LinkConfig[]
+}
+
 export type HeaderNavItem = {
   href?: string
-  links?: LinkConfig[]
+  links?: Links[]
   text: string
 }
