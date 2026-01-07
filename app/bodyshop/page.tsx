@@ -44,7 +44,7 @@ const section3InfoCardsContent = [
     title: "Vehicle Body Repairs",
     description:
       "From small dents to major accident damage, Cool Cars provides quality car body repairs at fair prices.",
-    imageSrc: "/home-third-section-item-1.jpg",
+    imageSrc: "/vehicle-body-repairs.jpg",
     href: routes.bodyshopServicesVehicleBodyRepairs,
     alt: "Auto technician polishing a car hood inside a workshop",
   },
@@ -52,7 +52,7 @@ const section3InfoCardsContent = [
     title: "Car Resprays & Paintwork",
     description:
       "From quick touch-ups to full paint jobs, we deliver high-quality finishes at fair prices.",
-    imageSrc: "/home-third-section-item-2.jpg",
+    imageSrc: "/car-resprays-and-paintwork.jpg",
     href: routes.bodyshopServicesRespraysAndPaintwork,
     alt: "Workshop technician refinishing a car with a spray gun",
   },
@@ -60,7 +60,7 @@ const section3InfoCardsContent = [
     title: "Accident Repairs",
     description:
       "Cool Cars delivers reliable, high-quality accident repairs that get you back on the road fast",
-    imageSrc: "/home-third-section-item-3.jpg",
+    imageSrc: "/accident-repairs.jpg",
     href: routes.bodyshopServicesAccidentRepairs,
     alt: "Two cars involved in a crash",
   },
@@ -68,7 +68,7 @@ const section3InfoCardsContent = [
     title: "Paint Correction & Car Polishing",
     description:
       "Bring back your car’s shine with professional paint correction and polishing from Cool Cars.",
-    imageSrc: "/home-third-section-item-4.jpg",
+    imageSrc: "/paint-correction-and-polishing.jpg",
     href: routes.bodyshopServicesPaintCorrectionAndPolishing,
     alt: "Paint correction in progress with a polisher applied to a car door",
   },
@@ -76,7 +76,7 @@ const section3InfoCardsContent = [
     title: "Custom Bodywork & Modifications",
     description:
       "From subtle upgrades to bold styling changes, we deliver great-looking results at prices that make sense.",
-    imageSrc: "/home-third-section-item-5.jpg",
+    imageSrc: "/custom-bodywork-and-modifications.jpg",
     href: routes.bodyshopServicesBodyworkAndModifications,
     alt: "Custom bodywork in progress with a technician trimming material on a car panel",
   },
@@ -84,7 +84,7 @@ const section3InfoCardsContent = [
     title: "Fleet Repair Management",
     description:
       "Cool Cars keeps your business on the road with expert fleet repair management.",
-    imageSrc: "/home-third-section-item-6.jpg",
+    imageSrc: "/fleet-repair-management.jpg",
     href: routes.bodyshopServicesFleetRepairManagement,
     alt: "Fleet of cars in motion",
   },
@@ -93,7 +93,7 @@ const section3InfoCardsContent = [
 export default function BodyshopPage() {
   return (
     <main className="gap-20">
-      <section className="bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=828&q=75')]">
+      <section className="bg-[url('/_next/image?url=%2Fbodyshop-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fbodyshop-banner.jpg&w=828&q=75')]">
         <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 mb-10 pt-10">
             <Animated as="h1">Cool Cars - Bodyshop</Animated>

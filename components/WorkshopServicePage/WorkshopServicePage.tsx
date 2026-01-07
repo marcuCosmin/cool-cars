@@ -11,10 +11,11 @@ import { Animated } from "@/components/Animated/Animated"
 
 import { whatsAppNumberValue, type Routes } from "@/globals/globals.const"
 
+import { WorkshopServicePagePricing } from "./WorkshopServicePagePricing"
+
 import { mainSectionBgClassNames } from "./WorkshopServicePage.const"
 
 import type { Pricing } from "./WorkshopServicePage.model"
-import { WorkshopServicePagePricing } from "./WorkshopServicePagePricing"
 
 type ServicesRoutes = Pick<
   Routes,

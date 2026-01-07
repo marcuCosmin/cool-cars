@@ -37,7 +37,7 @@ const section1InfoCardsContent = [
 export default function Home() {
   return (
     <main className="gap-20">
-      <section className="bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=828&q=75')]">
+      <section className="bg-[url('/_next/image?url=%2Fhome-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fhome-banner.jpg&w=828&q=75')]">
         <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 mb-10 pt-10">
             <Animated as="h1">Complete Car Care You Can Trust</Animated>
@@ -95,7 +95,7 @@ export default function Home() {
             direction="right"
             as="a"
             href="/bodyshop"
-            className="flex items-center justify-center text-white text-2xl w-full bg-overlay glass-button h-96"
+            className="flex items-center justify-center text-white text-2xl w-full bg-overlay glass-button h-96 bg-[url('/_next/image?url=%2Fbodyshop-banner.jpg&w=640&q=75')] bg-cover"
           >
             <span>Bodyshop</span>
           </Animated>
@@ -104,7 +104,7 @@ export default function Home() {
             direction="left"
             as="a"
             href="/workshop"
-            className="flex items-center justify-center text-white text-2xl w-full bg-overlay glass-button h-96"
+            className="flex items-center justify-center text-white text-2xl w-full bg-overlay glass-button h-96 bg-[url('/_next/image?url=%2Fworkshop-banner.jpg&w=640&q=75')] bg-cover"
           >
             <span> Workshop</span>
           </Animated>

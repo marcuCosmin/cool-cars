@@ -25,7 +25,7 @@ const mainServices = [
     title: "Servicing",
     description:
       "From interim services to full annual servicing, Cool Cars provides expert vehicle care at fair prices.",
-    imageSrc: "/home-third-section-item-1.jpg",
+    imageSrc: "/servicing.jpg",
     href: routes.workshopServicesServicing,
     alt: "Auto technician polishing a car hood inside a workshop",
   },
@@ -33,7 +33,7 @@ const mainServices = [
     title: "Brake Pads & Discs",
     description:
       "From brake checks to full pad and disc changes, we make sure your car stops safely every time.",
-    imageSrc: "/home-third-section-item-2.jpg",
+    imageSrc: "/brake-pads-and-discs.jpg",
     href: routes.workshopServicesBrakePadsAndDiscs,
     alt: "Workshop technician refinishing a car with a spray gun",
   },
@@ -41,7 +41,7 @@ const mainServices = [
     title: "Clutch Repairs/Replacements",
     description:
       "Expert clutch repairs and replacements to keep you moving smoothly.",
-    imageSrc: "/home-third-section-item-3.jpg",
+    imageSrc: "/clutch-repairs-or-replacements.jpg",
     href: routes.workshopServicesClutchRepairsOrReplacements,
     alt: "Two cars involved in a crash",
   },
@@ -49,7 +49,7 @@ const mainServices = [
     title: "Cambelts & Timing Belts",
     description:
       "Keep your engine running smoothly with expert cambelt and timing belt replacement.",
-    imageSrc: "/home-third-section-item-4.jpg",
+    imageSrc: "/cambelts-and-timing-belts.jpg",
     href: routes.workshopServicesCambeltsAndTimingBelts,
     alt: "Paint correction in progress with a polisher applied to a car door",
   },
@@ -57,7 +57,7 @@ const mainServices = [
     title: "Tyres and Puncture Repairs",
     description:
       "From quick puncture fixes to brand-new tyres, we deliver dependable performance you can rely on.",
-    imageSrc: "/home-third-section-item-5.jpg",
+    imageSrc: "/tyres-and-puncture-repairs.jpg",
     href: routes.workshopServicesTyresAndPunctureRepairs,
     alt: "Custom bodywork in progress with a technician trimming material on a car panel",
   },
@@ -65,7 +65,7 @@ const mainServices = [
     title: "Gear Box Repairs/Replacements",
     description:
       "Professional gearbox repairs and replacements that keep you on the road.",
-    imageSrc: "/home-third-section-item-6.jpg",
+    imageSrc: "/gear-box-repairs-or-replacements.jpg",
     href: routes.workshopServicesGearBoxRepairsOrReplacements,
     alt: "Fleet of cars in motion",
   },
@@ -94,7 +94,7 @@ const otherServices = [
 export default function WorkshopPage() {
   return (
     <main className="gap-20">
-      <section className="bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fhome-first-section-banner.jpg&w=828&q=75')]">
+      <section className="bg-[url('/_next/image?url=%2Fworkshop-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fworkshop-banner.jpg&w=828&q=75')]">
         <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 mb-10 pt-10">
             <Animated as="h1">Cool Cars - Workshop</Animated>
