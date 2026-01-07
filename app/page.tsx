@@ -90,7 +90,7 @@ export default function Home() {
       <section>
         <h2 className="mb-10 text-center">Main Services</h2>
 
-        <div className="flex gap-10">
+        <div className="flex flex-col md:flex-row gap-10">
           <Animated
             direction="right"
             as="a"
