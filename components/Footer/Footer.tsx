@@ -7,7 +7,7 @@ import { AddressFields } from "@/components/AddressFields/AddressFields"
 import { FooterSectionWithLinks } from "./FooterSectionWithLinks"
 import { FooterBottomLinks } from "./FooterBottomLinks"
 
-import { quickLinks, services } from "./Footer.const"
+import { quickLinks, bodyshopServices, workshopServices } from "./Footer.const"
 
 export const Footer = () => {
   return (
@@ -42,8 +42,13 @@ export const Footer = () => {
         </section>
 
         <FooterSectionWithLinks
-          title="Our Services"
-          items={services}
+          title="Bodyshop Services"
+          items={bodyshopServices}
+        />
+
+        <FooterSectionWithLinks
+          title="Workshop Services"
+          items={workshopServices}
         />
 
         <FooterSectionWithLinks

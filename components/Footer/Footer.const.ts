@@ -1,6 +1,6 @@
 import { routes } from "@/globals/globals.const"
 
-export const services = [
+export const bodyshopServices = [
   {
     href: routes.bodyshopServicesVehicleBodyRepairs,
     text: "Vehicle Body Repairs",
@@ -21,6 +21,33 @@ export const services = [
   {
     href: routes.bodyshopServicesFleetRepairManagement,
     text: "Fleet Repair Management",
+  },
+]
+
+export const workshopServices = [
+  {
+    href: routes.workshopServicesServicing,
+    text: "Servicing",
+  },
+  {
+    href: routes.workshopServicesBrakePadsAndDiscs,
+    text: "Brake Pads & Discs",
+  },
+  {
+    href: routes.workshopServicesClutchRepairsOrReplacements,
+    text: "Clutch Repairs & Replacements",
+  },
+  {
+    href: routes.workshopServicesCambeltsAndTimingBelts,
+    text: "Cambelts & Timing Belts",
+  },
+  {
+    href: routes.workshopServicesTyresAndPunctureRepairs,
+    text: "Tyres and Puncture Repairs",
+  },
+  {
+    href: routes.workshopServicesGearBoxRepairsOrReplacements,
+    text: "Gear Box Repairs and Replacements",
   },
 ]
 
