@@ -87,7 +87,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="overflow-hidden">
         <h2 className="mb-10 text-center">Main Services</h2>
 
         <div className="flex flex-col mx-auto max-w-2xl md:max-w-7xl md:flex-row gap-10">
