@@ -101,7 +101,6 @@ export const rightSideNavLinks: HeaderNavItem[] = [
     links: [
       {
         items: [
-          { href: routes.pricing, text: "Pricing" },
           { href: routes.faq, text: "FAQ" },
           { href: routes.testimonials, text: "Testimonials" },
           { href: routes.contact, text: "Contact" },

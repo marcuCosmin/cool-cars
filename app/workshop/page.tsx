@@ -109,7 +109,7 @@ export default function WorkshopPage() {
 
             <Link
               href="/contact"
-              className="link-button bg-primary text-black border-primary hover:bg-transparent hover:text-white"
+              className="link-button-fill-primary"
             >
               Get in touch
             </Link>
@@ -170,7 +170,7 @@ export default function WorkshopPage() {
             >
               <Link
                 href="/contact"
-                className="glass-button w-[300px] justify-center"
+                className="block text-center link-button-fill-primary w-[250px]"
               >
                 {title}
               </Link>

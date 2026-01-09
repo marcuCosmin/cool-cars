@@ -33,7 +33,6 @@ export const routes = {
     "/workshop/services/tyres-and-puncture-repairs",
   workshopServicesGearBoxRepairsOrReplacements:
     "/workshop/services/gearbox-repairs-or-replacements",
-  pricing: "/pricing",
   faq: "/faq",
   testimonials: "/testimonials",
   privacyPolicy: "/privacy-policy",

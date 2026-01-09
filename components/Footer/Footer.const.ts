@@ -52,7 +52,6 @@ export const workshopServices = [
 ]
 
 export const quickLinks = [
-  { href: routes.pricing, text: "Pricing" },
   { href: routes.testimonials, text: "Testimonials" },
   { href: routes.blog, text: "Blog" },
   { href: routes.faq, text: "FAQ" },
