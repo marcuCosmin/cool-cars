@@ -1,13 +1,12 @@
-import { Animated } from "../Animated/Animated"
-import type { Pricing } from "./WorkshopServicePage.model"
+import { Animated } from "@/components/Animated/Animated"
 
-type WorkshopServicePagePricingProps = {
+import type { Pricing } from "./ServiceContent.model"
+
+type ServicePricingProps = {
   pricing: Pricing
 }
 
-export const WorkshopServicePagePricing = ({
-  pricing,
-}: WorkshopServicePagePricingProps) => {
+export const ServicePricing = ({ pricing }: ServicePricingProps) => {
   const maxRows = Math.max(...pricing.map(col => col.values.length))
   const pinnedColumn = pricing.find(col => col.pinned)
   const otherColumns = pricing.filter(col => col !== pinnedColumn)

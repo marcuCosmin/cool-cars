@@ -1,6 +1,6 @@
 import { type Metadata } from "next"
 
-import { WorkshopServicePage } from "@/components/WorkshopServicePage/WorkshopServicePage"
+import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 
 import { routes } from "@/globals/globals.const"
 
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function ClutchRepairsOrReplacementsServicePage() {
   return (
-    <WorkshopServicePage
+    <ServiceContent
       servicePathname={routes.workshopServicesClutchRepairsOrReplacements}
       title="Clutch Repairs & Replacements"
       description={
