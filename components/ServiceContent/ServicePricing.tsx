@@ -28,7 +28,7 @@ export const ServicePricing = ({ pricing }: ServicePricingProps) => {
               </Animated>
               <Animated
                 as="th"
-                className="px-4 pb-2"
+                className="px-4 pb-2 w-44"
               >
                 {title}
               </Animated>
