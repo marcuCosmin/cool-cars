@@ -11,6 +11,7 @@ import { ServicePricing } from "./ServicePricing"
 import { serviceContentBannerClassNames } from "./ServiceContent.const"
 
 import type { Pricing } from "./ServiceContent.model"
+import { mergeClassNames } from "@/utils/mergeClassNames"
 
 type ServicesRoutesKeys =
   | "bodyshopServicesVehicleBodyRepairs"
@@ -45,14 +46,14 @@ export const ServiceContent = ({
 
   return (
     <main className="gap-20">
-      <section className={bannerClassName}>
+      <section className={mergeClassNames(`bg-center p-2 ${bannerClassName}`)}>
         <Animated
           as="h1"
-          className="mb-10"
+          className="mb-5 md:mb-10 text-center"
         >
           {title}
         </Animated>
-        <div className="text-base p-2 [&>p]:text-white">{description}</div>
+        <div className="text-base [&>p]:text-white">{description}</div>
       </section>
 
       {!!pricing?.length && (
@@ -68,7 +69,7 @@ export const ServiceContent = ({
         </section>
       )}
 
-      <section className="flex flex-col gap-5 items-center">
+      <section className="flex flex-col gap-5 items-center p-5 md:p-0">
         <Animated
           as="h2"
           className="mb-5"

@@ -4,7 +4,7 @@ export const serviceContentBannerClassNames = {
   [routes.bodyshopServicesVehicleBodyRepairs]:
     "bg-[url('/_next/image?url=%2Fvehicle-body-repairs-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fvehicle-body-repairs-banner.jpg&w=828&q=75')]",
   [routes.bodyshopServicesRespraysAndPaintwork]:
-    "bg-[url('/_next/image?url=%2Fresprays-and-paintwork-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fresprays-and-paintwork-banner.jpg&w=828&q=75')]",
+    "bg-right md:bg-center bg-[url('/_next/image?url=%2Fresprays-and-paintwork-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fresprays-and-paintwork-banner.jpg&w=828&q=75')]",
   [routes.bodyshopServicesAccidentRepairs]:
     "bg-[url('/_next/image?url=%2Faccident-repairs-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Faccident-repairs-banner.jpg&w=828&q=75')]",
   [routes.bodyshopServicesBodyworkAndModifications]:
