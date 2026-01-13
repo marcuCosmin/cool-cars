@@ -37,7 +37,7 @@ export const Header = () => {
 
         <hr className="text-secondary w-full my-2" />
 
-        <nav className="flex justify-between md:justify-center items-center gap-10 w-full">
+        <nav className="flex justify-between md:justify-center items-center gap-10 w-full relative">
           <ul className={navListClassName}>
             {leftSideNavLinks.map((props, index) => (
               <HeaderNavItem
@@ -47,7 +47,7 @@ export const Header = () => {
             ))}
           </ul>
 
-          <Logo className="h-[85px] md:h-24" />
+          <Logo className="h-[85px] md:h-24 mx-auto md:mx-0" />
 
           <ul className={navListClassName}>
             {rightSideNavLinks.map((props, index) => (
@@ -61,7 +61,7 @@ export const Header = () => {
           <button
             type="button"
             aria-label="Open navigation panel"
-            className="md:hidden"
+            className="absolute right-0 md:hidden"
             onClick={onNavOpen}
           >
             <List
