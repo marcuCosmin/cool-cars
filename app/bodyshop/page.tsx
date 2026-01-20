@@ -95,7 +95,7 @@ export default function BodyshopPage() {
     <main className="gap-20">
       <section className="bg-[url('/_next/image?url=%2Fbodyshop-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fbodyshop-banner.jpg&w=828&q=75')]">
         <div className="h-full max-w-7xl">
-          <div className="first-section-main-content px-2.5 mb-10 pt-10">
+          <div className="first-section-main-content px-2.5 pt-10">
             <Animated as="h1">Cool Cars - Bodyshop</Animated>
             <h2 className="text-shadow-black text-shadow-md">
               Flawless Care for Every Vehicle
@@ -107,19 +107,12 @@ export default function BodyshopPage() {
             </p>
           </div>
 
-          {/* <ul className="flex flex-col gap-2 md:flex-row">
-            {section1InfoCardsContent.map(({ label, href }, index) => (
-              <li key={index}>
-                <Animated
-                  as="a"
-                  href={href}
-                  className="glass-button text-2xl"
-                >
-                  {label}
-                </Animated>
-              </li>
-            ))}
-          </ul> */}
+          <a
+            href="https://www.bodydamagequote.co.uk/#/b?subscriber=c8048290-3b67-462d-9c68-ce498d8e37f9&liteFlow"
+            className="link-button-fill-primary"
+          >
+            Get an estimate
+          </a>
         </div>
       </section>
 

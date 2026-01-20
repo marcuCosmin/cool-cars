@@ -51,7 +51,7 @@ export default function Home() {
 
             <Link
               href="/contact"
-              className="link-button bg-primary text-black border-primary hover:bg-transparent hover:text-white"
+              className="link-button-fill-primary"
             >
               Get in touch
             </Link>
