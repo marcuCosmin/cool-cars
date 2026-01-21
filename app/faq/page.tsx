@@ -90,7 +90,12 @@ export default function FAQPage() {
   return (
     <main className="gap-10">
       <section className="bg-[url('/_next/image?url=%2Ffaq-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Ffaq-banner.jpg&w=828&q=75')]">
-        <Animated as="h1">Frequently Asked Questions</Animated>
+        <Animated
+          as="h1"
+          className="text-center"
+        >
+          Frequently Asked Questions
+        </Animated>
       </section>
 
       <section className="flex flex-col gap-10">

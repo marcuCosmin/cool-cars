@@ -10,6 +10,7 @@ import { MapLocationSection } from "@/components/MapLocationSection"
 import { Animated } from "@/components/Animated/Animated"
 
 import { routes } from "@/globals/globals.const"
+import { MainSectionLinks } from "@/components/MainSectionLinks"
 
 export const metadata: Metadata = {
   title: "Cool Cars - Workshop",
@@ -19,6 +20,17 @@ export const metadata: Metadata = {
     canonical: "https://cool-cars.co.uk",
   },
 }
+
+const mainSectionLinks = [
+  {
+    href: routes.contact,
+    label: "Get in touch",
+  },
+  {
+    href: routes.finance,
+    label: "Get finance",
+  },
+]
 
 const mainServices = [
   {
@@ -107,12 +119,7 @@ export default function WorkshopPage() {
               running at its best.
             </p>
 
-            <Link
-              href="/contact"
-              className="link-button-fill-primary"
-            >
-              Get in touch
-            </Link>
+            <MainSectionLinks links={mainSectionLinks} />
           </div>
         </div>
       </section>

@@ -1,11 +1,13 @@
 import { type Metadata } from "next"
 import Image from "next/image"
-import Link from "next/link"
 
 import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection"
 import { ContactSection } from "@/components/ContactSection"
 import { MapLocationSection } from "@/components/MapLocationSection"
 import { Animated } from "@/components/Animated/Animated"
+import { MainSectionLinks } from "@/components/MainSectionLinks"
+
+import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
   title: "Cool Cars – Expert Car Body Repairs, Swanmore",
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
   },
 }
 
-const section1InfoCardsContent = [
+const mainSectionCards = [
   {
     title: "Industry Approved Methods",
     description: "Using Thatcham approved processes and repair times.",
@@ -31,6 +33,17 @@ const section1InfoCardsContent = [
     title: "Get back on the road",
     description: "Every mechanical and aesthetic requirement taken care of.",
     imageSrc: "/wheel-key.webp",
+  },
+]
+
+const mainSectionLinks = [
+  {
+    href: routes.contact,
+    label: "Get in touch",
+  },
+  {
+    href: routes.finance,
+    label: "Get finance",
   },
 ]
 
@@ -49,40 +62,33 @@ export default function Home() {
               servicing and ongoing vehicle care.
             </p>
 
-            <Link
-              href="/contact"
-              className="link-button-fill-primary"
-            >
-              Get in touch
-            </Link>
+            <MainSectionLinks links={mainSectionLinks} />
           </div>
 
           <ul className="flex flex-col gap-1 md:flex-row">
-            {section1InfoCardsContent.map(
-              ({ title, description, imageSrc }, index) => (
-                <li key={index}>
-                  <Animated
-                    as="article"
-                    className="p-8 flex flex-col md:flex-row items-center gap-4 bg-white/10 h-full"
-                  >
-                    <Image
-                      className="drop-shadow-md drop-shadow-black"
-                      src={imageSrc}
-                      aria-hidden="true"
-                      alt=""
-                      width={80}
-                      height={80}
-                    />
-                    <div>
-                      <h3 className="font-semibold mb-2.5 text-white text-2xl">
-                        {title}
-                      </h3>
-                      <p>{description}</p>
-                    </div>
-                  </Animated>
-                </li>
-              )
-            )}
+            {mainSectionCards.map(({ title, description, imageSrc }, index) => (
+              <li key={index}>
+                <Animated
+                  as="article"
+                  className="p-8 flex flex-col md:flex-row items-center gap-4 bg-white/10 h-full"
+                >
+                  <Image
+                    className="drop-shadow-md drop-shadow-black"
+                    src={imageSrc}
+                    aria-hidden="true"
+                    alt=""
+                    width={80}
+                    height={80}
+                  />
+                  <div>
+                    <h3 className="font-semibold mb-2.5 text-white text-2xl">
+                      {title}
+                    </h3>
+                    <p>{description}</p>
+                  </div>
+                </Animated>
+              </li>
+            ))}
           </ul>
         </div>
       </section>

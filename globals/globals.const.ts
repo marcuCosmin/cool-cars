@@ -39,6 +39,7 @@ export const routes = {
   termsAndConditions: "/terms-and-conditions",
   blog: "/blog",
   cookiesPolicy: "/cookies-policy",
+  finance: "/finance",
 } as const
 
 export type Routes = typeof routes

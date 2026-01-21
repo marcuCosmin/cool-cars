@@ -104,6 +104,7 @@ export const rightSideNavLinks: HeaderNavItem[] = [
           { href: routes.faq, text: "FAQ" },
           { href: routes.testimonials, text: "Testimonials" },
           { href: routes.contact, text: "Contact" },
+          { href: routes.finance, text: "Finance" },
         ],
       },
     ],

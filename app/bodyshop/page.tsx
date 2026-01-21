@@ -8,6 +8,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection/Testimonia
 import { ContactSection } from "@/components/ContactSection"
 import { MapLocationSection } from "@/components/MapLocationSection"
 import { Animated } from "@/components/Animated/Animated"
+import { MainSectionLinks } from "@/components/MainSectionLinks"
 
 import { routes } from "@/globals/globals.const"
 
@@ -20,26 +21,19 @@ export const metadata: Metadata = {
   },
 }
 
-// const section1InfoCardsContent = [
-//   {
-//     label: "Get an Estimate",
-//     href: "",
-//   },
-//   {
-//     label: "Get Finance",
-//     href: "",
-//   },
-//   {
-//     label: "Track My Car",
-//     href: "",
-//   },
-//   {
-//     label: "Make a Booking",
-//     href: "",
-//   },
-// ]
+const mainSectionLinks = [
+  {
+    href: "https://www.bodydamagequote.co.uk/#/b?subscriber=c8048290-3b67-462d-9c68-ce498d8e37f9&liteFlow",
+    label: "Get an estimate",
+    external: true,
+  },
+  {
+    href: routes.finance,
+    label: "Get finance",
+  },
+]
 
-const section3InfoCardsContent = [
+const services = [
   {
     title: "Vehicle Body Repairs",
     description:
@@ -107,12 +101,7 @@ export default function BodyshopPage() {
             </p>
           </div>
 
-          <a
-            href="https://www.bodydamagequote.co.uk/#/b?subscriber=c8048290-3b67-462d-9c68-ce498d8e37f9&liteFlow"
-            className="link-button-fill-primary"
-          >
-            Get an estimate
-          </a>
+          <MainSectionLinks links={mainSectionLinks} />
         </div>
       </section>
 
@@ -121,7 +110,7 @@ export default function BodyshopPage() {
         <h3 className="mb-10">Complete Solutions for All Your Car Needs</h3>
 
         <ul className="flex flex-col items-center md:grid md:grid-cols-3 gap-10 md:items-start">
-          {section3InfoCardsContent.map(
+          {services.map(
             ({ title, description, imageSrc, href, alt }, index) => (
               <Animated
                 as="li"
