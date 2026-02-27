@@ -23,7 +23,7 @@ export const Header = () => {
   return (
     <header
       role="banner"
-      className="z-50 flex flex-col justify-between sm:justify-normal items-center py-3 px-3 md:px-8 sticky top-0 left-0 bg-background"
+      className="z-50 flex flex-col justify-between sm:justify-normal items-center py-3 px-3 md:px-8 sticky top-0 left-0 bg-background will-change-transform"
     >
       <div className="flex flex-col w-full max-w-7xl">
         <div className="flex justify-between w-full">
