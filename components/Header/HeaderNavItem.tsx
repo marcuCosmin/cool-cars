@@ -51,13 +51,13 @@ export const HeaderNavItem = ({
             transition
             as="ul"
             anchor="bottom"
-            className="z-[9999] py-2.5 px-5 flex flex-col gap-2.5 rounded-xs text-white bg-background border-border border data-focus:text-primary transition duration-200 ease-out data-closed:scale-95 data-closed:opacity-0 focus:outline-none"
+            className="z-[9999] py-2.5 px-5 flex flex-col rounded-xs gap-2.5 text-white bg-background border-border border data-focus:text-primary transition duration-200 ease-out data-closed:scale-95 data-closed:opacity-0 focus:outline-none"
           >
             {links?.map(({ label, items }, index) => (
               <Fragment key={index}>
-                <MenuSection>
+                <MenuSection className="gap-4 md:gap-2 flex flex-col">
                   {label && (
-                    <MenuHeading className="text-sm font-semibold mb-2 text-paragraph">
+                    <MenuHeading className="text-sm font-semibold text-paragraph">
                       {label}
                     </MenuHeading>
                   )}

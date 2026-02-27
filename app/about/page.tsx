@@ -104,13 +104,13 @@ export default function About() {
           </p>
         </div>
 
-        <ul className="flex gap-5">
+        <ul className="flex gap-5 flex-wrap">
           {thirdSectionItems.map((item, index) => (
             <Animated
               as="li"
               direction="left"
               key={index}
-              className="flex flex-col gap-5 p-12 bg-gray-950 w-1/2 md:w-72"
+              className="flex flex-col gap-5 p-12 bg-gray-950 w-full md:w-72"
             >
               <Image
                 className="drop-shadow-md drop-shadow-black"
