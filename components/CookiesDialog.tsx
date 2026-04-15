@@ -15,7 +15,7 @@ type CookiesDialogProps = {
 
 export const CookiesDialog = ({ isOpen, setIsOpen }: CookiesDialogProps) => {
   const pathname = usePathname()
-  const isCookiePolicyPage = pathname === "/cookie-policy"
+  const isCookiePolicyPage = pathname === routes.cookiesPolicy
 
   const handleCookieConsent = (consent: boolean) => {
     const event = new CustomEvent("cookies-policy", { detail: consent })
@@ -86,4 +86,3 @@ export const CookiesDialog = ({ isOpen, setIsOpen }: CookiesDialogProps) => {
     </Dialog>
   )
 }
-
