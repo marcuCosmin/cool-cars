@@ -11,31 +11,31 @@
     "start:prod": "node server.js"
   },
   "dependencies": {
-    "@headlessui/react": "^2.2.9",
-    "@next/third-parties": "^16.0.0",
+    "@headlessui/react": "^2.2.10",
+    "@next/third-parties": "^16.2.3",
     "clsx": "^2.1.1",
     "email-validator": "^2.0.4",
-    "next": "^16.0.7",
+    "next": "^16.2.3",
     "next-sitemap": "^4.2.3",
-    "react": "^19.2.1",
+    "react": "^19.2.5",
     "react-bootstrap-icons": "^1.11.6",
-    "react-dom": "^19.2.1",
-    "react-hook-form": "^7.65.0",
-    "sharp": "^0.34.4",
-    "tailwind-merge": "^3.3.1",
-    "use-debounce": "^10.0.6"
+    "react-dom": "^19.2.5",
+    "react-hook-form": "^7.72.1",
+    "sharp": "^0.34.5",
+    "tailwind-merge": "^3.5.0",
+    "use-debounce": "^10.1.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/postcss": "^4.2.2",
     "@types/ga-gtag": "^1.2.0",
     "@types/node": "^20",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "prettier": "^3.5.3",
-    "tailwindcss": "^4",
+    "tailwindcss": "^4.2.2",
     "typescript": "^5"
   }
 }
