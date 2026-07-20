@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Bring back your car’s gloss and clarity with professional paint correction and polishing. Remove swirl marks and enhance your vehicle’s shine.",
   alternates: {
-    canonical: "https://cool-cars.co.uk/paint-correction-and-polishing",
+    canonical: "https://cool-cars.co.uk/bodyshop/services/paint-correction-and-polishing",
   },
 }
 

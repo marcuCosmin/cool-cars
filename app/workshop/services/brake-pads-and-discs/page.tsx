@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Brake pad and disc replacement services with clear pricing. Expert technicians, fair costs and simple online booking",
   alternates: {
-    canonical: "https://cool-cars.co.uk/accident-repairs",
+    canonical: "https://cool-cars.co.uk/workshop/services/brake-pads-and-discs",
   },
 }
 

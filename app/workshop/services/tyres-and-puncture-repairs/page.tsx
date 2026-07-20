@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Tyre supply, fitting and puncture repair services. Quality tyres, fair pricing and quick turnaround from trusted technicians.",
   alternates: {
-    canonical: "https://cool-cars.co.uk/accident-repairs",
+    canonical: "https://cool-cars.co.uk/workshop/services/tyres-and-puncture-repairs",
   },
 }
 

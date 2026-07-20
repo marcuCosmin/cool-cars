@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Trust Cool Cars for seamless accident repairs, expert bodywork restoration and support with insurance processes. Get back on the road with confidence.",
   alternates: {
-    canonical: "https://cool-cars.co.uk/accident-repairs",
+    canonical: "https://cool-cars.co.uk/bodyshop/services/accident-repairs",
   },
 }
 

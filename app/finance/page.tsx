@@ -57,6 +57,6 @@ export const metadata: Metadata = {
   description:
     "Spread the cost with Cool Cars 0% finance. Pay over 3, 4 or 6 months with no interest. Speak to our office team to start your application.",
   alternates: {
-    canonical: "https://cool-cars.co.uk",
+    canonical: "https://cool-cars.co.uk/finance",
   },
 }

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "From small dents to major collision damage, Cool Cars restores your vehicle with high-quality repairs and a finish that looks like new.",
   alternates: {
-    canonical: "https://cool-cars.co.uk/vehicle-body-repairs",
+    canonical: "https://cool-cars.co.uk/bodyshop/services/vehicle-body-repairs",
   },
 }
 

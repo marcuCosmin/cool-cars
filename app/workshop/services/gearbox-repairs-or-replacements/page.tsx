@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Gearbox repairs and replacements with expert diagnosis and honest advice. Quality workmanship and cost-effective solutions.",
   alternates: {
-    canonical: "https://cool-cars.co.uk/accident-repairs",
+    canonical: "https://cool-cars.co.uk/workshop/services/gearbox-repairs-or-replacements",
   },
 }
 

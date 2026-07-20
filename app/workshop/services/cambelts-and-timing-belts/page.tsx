@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Cambelt and timing belt replacement services with clear pricing. Expert fitting, fair costs and simple online booking.",
   alternates: {
-    canonical: "https://cool-cars.co.uk/accident-repairs",
+    canonical: "https://cool-cars.co.uk/workshop/services/cambelts-and-timing-belts",
   },
 }
 

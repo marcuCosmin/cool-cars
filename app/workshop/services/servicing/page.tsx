@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Vehicle servicing including oil & filter changes, interim, full and major services. Clear pricing, quality oil included, book online.",
   alternates: {
-    canonical: "https://cool-cars.co.uk/accident-repairs",
+    canonical: "https://cool-cars.co.uk/workshop/services/servicing",
   },
 }
 

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Cost-effective, reliable fleet body repair management from Cool Cars. Keep your business vehicles looking professional and on the road.",
   alternates: {
-    canonical: "https://cool-cars.co.uk/fleet-repair-management",
+    canonical: "https://cool-cars.co.uk/bodyshop/services/fleet-repair-management",
   },
 }
 

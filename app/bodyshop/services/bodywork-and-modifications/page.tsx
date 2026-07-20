@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Upgrade your vehicle’s style with bespoke bodywork modifications, enhancements and tailored exterior styling from Cool Cars.",
   alternates: {
-    canonical: "https://cool-cars.co.uk/bodywork-and-modifications",
+    canonical: "https://cool-cars.co.uk/bodyshop/services/bodywork-and-modifications",
   },
 }
 

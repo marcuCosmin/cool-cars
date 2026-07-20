@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Professional car bodyshop services including accident repair, paintwork, dent removal and refinishing. High-quality repairs you can trust.",
   alternates: {
-    canonical: "https://cool-cars.co.uk",
+    canonical: "https://cool-cars.co.uk/bodyshop",
   },
 }
 

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Mechanical repairs, vehicle servicing and diagnostics from a trusted local workshop. Quality workmanship at fair, transparent prices.",
   alternates: {
-    canonical: "https://cool-cars.co.uk",
+    canonical: "https://cool-cars.co.uk/workshop",
   },
 }
 

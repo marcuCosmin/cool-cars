@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Full resprays, colour changes and paintwork perfection from Cool Cars. Achieve a flawless, long-lasting finish with expert craftsmanship",
   alternates: {
-    canonical: "https://cool-cars.co.uk/resprays-and-paintwork",
+    canonical: "https://cool-cars.co.uk/bodyshop/services/resprays-and-paintwork",
   },
 }
 

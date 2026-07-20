@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Clutch repairs and replacements carried out by experienced technicians. Vehicle-specific quotes and transparent pricing.",
   alternates: {
-    canonical: "https://cool-cars.co.uk/accident-repairs",
+    canonical: "https://cool-cars.co.uk/workshop/services/clutch-repairs-or-replacements",
   },
 }
 
