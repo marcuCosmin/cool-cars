@@ -7,6 +7,16 @@ import { Header } from "@/components/Header/Header"
 import { Footer } from "@/components/Footer/Footer"
 import { GoogleAnalytics } from "@/components/GoogleAnalytics"
 
+import {
+  addressStreet,
+  addressLocality,
+  addressRegion,
+  addressPostalCode,
+  addressCountry,
+  phoneNumberText,
+  website,
+} from "@/globals/globals.const"
+
 const inter = Inter({ subsets: ["latin"] })
 
 export const viewport: Viewport = {
@@ -55,14 +65,14 @@ const jsonLd = {
   name: "Cool Cars South Coast",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "123 High Street",
-    addressLocality: "Swanmore",
-    addressRegion: "Hampshire",
-    postalCode: "SO32 2QQ",
-    addressCountry: "UK",
+    streetAddress: addressStreet,
+    addressLocality,
+    addressRegion,
+    postalCode: addressPostalCode,
+    addressCountry,
   },
-  telephone: "+44 07387 267400",
-  url: "https://cool-cars.co.uk",
+  telephone: phoneNumberText,
+  url: website,
 }
 
 type RootLayoutProps = Readonly<{

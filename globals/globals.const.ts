@@ -1,9 +1,16 @@
 export const phoneNumberText = "01489 326 750"
 export const phoneNumberValue = phoneNumberText.replaceAll(" ", "")
 export const whatsAppNumberValue = "+447421535039"
-export const address =
-  "Unit 16, Swanmore Business Park, Lower Chase Road, Swanmore, SO32 2PB"
-export const shortAddress = "Unit 16, Swanmore Business Park, SO32 2PB"
+
+export const addressStreetShort = "Unit 16, Swanmore Business Park"
+export const addressStreet = `${addressStreetShort}, Lower Chase Road`
+export const addressLocality = "Swanmore"
+export const addressRegion = "Hampshire"
+export const addressPostalCode = "SO32 2PB"
+export const addressCountry = "GB"
+
+export const address = `${addressStreet}, ${addressLocality}, ${addressPostalCode}`
+export const shortAddress = `${addressStreetShort}, ${addressPostalCode}`
 export const email = "contact@cool-cars.co.uk"
 export const website = "https://cool-cars.co.uk"
 

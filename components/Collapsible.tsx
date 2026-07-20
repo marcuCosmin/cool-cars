@@ -1,6 +1,6 @@
 "use client"
 
-import { type ReactNode } from "react"
+import { type ElementType, type ReactNode } from "react"
 import { DashLg, PlusLg } from "react-bootstrap-icons"
 import {
   Disclosure,
@@ -8,18 +8,30 @@ import {
   DisclosurePanel,
 } from "@headlessui/react"
 
+import { mergeClassNames } from "@/utils/mergeClassNames"
+
 type CollapsibleProps = {
   title: string
   children: ReactNode
+  as?: ElementType
+  buttonClassName?: string
 }
 
-export const Collapsible = ({ title, children }: CollapsibleProps) => (
+export const Collapsible = ({
+  title,
+  children,
+  as = "h2",
+  buttonClassName,
+}: CollapsibleProps) => (
   <Disclosure as="div">
     {({ open }) => (
       <>
         <DisclosureButton
-          as="h2"
-          className={`flex p-3 font-bold cursor-pointer items-center justify-between transition-colors duration-300 hover:text-primary ${open ? "text-white" : "text-paragraph"}`}
+          as={as}
+          className={mergeClassNames(
+            `flex p-3 font-bold cursor-pointer items-center justify-between transition-colors duration-300 hover:text-primary ${open ? "text-white" : "text-paragraph"}`,
+            buttonClassName
+          )}
         >
           {title} {open ? <DashLg /> : <PlusLg />}
         </DisclosureButton>
