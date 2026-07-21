@@ -10,7 +10,7 @@ export const socialMediaLinks = [
   },
   {
     Icon: Linkedin,
-    href: "https://www.linkedin.com/company/109203288/admin/dashboard/",
+    href: "https://www.linkedin.com/company/109203288/",
     ariaLabel: "LinkedIn",
   },
   {

@@ -7,7 +7,22 @@ import { MapLocationSection } from "@/components/MapLocationSection"
 import { Animated } from "@/components/Animated/Animated"
 import { MainSectionLinks } from "@/components/MainSectionLinks"
 
-import { routes } from "@/globals/globals.const"
+import { socialMediaLinks } from "@/components/SocialMediaLinks/SocialMediaLinks.const"
+
+import {
+  routes,
+  website,
+  email,
+  phoneNumberInternational,
+  addressStreet,
+  addressLocality,
+  addressRegion,
+  addressPostalCode,
+  addressCountry,
+  geoLatitude,
+  geoLongitude,
+  googleMapsUrl,
+} from "@/globals/globals.const"
 
 export const metadata: Metadata = {
   title: "Cool Cars – Expert Car Body Repairs, Swanmore",
@@ -16,6 +31,83 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://cool-cars.co.uk",
   },
+}
+
+const offeredServices = [
+  "Vehicle Body Repairs",
+  "Car Resprays & Paintwork",
+  "Accident Repairs",
+  "Paint Correction & Polishing",
+  "Custom Bodywork & Modifications",
+  "Fleet Repair Management",
+  "Car Servicing",
+  "Brake Pads & Discs",
+  "Clutch Repairs & Replacements",
+  "Cambelts & Timing Belts",
+  "Tyres & Puncture Repairs",
+  "Gearbox Repairs & Replacements",
+]
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["AutoRepair", "AutoBodyShop"],
+  name: "Cool Cars South Coast Ltd",
+  url: website,
+  logo: `${website}/logo.svg`,
+  image: `${website}/grey-car-front-headlight-bodywork-swanmore.jpg`,
+  description:
+    "Car body repair and respray specialists in Swanmore, Hampshire. Expert bodyshop and mechanical workshop services including accident repairs, resprays, servicing, brakes, clutch and gearbox repairs.",
+  telephone: phoneNumberInternational,
+  email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: addressStreet,
+    addressLocality,
+    addressRegion,
+    postalCode: addressPostalCode,
+    addressCountry,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: geoLatitude,
+    longitude: geoLongitude,
+  },
+  hasMap: googleMapsUrl,
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday"],
+      opens: "10:00",
+      closes: "18:00",
+    },
+  ],
+  priceRange: "££",
+  currenciesAccepted: "GBP",
+  paymentAccepted: "Cash, Credit Card, Debit Card, Bank Transfer",
+  areaServed: [
+    { "@type": "City", name: "Swanmore" },
+    { "@type": "City", name: "Southampton" },
+    { "@type": "City", name: "Fareham" },
+    { "@type": "City", name: "Bishops Waltham" },
+    { "@type": "City", name: "Wickham" },
+    { "@type": "City", name: "Eastleigh" },
+    { "@type": "AdministrativeArea", name: "Hampshire" },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Car Repair Services",
+    itemListElement: offeredServices.map((name) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name },
+    })),
+  },
+  sameAs: socialMediaLinks.map(({ href }) => href),
 }
 
 const mainSectionCards = [
@@ -125,6 +217,11 @@ export default function Home() {
       <ContactSection />
 
       <MapLocationSection />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </main>
   )
 }

@@ -1,5 +1,6 @@
 export const phoneNumberText = "01489 326 750"
 export const phoneNumberValue = phoneNumberText.replaceAll(" ", "")
+export const phoneNumberInternational = `+44${phoneNumberValue.slice(1)}`
 export const whatsAppNumberValue = "+447421535039"
 
 export const addressStreetShort = "Unit 16, Swanmore Business Park"
@@ -13,6 +14,10 @@ export const address = `${addressStreet}, ${addressLocality}, ${addressPostalCod
 export const shortAddress = `${addressStreetShort}, ${addressPostalCode}`
 export const email = "contact@cool-cars.co.uk"
 export const website = "https://cool-cars.co.uk"
+
+export const geoLatitude = 50.9435355
+export const geoLongitude = -1.193956
+export const googleMapsUrl = "https://maps.app.goo.gl/o371gkfg4AGhNAqY7"
 
 export const routes = {
   home: "/",
