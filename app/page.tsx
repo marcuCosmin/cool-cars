@@ -21,9 +21,9 @@ import {
 } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title: "Cool Cars – Expert Car Body Repairs, Swanmore",
+  title: "Car Body Repair in Swanmore, Hampshire | Cool Cars South Coast",
   description:
-    "Cool Cars offers expert car bodywork, mechanical repairs and servicing. Trusted local specialists keeping your vehicle looking great and running perfectly.",
+    "Car body repairs, resprays and servicing in Swanmore, Hampshire. Serving Southampton, Fareham and nearby areas. Call 01489 326 750 today!",
   alternates: {
     canonical: "https://cool-cars.co.uk",
   },

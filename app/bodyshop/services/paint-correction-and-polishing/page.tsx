@@ -5,9 +5,9 @@ import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title: "Paint Correction & Polishing – Cool Cars",
+  title: "Paint Correction in Swanmore, Hampshire | Cool Cars South Coast",
   description:
-    "Bring back your car’s gloss and clarity with professional paint correction and polishing. Remove swirl marks and enhance your vehicle’s shine.",
+    "Paint correction in Swanmore, Hampshire. Remove swirl marks, scratches & oxidation and restore your paintwork's original shine. Call us today!",
   alternates: {
     canonical: "https://cool-cars.co.uk/bodyshop/services/paint-correction-and-polishing",
   },

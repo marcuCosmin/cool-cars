@@ -5,9 +5,9 @@ import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title: "Cool Cars - Workshop - Brake Pads and Discs",
+  title: "Brake Repair in Swanmore, Hampshire | Cool Cars",
   description:
-    "Brake pad and disc replacement services with clear pricing. Expert technicians, fair costs and simple online booking",
+    "Brake repair in Swanmore, Hampshire. Pad & disc replacement for all makes & models. Fixed quotes. Serving Southampton & Fareham. Book today!",
   alternates: {
     canonical: "https://cool-cars.co.uk/workshop/services/brake-pads-and-discs",
   },

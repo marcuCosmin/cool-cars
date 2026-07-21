@@ -5,9 +5,9 @@ import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title: "Cool Cars - Workshop - Clutch Repairs & Replacements",
+  title: "Clutch Replacement in Swanmore, Hampshire | Cool Cars South Coast",
   description:
-    "Clutch repairs and replacements carried out by experienced technicians. Vehicle-specific quotes and transparent pricing.",
+    "Clutch replacement in Swanmore, Hampshire. Expert clutch repairs and replacements for all makes and models. Book your clutch check today!",
   alternates: {
     canonical: "https://cool-cars.co.uk/workshop/services/clutch-repairs-or-replacements",
   },

@@ -5,9 +5,9 @@ import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title: "Cool Cars - Workshop - Gear Box Repairs and Replacements",
+  title: "Gearbox Repair in Swanmore, Hampshire | Cool Cars South Coast",
   description:
-    "Gearbox repairs and replacements with expert diagnosis and honest advice. Quality workmanship and cost-effective solutions.",
+    "Expert gearbox repairs & replacements in Swanmore, Hampshire for all makes & models. Serving Southampton & Fareham. Contact us today!",
   alternates: {
     canonical: "https://cool-cars.co.uk/workshop/services/gearbox-repairs-or-replacements",
   },

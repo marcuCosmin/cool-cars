@@ -5,9 +5,9 @@ import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title: "Custom Bodywork & Modifications – Cool Cars",
+  title: "Custom Bodywork & Car Modifications in Swanmore | Cool Cars South Coast",
   description:
-    "Upgrade your vehicle’s style with bespoke bodywork modifications, enhancements and tailored exterior styling from Cool Cars.",
+    "Custom bodywork & car modifications in Swanmore, Hampshire. Styling upgrades, body kits, and more. Serving Southampton & Fareham. Get a free quote!",
   alternates: {
     canonical: "https://cool-cars.co.uk/bodyshop/services/bodywork-and-modifications",
   },

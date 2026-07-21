@@ -5,9 +5,9 @@ import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title: "Cool Cars - Workshop - Cambelts & Timing Belts",
+  title: "Timing Belt Replacement in Swanmore, Hampshire | Cool Cars South Coast",
   description:
-    "Cambelt and timing belt replacement services with clear pricing. Expert fitting, fair costs and simple online booking.",
+    "Timing belt replacement in Swanmore, Hampshire. Cambelt changes to manufacturer intervals for all makes and models. Book your vehicle in today!",
   alternates: {
     canonical: "https://cool-cars.co.uk/workshop/services/cambelts-and-timing-belts",
   },

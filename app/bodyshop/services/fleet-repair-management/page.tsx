@@ -5,9 +5,9 @@ import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title: "Fleet Repair Management – Cool Cars",
+  title: "Fleet Vehicle Repairs in Hampshire | Cool Cars South Coast",
   description:
-    "Cost-effective, reliable fleet body repair management from Cool Cars. Keep your business vehicles looking professional and on the road.",
+    "Fleet vehicle repairs in Hampshire for vans, cars and light commercial vehicles. Body repairs, accident damage and maintenance support. Call today!",
   alternates: {
     canonical: "https://cool-cars.co.uk/bodyshop/services/fleet-repair-management",
   },

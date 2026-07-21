@@ -5,9 +5,9 @@ import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title: "Cool Cars - Workshop - Servicing",
+  title: "Car Servicing in Swanmore, Hampshire | Cool Cars South Coast",
   description:
-    "Vehicle servicing including oil & filter changes, interim, full and major services. Clear pricing, quality oil included, book online.",
+    "Car servicing in Swanmore, Hampshire. Oil & filter, interim, full & major services. Fully synthetic oil included, no extra charge. Book your car service today!",
   alternates: {
     canonical: "https://cool-cars.co.uk/workshop/services/servicing",
   },

@@ -5,9 +5,9 @@ import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title: "Accident Repairs – Cool Cars",
+  title: "Accident Repairs in Swanmore, Hampshire | Cool Cars South Coast",
   description:
-    "Trust Cool Cars for seamless accident repairs, expert bodywork restoration and support with insurance processes. Get back on the road with confidence.",
+    "Accident repair in Swanmore, Hampshire. Thatcham-approved collision repairs restoring your vehicle to pre-accident condition. Contact us today!",
   alternates: {
     canonical: "https://cool-cars.co.uk/bodyshop/services/accident-repairs",
   },

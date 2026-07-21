@@ -5,9 +5,9 @@ import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title: "Vehicle Body Repairs – Cool Cars",
+  title: "Vehicle Body Repairs in Swanmore, Hampshire | Cool Cars South Coast",
   description:
-    "From small dents to major collision damage, Cool Cars restores your vehicle with high-quality repairs and a finish that looks like new.",
+    "Vehicle body repairs in Swanmore, Hampshire. Dents, scratches, panel damage & more. Free estimates, Thatcham-approved. Get a quote today!",
   alternates: {
     canonical: "https://cool-cars.co.uk/bodyshop/services/vehicle-body-repairs",
   },

@@ -5,9 +5,9 @@ import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title: "Car Resprays & Paintwork – Cool Cars",
+  title: "Car Respray Swanmore, Hampshire | Cool Cars South Coast",
   description:
-    "Full resprays, colour changes and paintwork perfection from Cool Cars. Achieve a flawless, long-lasting finish with expert craftsmanship",
+    "Car respray in Swanmore, Hampshire. Full and partial resprays, colour changes, paintwork repairs, and more. Serving Southampton & Fareham. Get a quote!",
   alternates: {
     canonical: "https://cool-cars.co.uk/bodyshop/services/resprays-and-paintwork",
   },

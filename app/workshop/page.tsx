@@ -13,9 +13,9 @@ import { routes, website } from "@/globals/globals.const"
 import { MainSectionLinks } from "@/components/MainSectionLinks"
 
 export const metadata: Metadata = {
-  title: "Cool Cars - Workshop",
+  title: "Car Mechanic in Swanmore, Hampshire | Cool Cars South Coast",
   description:
-    "Mechanical repairs, vehicle servicing and diagnostics from a trusted local workshop. Quality workmanship at fair, transparent prices.",
+    "Mechanical workshop in Swanmore offering servicing, brakes, cambelts, clutches, tyres and gearbox repairs. Book your vehicle in today!",
   alternates: {
     canonical: "https://cool-cars.co.uk/workshop",
   },

@@ -5,9 +5,9 @@ import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 import { routes } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
-  title: "Cool Cars - Workshop - Tyres and Puncture Repairs",
+  title: "Puncture Repair in Swanmore, Hampshire | Cool Cars South Coast",
   description:
-    "Tyre supply, fitting and puncture repair services. Quality tyres, fair pricing and quick turnaround from trusted technicians.",
+    "Puncture repair in Swanmore, Hampshire, with tyre checks, tyre fitting and replacement options for all vehicles. Book your tyre check today!",
   alternates: {
     canonical: "https://cool-cars.co.uk/workshop/services/tyres-and-puncture-repairs",
   },
