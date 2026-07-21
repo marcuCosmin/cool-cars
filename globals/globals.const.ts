@@ -19,6 +19,40 @@ export const geoLatitude = 50.9435355
 export const geoLongitude = -1.193956
 export const googleMapsUrl = "https://maps.app.goo.gl/o371gkfg4AGhNAqY7"
 
+export const areaServed = [
+  { "@type": "City", name: "Swanmore" },
+  { "@type": "City", name: "Southampton" },
+  { "@type": "City", name: "Fareham" },
+  { "@type": "City", name: "Bishops Waltham" },
+  { "@type": "City", name: "Wickham" },
+  { "@type": "City", name: "Eastleigh" },
+  { "@type": "AdministrativeArea", name: "Hampshire" },
+]
+
+const providerDetails = {
+  name: "Cool Cars South Coast Ltd",
+  url: website,
+  telephone: phoneNumberInternational,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: addressStreet,
+    addressLocality,
+    addressRegion,
+    postalCode: addressPostalCode,
+    addressCountry,
+  },
+}
+
+export const businessProvider = {
+  "@type": ["AutoRepair", "AutoBodyShop"],
+  ...providerDetails,
+}
+
+export const autoRepairProvider = {
+  "@type": "AutoRepair",
+  ...providerDetails,
+}
+
 export const routes = {
   home: "/",
   bodyshop: "/bodyshop",

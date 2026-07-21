@@ -13,15 +13,11 @@ import {
   routes,
   website,
   email,
-  phoneNumberInternational,
-  addressStreet,
-  addressLocality,
-  addressRegion,
-  addressPostalCode,
-  addressCountry,
   geoLatitude,
   geoLongitude,
   googleMapsUrl,
+  areaServed,
+  businessProvider,
 } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
@@ -50,23 +46,12 @@ const offeredServices = [
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": ["AutoRepair", "AutoBodyShop"],
-  name: "Cool Cars South Coast Ltd",
-  url: website,
+  ...businessProvider,
   logo: `${website}/logo.svg`,
   image: `${website}/grey-car-front-headlight-bodywork-swanmore.jpg`,
   description:
     "Car body repair and respray specialists in Swanmore, Hampshire. Expert bodyshop and mechanical workshop services including accident repairs, resprays, servicing, brakes, clutch and gearbox repairs.",
-  telephone: phoneNumberInternational,
   email,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: addressStreet,
-    addressLocality,
-    addressRegion,
-    postalCode: addressPostalCode,
-    addressCountry,
-  },
   geo: {
     "@type": "GeoCoordinates",
     latitude: geoLatitude,
@@ -90,15 +75,7 @@ const jsonLd = {
   priceRange: "££",
   currenciesAccepted: "GBP",
   paymentAccepted: "Cash, Credit Card, Debit Card, Bank Transfer",
-  areaServed: [
-    { "@type": "City", name: "Swanmore" },
-    { "@type": "City", name: "Southampton" },
-    { "@type": "City", name: "Fareham" },
-    { "@type": "City", name: "Bishops Waltham" },
-    { "@type": "City", name: "Wickham" },
-    { "@type": "City", name: "Eastleigh" },
-    { "@type": "AdministrativeArea", name: "Hampshire" },
-  ],
+  areaServed,
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Car Repair Services",

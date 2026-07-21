@@ -4,11 +4,14 @@ import { Animated } from "@/components/Animated/Animated"
 import { ContactForm } from "@/components/ContactForm/ContactForm"
 import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection"
 
-import { Routes } from "@/globals/globals.const"
+import { Routes, website, areaServed } from "@/globals/globals.const"
 
 import { ServicePricing } from "./ServicePricing"
 
-import { serviceContentBannerClassNames } from "./ServiceContent.const"
+import {
+  serviceContentBannerClassNames,
+  serviceContentSchema,
+} from "./ServiceContent.const"
 
 import type { Pricing } from "./ServiceContent.model"
 import { mergeClassNames } from "@/utils/mergeClassNames"
@@ -43,6 +46,18 @@ export const ServiceContent = ({
   showTestimonials,
 }: ServiceContentProps) => {
   const bannerClassName = serviceContentBannerClassNames[servicePathname]
+  const schema = serviceContentSchema[servicePathname]
+
+  const serviceJsonLd = schema && {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: schema.serviceType,
+    name: schema.name,
+    description: schema.description,
+    provider: schema.provider,
+    areaServed,
+    url: `${website}${servicePathname}`,
+  }
 
   return (
     <main className="gap-20">
@@ -84,6 +99,13 @@ export const ServiceContent = ({
       </section>
 
       {showTestimonials && <TestimonialsSection />}
+
+      {serviceJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        />
+      )}
     </main>
   )
 }
