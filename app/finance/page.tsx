@@ -8,7 +8,7 @@ import { routes } from "@/globals/globals.const"
 const FinancePage = () => {
   return (
     <main className="gap-20">
-      <section className="bg-[url('/_next/image?url=%2Ffinance-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Ffinance-banner.jpg&w=828&q=75')] bg-center">
+      <section className="bg-[url('/_next/image?url=%2Fcar-repair-finance-options-hampshire.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fcar-repair-finance-options-hampshire.jpg&w=828&q=75')] bg-center">
         <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 mb-10 pt-10">
             <Animated as="h1">Interest-Free Finance</Animated>

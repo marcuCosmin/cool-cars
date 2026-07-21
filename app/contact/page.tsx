@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <main className="gap-20">
-      <section className="bg-[url('/_next/image?url=%2Fcontact-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fcontact-banner.jpg&w=828&q=75')]">
+      <section className="bg-[url('/_next/image?url=%2Fprestige-car-bodywork-swanmore-hampshire.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fprestige-car-bodywork-swanmore-hampshire.jpg&w=828&q=75')]">
         <Animated as="h1">Contact</Animated>
       </section>
 

@@ -33,7 +33,7 @@ const sixthSectionListItems = [
 export default function CookiesPolicyPage() {
   return (
     <main className="main-container-legal-page">
-      <section className="bg-[url('/_next/image?url=%2Fcookies-policy-banner.png&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fcookies-policy-banner.png&w=828&q=75')]">
+      <section className="bg-[url('/_next/image?url=%2Fcar-respray-technician-spray-booth-southampton.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fcar-respray-technician-spray-booth-southampton.jpg&w=828&q=75')]">
         <div className="first-section-main-content">
           <h1>Cookie Policy – Cool Cars</h1>
           <p>

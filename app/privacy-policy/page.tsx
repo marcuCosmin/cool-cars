@@ -76,7 +76,7 @@ const section8Items = [
 export default function PrivacyPolicy() {
   return (
     <main className="main-container-legal-page">
-      <section className="bg-[url('/_next/image?url=%2Fprivacy-policy-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fprivacy-policy-banner.jpg&w=828&q=75')]">
+      <section className="bg-[url('/_next/image?url=%2Fprestige-car-bodywork-repair-southampton.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fprestige-car-bodywork-repair-southampton.jpg&w=828&q=75')]">
         <div className="first-section-main-content">
           <h1>Privacy Policy – Cool Cars</h1>
           <p>

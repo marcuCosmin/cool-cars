@@ -31,17 +31,17 @@ const thirdSectionItems = [
 export default function About() {
   return (
     <main className="gap-20">
-      <section className="bg-[url('/_next/image?url=%2Fabout-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fabout-banner.jpg&w=828&q=75')]">
+      <section className="bg-[url('/_next/image?url=%2Fmachine-polishing-black-car-door-swanmore.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fmachine-polishing-black-car-door-swanmore.jpg&w=828&q=75')]">
         <Animated as="h1">About Us</Animated>
       </section>
 
-      <section className="flex gap-10 p-5 bg-[url('/_next/image?url=%2Fabout-first-section.jpg&w=640&q=75')] bg-cover bg-left bg-overlay bg-no-repeat text-center md:text-start md:bg-none">
+      <section className="flex gap-10 p-5 bg-[url('/_next/image?url=%2Ftechnician-masking-car-before-respray-hampshire.jpg&w=640&q=75')] bg-cover bg-left bg-overlay bg-no-repeat text-center md:text-start md:bg-none">
         <Animated
           as="img"
           direction="right"
           className="hidden md:block"
-          src="/about-first-section.jpg"
-          alt="Technician preparing a car body for paintwork."
+          src="/technician-masking-car-before-respray-hampshire.jpg"
+          alt="Technician in protective overalls masking a car before respray at Cool Cars, Swanmore, SO32 2PB"
           width={500}
           height={750}
         />

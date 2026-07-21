@@ -22,7 +22,8 @@ const mainSectionCards = [
   {
     title: "Industry Approved Methods",
     description: "Using Thatcham approved processes and repair times.",
-    imageSrc: "/driving-cert.webp",
+    imageSrc: "/thatcham-approved-repair-certificate-icon.webp",
+    alt: "Industry approved repair methods certificate icon at Cool Cars, Swanmore, Hampshire",
   },
   {
     title: "We have all the right tools",
@@ -50,7 +51,7 @@ const mainSectionLinks = [
 export default function Home() {
   return (
     <main className="gap-20">
-      <section className="bg-[url('/_next/image?url=%2Fhome-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fhome-banner.jpg&w=828&q=75')]">
+      <section className="bg-[url('/_next/image?url=%2Fgrey-car-front-headlight-bodywork-swanmore.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fgrey-car-front-headlight-bodywork-swanmore.jpg&w=828&q=75')]">
         <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 mb-10 pt-10">
             <Animated as="h1">Complete Car Care You Can Trust</Animated>
@@ -66,29 +67,31 @@ export default function Home() {
           </div>
 
           <ul className="flex flex-col gap-1 md:flex-row">
-            {mainSectionCards.map(({ title, description, imageSrc }, index) => (
-              <li key={index}>
-                <Animated
-                  as="article"
-                  className="p-8 flex flex-col md:flex-row items-center gap-4 bg-white/10 h-full"
-                >
-                  <Image
-                    className="drop-shadow-md drop-shadow-black"
-                    src={imageSrc}
-                    aria-hidden="true"
-                    alt=""
-                    width={80}
-                    height={80}
-                  />
-                  <div>
-                    <h3 className="font-semibold mb-2.5 text-white text-2xl">
-                      {title}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </Animated>
-              </li>
-            ))}
+            {mainSectionCards.map(
+              ({ title, description, imageSrc, alt }, index) => (
+                <li key={index}>
+                  <Animated
+                    as="article"
+                    className="p-8 flex flex-col md:flex-row items-center gap-4 bg-white/10 h-full"
+                  >
+                    <Image
+                      className="drop-shadow-md drop-shadow-black"
+                      src={imageSrc}
+                      aria-hidden={alt ? undefined : "true"}
+                      alt={alt ?? ""}
+                      width={80}
+                      height={80}
+                    />
+                    <div>
+                      <h3 className="font-semibold mb-2.5 text-white text-2xl">
+                        {title}
+                      </h3>
+                      <p>{description}</p>
+                    </div>
+                  </Animated>
+                </li>
+              )
+            )}
           </ul>
         </div>
       </section>
@@ -101,7 +104,7 @@ export default function Home() {
             direction="right"
             as="a"
             href="/bodyshop"
-            className="flex items-center justify-center text-white text-2xl w-full bg-overlay glass-button h-96 bg-[url('/_next/image?url=%2Fbodyshop-banner.jpg&w=640&q=75')] bg-cover"
+            className="flex items-center justify-center text-white text-2xl w-full bg-overlay glass-button h-96 bg-[url('/_next/image?url=%2Ftechnician-spraying-car-bonnet-spray-booth.jpg&w=640&q=75')] bg-cover"
           >
             <span>Bodyshop</span>
           </Animated>
@@ -110,7 +113,7 @@ export default function Home() {
             direction="left"
             as="a"
             href="/workshop"
-            className="flex items-center justify-center text-white text-2xl w-full bg-overlay glass-button h-96 bg-[url('/_next/image?url=%2Fworkshop-banner.jpg&w=640&q=75')] bg-cover"
+            className="flex items-center justify-center text-white text-2xl w-full bg-overlay glass-button h-96 bg-[url('/_next/image?url=%2Fengine-valvetrain-rocker-arms-mechanical-repair-southampton.jpg&w=640&q=75')] bg-cover"
           >
             <span> Workshop</span>
           </Animated>

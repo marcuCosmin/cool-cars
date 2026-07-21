@@ -37,49 +37,49 @@ const mainServices = [
     title: "Servicing",
     description:
       "From interim services to full annual servicing, Cool Cars provides expert vehicle care at fair prices.",
-    imageSrc: "/servicing.jpg",
+    imageSrc: "/mechanical-workshop-tools-spanners-southampton.jpg",
     href: routes.workshopServicesServicing,
-    alt: "Auto technician polishing a car hood inside a workshop",
+    alt: "Spanners and workshop tools representing mechanical repair services at Cool Cars, Southampton, Hampshire",
   },
   {
     title: "Brake Pads & Discs",
     description:
       "From brake checks to full pad and disc changes, we make sure your car stops safely every time.",
-    imageSrc: "/brake-pads-and-discs.jpg",
+    imageSrc: "/brake-disc-caliper-service-hampshire.jpg",
     href: routes.workshopServicesBrakePadsAndDiscs,
-    alt: "Workshop technician refinishing a car with a spray gun",
+    alt: "Brake disc and caliper after brake pad and disc service at Cool Cars, Swanmore, SO32 2PB",
   },
   {
     title: "Clutch Repairs/Replacements",
     description:
       "Expert clutch repairs and replacements to keep you moving smoothly.",
-    imageSrc: "/clutch-repairs-or-replacements.jpg",
+    imageSrc: "/gearstick-gearbox-repair-swanmore.jpg",
     href: routes.workshopServicesClutchRepairsOrReplacements,
-    alt: "Two cars involved in a crash",
+    alt: "Manual gear lever close-up representing gearbox repair at Cool Cars, Swanmore, Hampshire",
   },
   {
     title: "Cambelts & Timing Belts",
     description:
       "Keep your engine running smoothly with expert cambelt and timing belt replacement.",
-    imageSrc: "/cambelts-and-timing-belts.jpg",
+    imageSrc: "/cambelt-tensioner-pulley-timing-belt.jpg",
     href: routes.workshopServicesCambeltsAndTimingBelts,
-    alt: "Paint correction in progress with a polisher applied to a car door",
+    alt: "Close-up of timing belt tensioner pulley during cambelt service at Cool Cars, Hampshire",
   },
   {
     title: "Tyres and Puncture Repairs",
     description:
       "From quick puncture fixes to brand-new tyres, we deliver dependable performance you can rely on.",
-    imageSrc: "/tyres-and-puncture-repairs.jpg",
+    imageSrc: "/new-tyres-replacement-service-southampton.jpg",
     href: routes.workshopServicesTyresAndPunctureRepairs,
-    alt: "Custom bodywork in progress with a technician trimming material on a car panel",
+    alt: "Stack of new tyres representing tyre replacement service at Cool Cars, Southampton, Hampshire",
   },
   {
     title: "Gear Box Repairs/Replacements",
     description:
       "Professional gearbox repairs and replacements that keep you on the road.",
-    imageSrc: "/gear-box-repairs-or-replacements.jpg",
+    imageSrc: "/worn-gearbox-internal-components-repair.jpg",
     href: routes.workshopServicesGearBoxRepairsOrReplacements,
-    alt: "Fleet of cars in motion",
+    alt: "Close-up of worn gearbox internal components requiring gearbox repair at Cool Cars, Hampshire",
   },
 ]
 
@@ -106,7 +106,7 @@ const otherServices = [
 export default function WorkshopPage() {
   return (
     <main className="gap-20">
-      <section className="bg-[url('/_next/image?url=%2Fworkshop-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fworkshop-banner.jpg&w=828&q=75')]">
+      <section className="bg-[url('/_next/image?url=%2Fengine-valvetrain-rocker-arms-mechanical-repair-southampton.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fengine-valvetrain-rocker-arms-mechanical-repair-southampton.jpg&w=828&q=75')]">
         <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 mb-10 pt-10">
             <Animated as="h1">Cool Cars - Workshop</Animated>

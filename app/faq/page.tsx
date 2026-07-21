@@ -316,7 +316,7 @@ const faqJsonLd = {
 export default function FAQPage() {
   return (
     <main className="gap-10">
-      <section className="bg-[url('/_next/image?url=%2Ffaq-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Ffaq-banner.jpg&w=828&q=75')]">
+      <section className="bg-[url('/_next/image?url=%2Fpaint-correction-compound-black-car-swanmore.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fpaint-correction-compound-black-car-swanmore.jpg&w=828&q=75')]">
         <div className="first-section-main-content">
           <Animated
             as="h1"

@@ -38,56 +38,56 @@ const services = [
     title: "Vehicle Body Repairs",
     description:
       "From small dents to major accident damage, Cool Cars provides quality car body repairs at fair prices.",
-    imageSrc: "/vehicle-body-repairs.jpg",
+    imageSrc: "/paint-correction-polishing-dark-car-bonnet-swanmore.jpg",
     href: routes.bodyshopServicesVehicleBodyRepairs,
-    alt: "Auto technician polishing a car hood inside a workshop",
+    alt: "Technician using orbital polisher on dark car bonnet during paint correction at Cool Cars, Swanmore, SO32 2PB",
   },
   {
     title: "Car Resprays & Paintwork",
     description:
       "From quick touch-ups to full paint jobs, we deliver high-quality finishes at fair prices.",
-    imageSrc: "/car-resprays-and-paintwork.jpg",
+    imageSrc: "/technician-spraying-white-car-paint-booth.jpg",
     href: routes.bodyshopServicesRespraysAndPaintwork,
-    alt: "Workshop technician refinishing a car with a spray gun",
+    alt: "Technician applying paint to white car in spray booth at Cool Cars, Swanmore, SO32 2PB",
   },
   {
     title: "Accident Repairs",
     description:
       "Cool Cars delivers reliable, high-quality accident repairs that get you back on the road fast",
-    imageSrc: "/accident-repairs.jpg",
+    imageSrc: "/two-cars-front-end-collision-damage-swanmore.jpg",
     href: routes.bodyshopServicesAccidentRepairs,
-    alt: "Two cars involved in a crash",
+    alt: "Two cars with front-end collision damage requiring accident repair at Cool Cars, Swanmore, Hampshire",
   },
   {
     title: "Paint Correction & Car Polishing",
     description:
       "Bring back your car’s shine with professional paint correction and polishing from Cool Cars.",
-    imageSrc: "/paint-correction-and-polishing.jpg",
+    imageSrc: "/dual-action-polish-dark-car-detailing-swanmore.jpg",
     href: routes.bodyshopServicesPaintCorrectionAndPolishing,
-    alt: "Paint correction in progress with a polisher applied to a car door",
+    alt: "Detailer applying dual-action machine polish to dark car at Cool Cars, Swanmore, Hampshire",
   },
   {
     title: "Custom Bodywork & Modifications",
     description:
       "From subtle upgrades to bold styling changes, we deliver great-looking results at prices that make sense.",
-    imageSrc: "/custom-bodywork-and-modifications.jpg",
+    imageSrc: "/car-dent-inspection-white-panel-repair.jpg",
     href: routes.bodyshopServicesBodyworkAndModifications,
-    alt: "Custom bodywork in progress with a technician trimming material on a car panel",
+    alt: "Technician inspecting dent on white car door panel before repair at Cool Cars, Hampshire",
   },
   {
     title: "Fleet Repair Management",
     description:
       "Cool Cars keeps your business on the road with expert fleet repair management.",
-    imageSrc: "/fleet-repair-management.jpg",
+    imageSrc: "/cars-on-road-vehicle-repair-swanmore.jpg",
     href: routes.bodyshopServicesFleetRepairManagement,
-    alt: "Fleet of cars in motion",
+    alt: "Cars in traffic representing vehicle repair and servicing at Cool Cars, Swanmore, SO32 2PB",
   },
 ]
 
 export default function BodyshopPage() {
   return (
     <main className="gap-20">
-      <section className="bg-[url('/_next/image?url=%2Fbodyshop-banner.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fbodyshop-banner.jpg&w=828&q=75')]">
+      <section className="bg-[url('/_next/image?url=%2Ftechnician-spraying-car-bonnet-spray-booth.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Ftechnician-spraying-car-bonnet-spray-booth.jpg&w=828&q=75')]">
         <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 pt-10">
             <Animated as="h1">Cool Cars - Bodyshop</Animated>
