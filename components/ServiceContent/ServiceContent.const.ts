@@ -9,6 +9,7 @@ type ServiceSchema = {
   name: string
   description: string
   provider: typeof businessProvider | typeof autoRepairProvider
+  breadcrumbName: string
 }
 
 export const serviceContentSchema: Partial<
@@ -20,6 +21,7 @@ export const serviceContentSchema: Partial<
     description:
       "Expert vehicle body repairs in Swanmore, Hampshire. From minor dents and scratches to major accident damage, Cool Cars delivers quality repairs at fair prices using Thatcham-approved processes. Serving Southampton, Fareham, Eastleigh, Bishops Waltham and the wider Hampshire area.",
     provider: businessProvider,
+    breadcrumbName: "Vehicle Body Repairs",
   },
   [routes.bodyshopServicesRespraysAndPaintwork]: {
     serviceType: "Car Respray",
@@ -27,6 +29,7 @@ export const serviceContentSchema: Partial<
     description:
       "Full and partial car resprays in Swanmore, Hampshire. From quick touch-ups to complete colour changes, Cool Cars delivers professional-quality paintwork at fair, transparent prices. Serving Southampton, Fareham, Eastleigh, Bishops Waltham and the wider Hampshire area.",
     provider: businessProvider,
+    breadcrumbName: "Car Resprays & Paintwork",
   },
   [routes.bodyshopServicesAccidentRepairs]: {
     serviceType: "Accident Repair",
@@ -34,6 +37,7 @@ export const serviceContentSchema: Partial<
     description:
       "Professional accident repairs in Swanmore, Hampshire. Thatcham-approved processes, expert bodywork and fast turnaround. We work with insurance and private customers. Serving Southampton, Fareham, Eastleigh, Bishops Waltham and the wider Hampshire area.",
     provider: businessProvider,
+    breadcrumbName: "Accident Repairs",
   },
   [routes.bodyshopServicesPaintCorrectionAndPolishing]: {
     serviceType: "Paint Correction",
@@ -41,6 +45,7 @@ export const serviceContentSchema: Partial<
     description:
       "Professional paint correction and machine polishing in Swanmore, Hampshire. Remove swirl marks, scratches and oxidation to restore your car's paintwork to a deep, lasting shine. Serving Southampton, Fareham, Eastleigh, Bishops Waltham and the wider Hampshire area.",
     provider: businessProvider,
+    breadcrumbName: "Paint Correction & Car Polishing",
   },
   [routes.bodyshopServicesBodyworkAndModifications]: {
     serviceType: "Custom Bodywork",
@@ -48,6 +53,7 @@ export const serviceContentSchema: Partial<
     description:
       "Custom bodywork and vehicle modifications in Swanmore, Hampshire. From subtle styling upgrades to bold custom changes, Cool Cars delivers great-looking results at fair prices. Serving Southampton, Fareham, Eastleigh, Bishops Waltham and the wider Hampshire area.",
     provider: businessProvider,
+    breadcrumbName: "Custom Bodywork & Modifications",
   },
   [routes.bodyshopServicesFleetRepairManagement]: {
     serviceType: "Fleet Repair Management",
@@ -55,6 +61,7 @@ export const serviceContentSchema: Partial<
     description:
       "Expert fleet repair management in Swanmore, Hampshire. Cool Cars keeps your business vehicles on the road with efficient, cost-effective bodywork and mechanical repairs and minimal downtime. Serving Southampton, Fareham, Eastleigh, Bishops Waltham and the wider Hampshire area.",
     provider: businessProvider,
+    breadcrumbName: "Fleet Repair Management",
   },
   [routes.workshopServicesServicing]: {
     serviceType: "Car Servicing",
@@ -62,6 +69,7 @@ export const serviceContentSchema: Partial<
     description:
       "Interim and full car servicing in Swanmore, Hampshire. Expert mechanics, transparent pricing and fast turnaround to keep your vehicle running at its best. Serving Southampton, Fareham, Eastleigh, Bishops Waltham and the wider Hampshire area.",
     provider: autoRepairProvider,
+    breadcrumbName: "Car Servicing",
   },
   [routes.workshopServicesBrakePadsAndDiscs]: {
     serviceType: "Brake Repair",
@@ -69,6 +77,7 @@ export const serviceContentSchema: Partial<
     description:
       "Expert brake pad and disc replacement in Swanmore, Hampshire, helping keep your vehicle safe, responsive and road-ready. Serving Southampton, Fareham, Eastleigh, Bishops Waltham and surrounding Hampshire areas.",
     provider: autoRepairProvider,
+    breadcrumbName: "Brake Pads & Discs",
   },
   [routes.workshopServicesClutchRepairsOrReplacements]: {
     serviceType: "Clutch Repair",
@@ -76,6 +85,7 @@ export const serviceContentSchema: Partial<
     description:
       "Expert clutch repairs and replacements in Swanmore, Hampshire. Fast diagnosis, quality parts and reliable workmanship to keep you moving smoothly. Serving Southampton, Fareham, Eastleigh, Bishops Waltham and the wider Hampshire area.",
     provider: autoRepairProvider,
+    breadcrumbName: "Clutch Repairs & Replacements",
   },
   [routes.workshopServicesCambeltsAndTimingBelts]: {
     serviceType: "Cambelt Replacement",
@@ -83,6 +93,7 @@ export const serviceContentSchema: Partial<
     description:
       "Cambelt and timing belt replacement in Swanmore, Hampshire. Protect your engine with timely replacement by Cool Cars' expert mechanics, using quality parts at fair, transparent prices. Serving Southampton, Fareham, Eastleigh, Bishops Waltham and the wider Hampshire area.",
     provider: autoRepairProvider,
+    breadcrumbName: "Cambelts & Timing Belts",
   },
   [routes.workshopServicesTyresAndPunctureRepairs]: {
     serviceType: "Tyre Fitting",
@@ -90,6 +101,7 @@ export const serviceContentSchema: Partial<
     description:
       "Tyre fitting and puncture repairs in Swanmore, Hampshire. From quick puncture fixes to brand-new tyre replacements, Cool Cars delivers dependable performance you can rely on. Serving Southampton, Fareham, Eastleigh, Bishops Waltham and the wider Hampshire area.",
     provider: autoRepairProvider,
+    breadcrumbName: "Tyres & Puncture Repairs",
   },
   [routes.workshopServicesGearBoxRepairsOrReplacements]: {
     serviceType: "Gearbox Repair",
@@ -97,6 +109,7 @@ export const serviceContentSchema: Partial<
     description:
       "Professional gearbox repairs and replacements in Swanmore, Hampshire. Expert diagnosis and quality workmanship to keep your vehicle running smoothly. Serving Southampton, Fareham, Bishops Waltham, Eastleigh and the wider Hampshire area.",
     provider: autoRepairProvider,
+    breadcrumbName: "Gearbox Repairs & Replacements",
   },
 }
 

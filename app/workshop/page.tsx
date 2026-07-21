@@ -9,7 +9,7 @@ import { ContactSection } from "@/components/ContactSection"
 import { MapLocationSection } from "@/components/MapLocationSection"
 import { Animated } from "@/components/Animated/Animated"
 
-import { routes } from "@/globals/globals.const"
+import { routes, website } from "@/globals/globals.const"
 import { MainSectionLinks } from "@/components/MainSectionLinks"
 
 export const metadata: Metadata = {
@@ -19,6 +19,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://cool-cars.co.uk/workshop",
   },
+}
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: website },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Workshop",
+      item: `${website}${routes.workshop}`,
+    },
+  ],
 }
 
 const mainSectionLinks = [
@@ -191,6 +205,11 @@ export default function WorkshopPage() {
       <ContactSection />
 
       <MapLocationSection />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
     </main>
   )
 }

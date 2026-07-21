@@ -10,7 +10,7 @@ import { MapLocationSection } from "@/components/MapLocationSection"
 import { Animated } from "@/components/Animated/Animated"
 import { MainSectionLinks } from "@/components/MainSectionLinks"
 
-import { routes } from "@/globals/globals.const"
+import { routes, website } from "@/globals/globals.const"
 
 export const metadata: Metadata = {
   title: "Cool Cars - Bodyshop",
@@ -19,6 +19,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://cool-cars.co.uk/bodyshop",
   },
+}
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: website },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Bodyshop",
+      item: `${website}${routes.bodyshop}`,
+    },
+  ],
 }
 
 const mainSectionLinks = [
@@ -147,6 +161,11 @@ export default function BodyshopPage() {
       <ContactSection />
 
       <MapLocationSection />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
     </main>
   )
 }

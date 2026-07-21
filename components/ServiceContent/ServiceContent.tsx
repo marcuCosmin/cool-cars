@@ -4,7 +4,7 @@ import { Animated } from "@/components/Animated/Animated"
 import { ContactForm } from "@/components/ContactForm/ContactForm"
 import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection"
 
-import { Routes, website, areaServed } from "@/globals/globals.const"
+import { Routes, routes, website, areaServed } from "@/globals/globals.const"
 
 import { ServicePricing } from "./ServicePricing"
 
@@ -59,6 +59,30 @@ export const ServiceContent = ({
     url: `${website}${servicePathname}`,
   }
 
+  const parentSection = servicePathname.startsWith(routes.bodyshop)
+    ? { name: "Bodyshop", pathname: routes.bodyshop }
+    : { name: "Workshop", pathname: routes.workshop }
+
+  const breadcrumbJsonLd = schema && {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: website },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: parentSection.name,
+        item: `${website}${parentSection.pathname}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: schema.breadcrumbName,
+        item: `${website}${servicePathname}`,
+      },
+    ],
+  }
+
   return (
     <main className="gap-20">
       <section className={mergeClassNames(`bg-center p-2 ${bannerClassName}`)}>
@@ -104,6 +128,15 @@ export const ServiceContent = ({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        />
+      )}
+
+      {breadcrumbJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbJsonLd),
+          }}
         />
       )}
     </main>
