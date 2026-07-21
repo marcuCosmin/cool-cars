@@ -30,5 +30,5 @@ export const GoogleAnalytics = () => {
     return null
   }
 
-  return <NextGoogleAnalytics gaId="AW-17129798926" />
+  return <NextGoogleAnalytics gaId="G-DHQ5DJR36G" />
 }
