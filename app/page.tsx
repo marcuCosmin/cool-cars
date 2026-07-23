@@ -1,5 +1,6 @@
 import { type Metadata } from "next"
 import Image from "next/image"
+import Link from "next/link"
 
 import { TestimonialsSection } from "@/components/TestimonialsSection/TestimonialsSection"
 import { ContactSection } from "@/components/ContactSection"
@@ -13,6 +14,8 @@ import {
   routes,
   website,
   email,
+  phoneNumberText,
+  phoneNumberValue,
   geoLatitude,
   geoLongitude,
   googleMapsUrl,
@@ -79,7 +82,7 @@ const jsonLd = {
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Car Repair Services",
-    itemListElement: offeredServices.map((name) => ({
+    itemListElement: offeredServices.map(name => ({
       "@type": "Offer",
       itemOffered: { "@type": "Service", name },
     })),
@@ -117,19 +120,84 @@ const mainSectionLinks = [
   },
 ]
 
+const bodyshopSection = {
+  title: "Our bodyshop team carries out:",
+  services: [
+    {
+      href: routes.bodyshopServicesVehicleBodyRepairs,
+      label: "Vehicle body repairs in Swanmore",
+    },
+    {
+      href: routes.bodyshopServicesRespraysAndPaintwork,
+      label: "Car resprays and paintwork",
+    },
+    {
+      href: routes.bodyshopServicesAccidentRepairs,
+      label: "Accident repairs",
+    },
+    {
+      href: routes.bodyshopServicesPaintCorrectionAndPolishing,
+      label: "Paint correction and polishing",
+    },
+    {
+      href: routes.bodyshopServicesBodyworkAndModifications,
+      label: "Custom bodywork and modifications",
+    },
+    {
+      href: routes.bodyshopServicesFleetRepairManagement,
+      label: "Fleet repair management",
+    },
+  ],
+}
+
+const workshopSection = {
+  title: "Our workshop team handles:",
+  services: [
+    {
+      href: routes.workshopServicesServicing,
+      label: "Car servicing",
+    },
+    {
+      href: routes.workshopServicesBrakePadsAndDiscs,
+      label: "Brake pad and disc replacement",
+    },
+    {
+      href: routes.workshopServicesClutchRepairsOrReplacements,
+      label: "Clutch repairs and replacements",
+    },
+    {
+      href: routes.workshopServicesCambeltsAndTimingBelts,
+      label: "Cambelt and timing belt replacement",
+    },
+    {
+      href: routes.workshopServicesTyresAndPunctureRepairs,
+      label: "Tyre and puncture repairs",
+    },
+    {
+      href: routes.workshopServicesGearBoxRepairsOrReplacements,
+      label: "Gearbox repairs and replacements",
+    },
+  ],
+}
+
 export default function Home() {
   return (
-    <main className="gap-20">
+    <main className="gap-10 md:gap-20">
       <section className="bg-[url('/_next/image?url=%2Fgrey-car-front-headlight-bodywork-swanmore.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fgrey-car-front-headlight-bodywork-swanmore.jpg&w=828&q=75')]">
         <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 mb-10 pt-10">
-            <Animated as="h1">Complete Car Care You Can Trust</Animated>
-            <h2 className="text-shadow-black text-shadow-md">
-              Bodywork, Mechanical Repairs & Servicing
-            </h2>
+            <Animated as="h1">
+              Car Body Repairs & Servicing
+              <br />
+              in Swanmore, Hampshire
+            </Animated>
             <p className="text-base">
-              From cosmetic fixes and accident repairs to essential mechanical
-              servicing and ongoing vehicle care.
+              Cool Cars South Coast is a professional car bodyshop in Swanmore,
+              Hampshire, specialising in car body repair, full and partial
+              resprays, accident repairs, and mechanical servicing. Based at
+              Swanmore Business Park, we provide reliable, high-quality repairs
+              for drivers across Southampton, Fareham, Bishops Waltham,
+              Eastleigh, Wickham, and the wider Hampshire area.
             </p>
 
             <MainSectionLinks links={mainSectionLinks} />
@@ -188,6 +256,78 @@ export default function Home() {
           </Animated>
         </div>
       </section>
+
+      <section className="flex flex-col gap-5 px-5 md:p-0 max-w-3xl">
+        <h2>Expert Bodyshop & Mechanical Workshop Under One Roof</h2>
+
+        <p className="text-center">
+          Having a fully equipped car bodyshop in Swanmore and mechanical
+          workshop in the same premises means we can handle everything your
+          vehicle needs, from cosmetic damage and paintwork to clutches,
+          gearboxes, and annual servicing.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-5">
+          {[bodyshopSection, workshopSection].map(
+            ({ title, services }, index) => (
+              <section key={index}>
+                <h3 className="text-primary text-lg font-normal">{title}</h3>
+                <ul>
+                  {services.map(({ href, label }) => (
+                    <li
+                      key={href}
+                      className="text-center"
+                    >
+                      <Link href={href}>{label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )
+          )}
+        </div>
+
+        <p className="text-center">
+          We work on a wide range of vehicles, from everyday cars and commercial
+          vans to classics and high-performance vehicles.
+        </p>
+      </section>
+
+      <div className="flex flex-col md:flex-row max-w-7xl mx-auto gap-10 md:gap-20">
+        <section className="flex flex-col gap-5 px-5 md:p-0 max-w-2xl">
+          <h2>Thatcham-Approved. Honest Pricing. Every Time.</h2>
+
+          <p className="text-center">
+            Every job at Cool Cars is carried out using Thatcham-approved
+            processes and repair times, so you can be confident the work meets
+            industry standards. Our tools are regularly calibrated and
+            safety-certified, and our technicians stay current with the latest
+            repair techniques. All estimates are free and no-obligation, and we
+            confirm the cost before any work begins. For larger repairs,{" "}
+            <Link href={routes.finance}>flexible car repair finance</Link> is
+            available to help spread the cost.
+          </p>
+        </section>
+
+        <section className="flex flex-col gap-5 px-5 md:p-0 max-w-2xl">
+          <h2>Covering Southampton, Fareham & Hampshire</h2>
+
+          <p className="text-center">
+            Our Swanmore car bodyshop is ideally placed to serve drivers across
+            Hampshire. We regularly welcome customers from Southampton, Fareham,
+            Bishops Waltham, Wickham, and Eastleigh. We work by appointment
+            only, so every vehicle gets the dedicated time and attention it
+            deserves.
+          </p>
+
+          <p className="text-center">
+            <Link href={routes.contact}>Contact us</Link> today for a free
+            estimate, or call{" "}
+            <Link href={`tel:${phoneNumberValue}`}>{phoneNumberText}</Link> to
+            book your vehicle in!
+          </p>
+        </section>
+      </div>
 
       <TestimonialsSection />
 
