@@ -1,8 +1,13 @@
 import { type Metadata } from "next"
+import Link from "next/link"
 
 import { ServiceContent } from "@/components/ServiceContent/ServiceContent"
 
-import { routes } from "@/globals/globals.const"
+import {
+  routes,
+  phoneNumberText,
+  phoneNumberValue,
+} from "@/globals/globals.const"
 
 export const metadata: Metadata = {
   title: "Vehicle Body Repairs in Swanmore, Hampshire | Cool Cars South Coast",
@@ -18,29 +23,83 @@ export default async function VehicleBodyRepairsServicePage() {
     <ServiceContent
       showTestimonials
       servicePathname={routes.bodyshopServicesVehicleBodyRepairs}
-      title="Vehicle Body Repairs"
+      title="Vehicle Body Repairs in Swanmore, Hampshire"
       description={
+        <p>
+          Cool Cars South Coast provides professional vehicle body repairs in
+          Swanmore, Hampshire, covering everything from minor dents and
+          scratches to more extensive panel damage. Based at our car bodyshop on
+          Swanmore Business Park, we repair everyday cars, vans, classics, and
+          performance vehicles to a consistently high standard.
+        </p>
+      }
+      content={
         <>
-          <p>
-            From dents and scratches to major repairs, Cool Cars delivers
-            quality work you can count on.
-          </p>
-          <p>
-            Our team combines skill, care, and fair pricing to give you lasting
-            results and real value.
-          </p>
-          <p>
-            Using trusted techniques and durable materials, we make sure every
-            vehicle leaves looking its best.
-          </p>
-          <p>
-            No jargon or hidden costs, just honest, professional repairs done
-            right
-          </p>
-          <p>
-            Whether it’s a minor scrape or serious damage, we treat every job
-            with the same attention to detail and pride in our work.
-          </p>
+          <section className="flex flex-col gap-5 px-5 md:p-0 max-w-3xl">
+            <h2>What We Cover</h2>
+
+            <p className="text-center">
+              Our bodyshop team handles a wide range of vehicle body repair
+              work, including minor dent and scratch repairs, scrape and scuff
+              removal, panel beating and reshaping, bumper repairs, and
+              structural body repairs following impact damage. No job is too
+              small or too complex — every repair gets the same care and
+              attention to detail.
+            </p>
+
+            <p className="text-center">
+              If the damage is more significant, our{" "}
+              <Link href={routes.bodyshopServicesAccidentRepairs}>
+                accident repair service
+              </Link>{" "}
+              covers the full scope of collision damage, including structural
+              assessment and insurance-related processes. Where paintwork has
+              been affected beyond a simple touch-up, we may recommend a{" "}
+              <Link href={routes.bodyshopServicesRespraysAndPaintwork}>
+                partial or full respray
+              </Link>{" "}
+              to achieve a seamless finish.
+            </p>
+          </section>
+
+          <div className="flex flex-col md:flex-row max-w-7xl mx-auto gap-10 md:gap-20">
+            <section className="flex flex-col gap-5 px-5 md:p-0 max-w-2xl">
+              <h2>Our Repair Process</h2>
+
+              <p className="text-center">
+                Every vehicle body repair starts with a free, no-obligation
+                assessment. We inspect the damage, explain what’s involved, and
+                confirm a fixed price before any work begins. All repairs follow
+                Thatcham-approved processes, and we use precision
+                colour-matching technology to ensure the repair blends perfectly
+                with your vehicle’s existing paintwork.
+              </p>
+
+              <p className="text-center">
+                We work by appointment only, so your car receives dedicated
+                attention from our technicians rather than sitting in a queue.
+              </p>
+            </section>
+
+            <section className="flex flex-col gap-5 px-5 md:p-0 max-w-2xl">
+              <h2>Serving Southampton, Fareham & Hampshire</h2>
+
+              <p className="text-center">
+                Our Swanmore bodyshop is well-placed for drivers from
+                Southampton, Fareham, Bishops Waltham, Eastleigh, Wickham, and
+                across Hampshire. If the cost of a repair is a concern,{" "}
+                <Link href={routes.finance}>car repair finance</Link> is
+                available to help spread the bill.
+              </p>
+
+              <p className="text-center">
+                <Link href={routes.contact}>Get a free estimate today</Link>, or
+                call{" "}
+                <Link href={`tel:${phoneNumberValue}`}>{phoneNumberText}</Link>{" "}
+                to discuss your repair!
+              </p>
+            </section>
+          </div>
         </>
       }
     />

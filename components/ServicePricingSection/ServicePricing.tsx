@@ -1,6 +1,6 @@
 import { Animated } from "@/components/Animated/Animated"
 
-import type { Pricing } from "./ServiceContent.model"
+import type { Pricing } from "./ServicePricingSection.model"
 
 type ServicePricingProps = {
   pricing: Pricing
