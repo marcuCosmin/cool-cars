@@ -10,7 +10,12 @@ import { MapLocationSection } from "@/components/MapLocationSection"
 import { Animated } from "@/components/Animated/Animated"
 import { MainSectionLinks } from "@/components/MainSectionLinks"
 
-import { routes, website } from "@/globals/globals.const"
+import {
+  routes,
+  website,
+  phoneNumberText,
+  phoneNumberValue,
+} from "@/globals/globals.const"
 
 export const metadata: Metadata = {
   title: "Car Bodyshop in Swanmore, Hampshire | Cool Cars South Coast",
@@ -104,14 +109,24 @@ export default function BodyshopPage() {
       <section className="bg-[url('/_next/image?url=%2Ftechnician-spraying-car-bonnet-spray-booth.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Ftechnician-spraying-car-bonnet-spray-booth.jpg&w=828&q=75')]">
         <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 pt-10">
-            <Animated as="h1">Cool Cars - Bodyshop</Animated>
-            <h2 className="text-shadow-black text-shadow-md">
-              Flawless Care for Every Vehicle
-            </h2>
+            <Animated as="h1">
+              Car Bodyshop in Swanmore, Hampshire — Body Repairs, Resprays &
+              Accident Repairs
+            </Animated>
             <p className="text-base">
-              From small dents and scratches to full resprays and accident
-              repairs, our technicians deliver flawless results that make your
-              vehicle shine.
+              Cool Cars South Coast is a professional car bodyshop in
+              Swanmore, Hampshire, based at Swanmore Business Park. Whether
+              your vehicle needs minor dent and body repairs, a full or
+              partial respray, or has sustained accident damage, our
+              technicians deliver quality, long-lasting results at fair and
+              transparent prices.
+            </p>
+            <p className="text-base">
+              Our Swanmore car bodyshop serves drivers from across Hampshire,
+              including Southampton, Fareham, Bishops Waltham, Eastleigh, and
+              Wickham. We work on all types of vehicles, from everyday family
+              cars and commercial vans to classics and high-performance
+              vehicles.
             </p>
           </div>
 
@@ -119,10 +134,34 @@ export default function BodyshopPage() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-5 p-5 md:p-0">
-        <h2>Our Services</h2>
-        <h3 className="mb-10">Complete Solutions for All Your Car Needs</h3>
+      <section className="flex flex-col gap-5 px-5 md:p-0 max-w-3xl mx-auto">
+        <h2>Our Hampshire Bodyshop Services</h2>
 
+        <p className="text-center">
+          From{" "}
+          <Link href={routes.bodyshopServicesPaintCorrectionAndPolishing}>
+            paint correction and polishing
+          </Link>{" "}
+          to restore your vehicle&apos;s original shine, to{" "}
+          <Link href={routes.bodyshopServicesBodyworkAndModifications}>
+            custom bodywork and modifications
+          </Link>{" "}
+          for something more individual, we cover the full range of car body
+          repair and paintwork services. Businesses can also take advantage
+          of our{" "}
+          <Link href={routes.bodyshopServicesFleetRepairManagement}>
+            fleet repair management
+          </Link>{" "}
+          service to keep commercial vehicles on the road with minimal
+          downtime.
+        </p>
+
+        <p className="text-center">
+          Select a service below for full details and booking information.
+        </p>
+      </section>
+
+      <section className="flex flex-col gap-5 p-5 md:p-0">
         <ul className="flex flex-col items-center md:grid md:grid-cols-3 gap-10 md:items-start">
           {services.map(
             ({ title, description, imageSrc, href, alt }, index) => (
@@ -154,6 +193,41 @@ export default function BodyshopPage() {
             )
           )}
         </ul>
+      </section>
+
+      <section className="flex flex-col gap-5 px-5 md:p-0 max-w-3xl mx-auto">
+        <h2>What to Expect at Our Car Bodyshop</h2>
+
+        <p className="text-center">
+          Every repair at Cool Cars follows Thatcham-approved processes and
+          repair times, the same standard used by approved insurance
+          repairers. Our technicians use precision colour-matching technology
+          to ensure every respray and repair blends seamlessly with your
+          vehicle&apos;s existing paintwork, whether it&apos;s a standard
+          factory colour or a custom finish on a classic or performance car.
+        </p>
+
+        <p className="text-center">
+          Estimates are always free and no-obligation. We inspect the damage,
+          agree the full cost upfront, and only begin once you&apos;re happy
+          to proceed. <Link href={routes.finance}>Car repair finance</Link> is
+          available if you&apos;d prefer to spread the cost of a larger job.
+        </p>
+
+        <p className="text-center">
+          We work by appointment to make sure your vehicle gets dedicated time
+          and attention rather than a place in a queue. If there are any
+          mechanical issues alongside the bodywork, our{" "}
+          <Link href={routes.workshop}>workshop team</Link> can often deal
+          with both in the same visit.
+        </p>
+
+        <p className="text-center">
+          <Link href={routes.contact}>Request a free estimate</Link> today, or
+          call{" "}
+          <Link href={`tel:${phoneNumberValue}`}>{phoneNumberText}</Link> to
+          book your vehicle in!
+        </p>
       </section>
 
       <TestimonialsSection />

@@ -9,7 +9,12 @@ import { ContactSection } from "@/components/ContactSection"
 import { MapLocationSection } from "@/components/MapLocationSection"
 import { Animated } from "@/components/Animated/Animated"
 
-import { routes, website } from "@/globals/globals.const"
+import {
+  routes,
+  website,
+  phoneNumberText,
+  phoneNumberValue,
+} from "@/globals/globals.const"
 import { MainSectionLinks } from "@/components/MainSectionLinks"
 
 export const metadata: Metadata = {
@@ -123,14 +128,33 @@ export default function WorkshopPage() {
       <section className="bg-[url('/_next/image?url=%2Fengine-valvetrain-rocker-arms-mechanical-repair-southampton.jpg&w=640&q=75')] md:bg-[url('/_next/image?url=%2Fengine-valvetrain-rocker-arms-mechanical-repair-southampton.jpg&w=828&q=75')]">
         <div className="h-full max-w-7xl">
           <div className="first-section-main-content px-2.5 mb-10 pt-10">
-            <Animated as="h1">Cool Cars - Workshop</Animated>
-            <h2 className="text-shadow-black text-shadow-md">
-              Skilled Hands for Every Vehicle
-            </h2>
+            <Animated as="h1">
+              Car Mechanic in Swanmore, Hampshire — Servicing, Brakes &
+              Mechanical Repairs
+            </Animated>
             <p className="text-base">
-              From routine servicing to complex mechanical repairs, our
-              technicians deliver reliable workmanship that keeps your vehicle
-              running at its best.
+              Cool Cars South Coast is a trusted mechanical workshop in
+              Swanmore, Hampshire, providing expert vehicle servicing and
+              mechanical repairs from our fully equipped workshop at Swanmore
+              Business Park.
+            </p>
+            <p className="text-base">
+              Based in Swanmore, our mechanical workshop serves drivers from
+              across Hampshire, including Southampton, Fareham, Bishops Waltham,
+              Eastleigh, Wickham, and nearby areas.
+            </p>
+            <p className="text-base">
+              Whether you need a routine car service, urgent brake pad and disc
+              replacement, or a more complex repair such as a clutch replacement
+              or gearbox repair, our experienced mechanics handle it all at
+              fair, transparent prices.
+            </p>
+            <p className="text-base">
+              As part of Cool Cars South Coast, our workshop team benefits from
+              fully calibrated tools, experienced technicians, and a commitment
+              to quality across every job. We work on all vehicle types, from
+              everyday cars and commercial vans to performance vehicles and
+              classics.
             </p>
 
             <MainSectionLinks links={mainSectionLinks} />
@@ -138,10 +162,29 @@ export default function WorkshopPage() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-5 p-5 md:p-0">
-        <h2>Our Services</h2>
-        <h3 className="mb-10">Complete Solutions for All Your Car Needs</h3>
+      <section className="flex flex-col gap-5 px-5 md:p-0 max-w-3xl mx-auto">
+        <h2>Our Mechanical Workshop Services</h2>
 
+        <p className="text-center">
+          Our workshop covers a wide range of car mechanical repairs and
+          maintenance. Alongside our main services, including{" "}
+          <Link href={routes.workshopServicesCambeltsAndTimingBelts}>
+            cambelt and timing belt replacement
+          </Link>{" "}
+          and{" "}
+          <Link href={routes.workshopServicesTyresAndPunctureRepairs}>
+            tyre and puncture repairs
+          </Link>
+          , we also carry out batteries, exhausts, turbos, air conditioning,
+          engine diagnostic scans, and wheel alignment.
+        </p>
+
+        <p className="text-center">
+          Select a service below for full details and booking information.
+        </p>
+      </section>
+
+      <section className="flex flex-col gap-5 p-5 md:p-0">
         <ul className="flex flex-col items-center md:grid md:grid-cols-3 gap-10 md:items-start">
           {mainServices.map(
             ({ title, description, imageSrc, href, alt }, index) => (
@@ -154,7 +197,7 @@ export default function WorkshopPage() {
                   className="flex flex-col gap-5 max-w-2xl w-full"
                 >
                   <Image
-                    className="w-full h-[350px] object-cover md:w-[400px] md:h-[500px]"
+                    className="w-full h-87.5 object-cover md:w-100 md:h-125"
                     src={imageSrc}
                     alt={alt}
                     width={400}
@@ -191,13 +234,44 @@ export default function WorkshopPage() {
             >
               <Link
                 href="/contact"
-                className="block text-center link-button-fill-primary w-[250px]"
+                className="block text-center link-button-fill-primary w-62.5"
               >
                 {title}
               </Link>
             </Animated>
           ))}
         </ul>
+      </section>
+
+      <section className="flex flex-col gap-5 px-5 md:p-0 max-w-3xl mx-auto">
+        <h2>Trusted Mechanics Across Hampshire</h2>
+
+        <p className="text-center">
+          Our workshop is equipped with up-to-date diagnostic tools to
+          accurately identify mechanical faults, helping us repair the right
+          issue first time. We use quality parts on every job and carry out all
+          work to manufacturer specifications, regardless of your vehicle&apos;s
+          make, model, or age.
+        </p>
+
+        <p className="text-center">
+          Pricing is always transparent. We diagnose the issue, confirm the full
+          cost, and only start work once you have approved it. For larger
+          mechanical repairs,{" "}
+          <Link href={routes.finance}>car repair finance</Link> is available to
+          help spread the cost.
+        </p>
+
+        <p className="text-center">
+          Our Swanmore workshop also sits alongside our{" "}
+          <Link href={routes.bodyshop}>car bodyshop</Link>, so if bodywork is
+          needed at the same time, both can often be handled in one visit.
+        </p>
+
+        <p className="text-center">
+          <Link href={routes.contact}>Book your vehicle in</Link> today, or call{" "}
+          <Link href={`tel:${phoneNumberValue}`}>{phoneNumberText}</Link>!
+        </p>
       </section>
 
       <TestimonialsSection />
