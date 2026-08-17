@@ -5,7 +5,7 @@ import { TestimonialsSection } from "@/components/TestimonialsSection/Testimonia
 import { Animated } from "@/components/Animated/Animated"
 
 export const metadata: Metadata = {
-  title: "About Cool Cars – Expert Car Body Repairs in Swanmore",
+  title: "About Cool Cars South Coast Ltd",
   description:
     "Learn about Cool Cars: a trusted Swanmore-based specialist delivering precise car body repairs, premium paintwork, and reliable service for all vehicle types.",
   alternates: {
