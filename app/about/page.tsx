@@ -104,7 +104,7 @@ export default function About() {
           </p>
         </div>
 
-        <ul className="flex gap-5 flex-wrap">
+        <ul className="flex gap-5 flex-wrap sm:flex-nowrap">
           {thirdSectionItems.map((item, index) => (
             <Animated
               as="li"
